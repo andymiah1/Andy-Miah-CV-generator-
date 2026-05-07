@@ -1,1 +1,1614 @@
-
+{
+  "identity": {
+    "name": "Andy Miah",
+    "credentials": "BSc, MPhil, PhD",
+    "title": "Chair in Science Communication & Future Media",
+    "institution": "University of Salford",
+    "location": "Manchester M5 4WT",
+    "website": "andymiah.net",
+    "tagline": "Interdisciplinary research leader in AI ethics, creative technologies, and civic innovation"
+  },
+  "focus_areas": {
+    "esports": [
+      "esports",
+      "gaming",
+      "digital-sport",
+      "metaverse",
+      "gametech",
+      "virtual-sport",
+      "olympics-digital"
+    ],
+    "creative-manchester": [
+      "creative-industries",
+      "createch",
+      "civic",
+      "interdisciplinary",
+      "platform-leadership",
+      "manchester",
+      "arts-science",
+      "health-wellbeing",
+      "innovation"
+    ],
+    "science-communication": [
+      "science-communication",
+      "public-engagement",
+      "scicomm",
+      "media",
+      "festival",
+      "broadcast",
+      "journalism"
+    ],
+    "ai-ethics": [
+      "ai-ethics",
+      "ai",
+      "emerging-tech",
+      "digital-futures",
+      "ethics",
+      "governance"
+    ],
+    "digital-health": [
+      "digital-health",
+      "health-wellbeing",
+      "wearables",
+      "mhealth",
+      "young-people"
+    ],
+    "olympic-studies": [
+      "olympics",
+      "olympic-studies",
+      "sport-governance",
+      "mega-events",
+      "social-media-sport"
+    ],
+    "bioethics": [
+      "bioethics",
+      "enhancement",
+      "posthumanism",
+      "gene-doping",
+      "emerging-tech"
+    ],
+    "platform-leadership": [
+      "platform-leadership",
+      "interdisciplinary",
+      "civic",
+      "leadership",
+      "manchester",
+      "creative-industries",
+      "innovation"
+    ]
+  },
+  "metrics": [
+    {
+      "value": "18 yrs",
+      "label": "Professorial Experience",
+      "tags": [
+        "platform-leadership",
+        "science-communication",
+        "ai-ethics"
+      ]
+    },
+    {
+      "value": "£4.5m",
+      "label": "Innovate UK PI (2023–26)",
+      "tags": [
+        "creative-manchester",
+        "esports",
+        "gametech",
+        "platform-leadership",
+        "createch"
+      ]
+    },
+    {
+      "value": "£18m",
+      "label": "SNSF Funding Oversight",
+      "tags": [
+        "science-communication",
+        "interdisciplinary",
+        "platform-leadership"
+      ]
+    },
+    {
+      "value": "250+",
+      "label": "GM Businesses Mobilised",
+      "tags": [
+        "creative-manchester",
+        "esports",
+        "platform-leadership",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "value": "450+",
+      "label": "Invited Talks, 50+ Countries",
+      "tags": [
+        "science-communication",
+        "ai-ethics",
+        "esports",
+        "olympic-studies",
+        "bioethics"
+      ]
+    },
+    {
+      "value": "10",
+      "label": "Books Published",
+      "tags": [
+        "science-communication",
+        "bioethics",
+        "olympic-studies",
+        "esports",
+        "digital-health"
+      ]
+    },
+    {
+      "value": "6+ yrs",
+      "label": "Esports Board & Commission",
+      "tags": [
+        "esports",
+        "gaming",
+        "digital-sport",
+        "governance"
+      ]
+    },
+    {
+      "value": "20+",
+      "label": "Esports Keynotes Delivered",
+      "tags": [
+        "esports",
+        "gaming"
+      ]
+    },
+    {
+      "value": "2016",
+      "label": "First UK Uni Esports Conf.",
+      "tags": [
+        "esports"
+      ]
+    },
+    {
+      "value": "250+",
+      "label": "Peer-reviewed Publications",
+      "tags": [
+        "bioethics",
+        "science-communication",
+        "ai-ethics",
+        "olympic-studies"
+      ]
+    }
+  ],
+  "profile": {
+    "core": "Professor Andy Miah is an internationally recognised academic leader with 18 years of Professorial experience across Arts & Humanities, Science & Engineering, and Health Sciences. His research in the ethics of emerging technologies spans creative industries, AI, digital sport, and health — always with a commitment to interdisciplinary collaboration and societal impact.",
+    "variants": {
+      "esports": "One of the UK's leading academic voices on esports, digital sport, and competitive gaming. With over a decade of sustained research, advisory, and governance work in the esports sector, he combines scholarly rigour with practical industry engagement — advising governing bodies, federations, and governments on the ethical, cultural, and technological dimensions of esports.",
+      "creative-manchester": "An interdisciplinary research leader with over 20 years embedded in the Greater Manchester creative and civic ecosystem. He has led major platform-building initiatives connecting academia, industry, cultural institutions, and policy — including a £4.5m Innovate UK Accelerator mobilising 250+ GM businesses into a CreaTech innovation ecosystem.",
+      "science-communication": "An award-winning science communicator and public intellectual with over 450 invited talks in 50+ countries. Director of The Science Communication Space at Salford and recipient of the Josh Award for Science Communication (Science and Industry Museum, Manchester, 2015).",
+      "ai-ethics": "A leading voice on AI ethics and emerging technologies, advising the UK Government's DCMS College of Experts, the Greater Manchester AI Foundry, and international organisations. His work spans AI ethics, biotechnology, immersive media, and digital futures.",
+      "bioethics": "A foundational figure in the bioethics of human enhancement, gene doping, and posthumanism. His book Genetically Modified Athletes (Routledge, 2004) remains a core text in the field, and his research has influenced government select committee inquiries and international sporting governance."
+    }
+  },
+  "appointments": [
+    {
+      "title": "Chair in Science Communication & Future Media",
+      "institution": "University of Salford",
+      "dates": "2014 – present",
+      "tags": [
+        "science-communication",
+        "platform-leadership",
+        "ai-ethics",
+        "esports",
+        "creative-manchester",
+        "interdisciplinary",
+        "manchester",
+        "civic"
+      ],
+      "bullets": [
+        {
+          "text": "Director, The Science Communication Space (scicomm.space) — cross-university research and public engagement platform",
+          "tags": [
+            "science-communication",
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "Principal Investigator, £4.5m Innovate UK Accelerator: MediaCity Immersive Technologies Innovation Hub (2023–2026) — gametech, esports, virtual production",
+          "tags": [
+            "creative-manchester",
+            "esports",
+            "gametech",
+            "platform-leadership",
+            "createch"
+          ]
+        },
+        {
+          "text": "Chair, Engagement Forum — coordinating civic investment across academic and professional services teams",
+          "tags": [
+            "platform-leadership",
+            "civic",
+            "manchester",
+            "creative-manchester"
+          ]
+        },
+        {
+          "text": "Chair, Metaverse Special Interest Group (2021–present)",
+          "tags": [
+            "esports",
+            "metaverse",
+            "ai-ethics",
+            "creative-manchester",
+            "createch"
+          ]
+        },
+        {
+          "text": "Convener, Drones Research Group (2015–17) and Alternate Realities Cluster (2015–17)",
+          "tags": [
+            "science-communication",
+            "ai-ethics",
+            "creative-manchester"
+          ]
+        },
+        {
+          "text": "Academic Lead, Manchester Science Festival partnership (2014–present, 10 years)",
+          "tags": [
+            "science-communication",
+            "civic",
+            "manchester",
+            "creative-manchester"
+          ]
+        },
+        {
+          "text": "Academic Lead, FameLab North West Regional Hub (2023–present)",
+          "tags": [
+            "science-communication"
+          ]
+        },
+        {
+          "text": "Ethics Lead, Greater Manchester AI Foundry (2020–2023)",
+          "tags": [
+            "ai-ethics",
+            "civic",
+            "manchester",
+            "creative-manchester"
+          ]
+        },
+        {
+          "text": "University REF Impact Committee (2018–2024)",
+          "tags": [
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "Task and Finish Groups: AI Research Policy (2023–25); AI Teaching & Learning Strategy (2024–25)",
+          "tags": [
+            "ai-ethics",
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "Advisory Group: Campus Connectivity Project £6.5m (2026–present); Sport Strategy Group (2024–25)",
+          "tags": [
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "University Sub-Committee, Athena Swan (2016–2020)",
+          "tags": [
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "Steering Group, Manchester European City of Science 2016 (2015–16)",
+          "tags": [
+            "science-communication",
+            "civic",
+            "manchester"
+          ]
+        },
+        {
+          "text": "Marketing Manchester Ambassador (appointed 2026)",
+          "tags": [
+            "civic",
+            "manchester",
+            "creative-manchester",
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "Organised first dedicated esports research conference at a UK university (November 2016)",
+          "tags": [
+            "esports",
+            "gaming"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Professor of Ethics & Emerging Technologies",
+      "institution": "University of the West of Scotland",
+      "dates": "2008 – 2014",
+      "tags": [
+        "bioethics",
+        "platform-leadership",
+        "interdisciplinary",
+        "ai-ethics",
+        "science-communication"
+      ],
+      "bullets": [
+        {
+          "text": "Founder & Director, Creative Futures Institute — cross-faculty interdisciplinary research unit",
+          "tags": [
+            "platform-leadership",
+            "interdisciplinary",
+            "creative-manchester"
+          ]
+        },
+        {
+          "text": "School REF2014 Unit Leader; Chair, School Research Committee (2007–2014)",
+          "tags": [
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "University Ethics Committee (2011–2012)",
+          "tags": [
+            "bioethics",
+            "platform-leadership"
+          ]
+        },
+        {
+          "text": "Editorial Board, Computer Games Journal (2011–2015)",
+          "tags": [
+            "esports",
+            "gaming"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Reader in New Media & Bioethics",
+      "institution": "University of the West of Scotland",
+      "dates": "2006 – 2008",
+      "tags": [
+        "bioethics",
+        "science-communication"
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Lecturer in Media, Bioethics & Cyberculture",
+      "institution": "University of the West of Scotland",
+      "dates": "2002 – 2006",
+      "tags": [
+        "bioethics",
+        "science-communication"
+      ],
+      "bullets": [
+        {
+          "text": "Courses designed: Becoming Posthuman (Honours); Cyberculture (class of 120); Sport & Spectacle",
+          "tags": [
+            "bioethics",
+            "science-communication",
+            "esports"
+          ]
+        }
+      ]
+    },
+    {
+      "title": "Associate Lecturer — Bioethics",
+      "institution": "University of Glasgow, Graduate School of Biomedical & Life Sciences",
+      "dates": "2002 – 2005",
+      "tags": [
+        "bioethics"
+      ],
+      "bullets": []
+    },
+    {
+      "title": "Visiting Professor — MA Design Interactions",
+      "institution": "Royal College of Art, London",
+      "dates": "2006 – 2016",
+      "tags": [
+        "science-communication",
+        "creative-manchester",
+        "interdisciplinary",
+        "ai-ethics"
+      ],
+      "bullets": []
+    },
+    {
+      "title": "International Visiting Scholar",
+      "institution": "The Hastings Center, New York",
+      "dates": "2002",
+      "tags": [
+        "bioethics"
+      ],
+      "bullets": []
+    }
+  ],
+  "governance_advisory": [
+    {
+      "title": "Board Member",
+      "org": "British Esports Federation",
+      "dates": "2019 – present",
+      "tags": [
+        "esports",
+        "gaming",
+        "digital-sport",
+        "governance"
+      ]
+    },
+    {
+      "title": "Commission Member",
+      "org": "Global Esports Federation",
+      "dates": "2020 – present",
+      "tags": [
+        "esports",
+        "gaming",
+        "governance"
+      ]
+    },
+    {
+      "title": "Commission Chair",
+      "org": "World Technology Games",
+      "dates": "2025 – present",
+      "tags": [
+        "esports",
+        "gaming",
+        "ai-ethics",
+        "governance"
+      ]
+    },
+    {
+      "title": "Member",
+      "org": "DCMS College of Experts, UK Government",
+      "dates": "2025 – present",
+      "tags": [
+        "ai-ethics",
+        "creative-industries",
+        "platform-leadership",
+        "governance",
+        "creative-manchester"
+      ]
+    },
+    {
+      "title": "Advisory Board",
+      "org": "Manchester Science Festival",
+      "dates": "2025 – present",
+      "tags": [
+        "science-communication",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "title": "Advisory Board",
+      "org": "World Technology Group",
+      "dates": "2025 – present",
+      "tags": [
+        "ai-ethics",
+        "governance",
+        "emerging-tech"
+      ]
+    },
+    {
+      "title": "Advisory Board",
+      "org": "Science and Industry Museum, Manchester",
+      "dates": "2016 – 2024",
+      "tags": [
+        "science-communication",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "title": "Agora Committee Member",
+      "org": "Swiss National Science Foundation",
+      "dates": "2017 – 2023",
+      "tags": [
+        "science-communication",
+        "interdisciplinary",
+        "platform-leadership"
+      ]
+    },
+    {
+      "title": "IOC Young Reporters Programme Mentor",
+      "org": "International Olympic Committee",
+      "dates": "2014",
+      "tags": [
+        "olympic-studies",
+        "social-media-sport"
+      ]
+    },
+    {
+      "title": "Ethics Lead",
+      "org": "Greater Manchester AI Foundry",
+      "dates": "2020 – 2023",
+      "tags": [
+        "ai-ethics",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "title": "Marketing Manchester Ambassador",
+      "org": "Marketing Manchester",
+      "dates": "2026 – present",
+      "tags": [
+        "civic",
+        "manchester",
+        "creative-manchester",
+        "platform-leadership"
+      ]
+    },
+    {
+      "title": "Global Director",
+      "org": "Centre for Policy & Emerging Technologies, Washington DC",
+      "dates": "2010 – 2017",
+      "tags": [
+        "ai-ethics",
+        "bioethics",
+        "governance"
+      ]
+    },
+    {
+      "title": "Adviser",
+      "org": "BRILLIANT Festival",
+      "dates": "2024 – present",
+      "tags": [
+        "science-communication"
+      ]
+    },
+    {
+      "title": "Advisory Board",
+      "org": "International Journal of Esports",
+      "dates": "2020 – present",
+      "tags": [
+        "esports"
+      ]
+    }
+  ],
+  "grants": [
+    {
+      "title": "Nested Cinema",
+      "funder": "AHRC",
+      "role": "Co-I",
+      "amount": "£285,000",
+      "dates": "2026 – present",
+      "description": "Designing a new immersive cinema proposition",
+      "tags": [
+        "creative-manchester",
+        "creative-industries",
+        "createch",
+        "arts-science",
+        "platform-leadership"
+      ]
+    },
+    {
+      "title": "PROBABLE Futures: Probabilistic AI in Law Enforcement",
+      "funder": "RAi Keystone Project",
+      "role": "Oversight Committee",
+      "amount": "£3.4m",
+      "dates": "2025 – present",
+      "description": "AI systems in law enforcement futures; Northumbria/Glasgow/Cambridge/Newcastle/Leicester",
+      "tags": [
+        "ai-ethics",
+        "governance",
+        "emerging-tech"
+      ]
+    },
+    {
+      "title": "MediaCity Immersive Technologies & Innovation Hub",
+      "funder": "Innovate UK Accelerator",
+      "role": "PI",
+      "amount": "£3.2m university / £4.5m total",
+      "dates": "2023 – 2026",
+      "description": "CreaTech innovation ecosystem with MediaCity and Salford City Council — gametech, esports, virtual production, metaverse applications, 250+ GM SMEs",
+      "tags": [
+        "creative-manchester",
+        "esports",
+        "gametech",
+        "createch",
+        "platform-leadership",
+        "manchester",
+        "civic",
+        "innovation"
+      ]
+    },
+    {
+      "title": "PEAs in a Pod",
+      "funder": "EPSRC",
+      "role": "Co-I",
+      "amount": "N/A",
+      "dates": "2022",
+      "description": "Public engagement with artificial intelligence for early-career researchers, with Manchester Metropolitan University",
+      "tags": [
+        "ai-ethics",
+        "science-communication"
+      ]
+    },
+    {
+      "title": "UKRI Climate Expo & Live from COP26",
+      "funder": "UKRI",
+      "role": "Lead",
+      "amount": "N/A",
+      "dates": "2021",
+      "description": "Research communications programme for COP26",
+      "tags": [
+        "science-communication",
+        "civic"
+      ]
+    },
+    {
+      "title": "Greater Manchester AI Foundry",
+      "funder": "GM Partnership",
+      "role": "Ethics Co-lead",
+      "amount": "N/A",
+      "dates": "2020 – 2023",
+      "description": "Ethics programme for AI across Greater Manchester",
+      "tags": [
+        "ai-ethics",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "title": "Digital Health Technologies and Young People",
+      "funder": "Wellcome Trust",
+      "role": "Co-I",
+      "amount": "£130,000",
+      "dates": "2016 – 2019",
+      "description": "With University of Bath and University of Canberra",
+      "tags": [
+        "digital-health",
+        "health-wellbeing",
+        "young-people"
+      ]
+    },
+    {
+      "title": "Project Daedalus — Digital R&D for the Arts",
+      "funder": "NESTA / AHRC / Arts Council England",
+      "role": "PI",
+      "amount": "£125,000",
+      "dates": "2014",
+      "description": "Drone art project with Abandon Normal Devices and Marshmallow Laser Feast",
+      "tags": [
+        "creative-manchester",
+        "arts-science",
+        "creative-industries"
+      ]
+    },
+    {
+      "title": "Science Communication Projects (Switzerland)",
+      "funder": "Swiss National Science Foundation — Agora Committee",
+      "role": "Committee Member",
+      "amount": "~£18m (oversight)",
+      "dates": "2017 – 2023",
+      "description": "Oversaw approximately £18m in science communication and public engagement funding across 200+ interdisciplinary projects",
+      "tags": [
+        "science-communication",
+        "interdisciplinary",
+        "platform-leadership"
+      ]
+    }
+  ],
+  "publications": {
+    "books": [
+      {
+        "citation": "Miah, A. (2020) Drones: The Brilliant, the Bad, and the Beautiful. Emerald Publishing.",
+        "tags": [
+          "science-communication",
+          "ai-ethics",
+          "arts-science"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2017) Sport 2.0: Transforming Sports for Digital Worlds. MIT Press. [Japanese translation 2019]",
+        "tags": [
+          "esports",
+          "digital-sport",
+          "olympic-studies",
+          "gametech"
+        ]
+      },
+      {
+        "citation": "Miah, A. & Garcia, B. (2012) The Olympics: The Basics. Routledge.",
+        "tags": [
+          "olympic-studies"
+        ]
+      },
+      {
+        "citation": "Miah, A. & Rich, E. (2008) The Medicalization of Cyberspace. Routledge.",
+        "tags": [
+          "digital-health",
+          "health-wellbeing",
+          "bioethics"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2004) Genetically Modified Athletes: Biomedical Ethics, Gene Doping & Sport. Routledge.",
+        "tags": [
+          "bioethics",
+          "enhancement",
+          "gene-doping",
+          "olympic-studies"
+        ]
+      }
+    ],
+    "books_forthcoming": [
+      {
+        "citation": "Miah, A. (forthcoming) The Metaverse. Emerald Publishing.",
+        "tags": [
+          "esports",
+          "metaverse",
+          "ai-ethics",
+          "creative-manchester"
+        ]
+      },
+      {
+        "citation": "Miah, A. (under review) The Science Communication Imperative. Oxford University Press.",
+        "tags": [
+          "science-communication"
+        ]
+      },
+      {
+        "citation": "Miah, A. (forthcoming) Posthuman Lifestyles.",
+        "tags": [
+          "bioethics",
+          "enhancement"
+        ]
+      },
+      {
+        "citation": "Miah, A. (forthcoming) On The End of Species by Means of Biotechnological Enhancement.",
+        "tags": [
+          "bioethics",
+          "enhancement"
+        ]
+      }
+    ],
+    "books_edited": [
+      {
+        "citation": "Lorch, M. & Miah, A. (Eds.) (2017) The Science of Superheroes. Royal Society of Chemistry.",
+        "tags": [
+          "science-communication",
+          "arts-science"
+        ]
+      },
+      {
+        "citation": "Lorch, M. & Miah, A. (Eds.) (2016) A Flash of Light: The Science of Light and Colour. Royal Society of Chemistry.",
+        "tags": [
+          "science-communication",
+          "arts-science"
+        ]
+      },
+      {
+        "citation": "Miah, A. (Ed.) (2008) Human Futures: Art in an Age of Uncertainty. FACT & Liverpool University Press.",
+        "tags": [
+          "arts-science",
+          "bioethics",
+          "creative-manchester"
+        ]
+      }
+    ],
+    "journal_articles": [
+      {
+        "citation": "Miah, A. (2021) The Esports Question for the Olympic Movement. Journal of Olympic Studies, 2.",
+        "tags": [
+          "esports",
+          "olympic-studies",
+          "governance"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2020) How do esports companies support their community's wellness? International Journal of Esports, 1(1).",
+        "tags": [
+          "esports",
+          "digital-health",
+          "health-wellbeing"
+        ]
+      },
+      {
+        "citation": "Rich, E., Miah, A. & Lewis, S.C. (2019) Is digital health care more equitable? Sociology of Health and Illness, 41(51), 31–49.",
+        "tags": [
+          "digital-health",
+          "health-wellbeing"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2017) Nanoethics, Science Communication and a Fourth Model for Public Engagement. NanoEthics, 11(2), 139–52.",
+        "tags": [
+          "science-communication",
+          "bioethics",
+          "ai-ethics"
+        ]
+      },
+      {
+        "citation": "Rich, E. & Miah, A. (2016) Mobile, wearable and ingestible health technologies. Health Sociology Review, 26(1), 84–97.",
+        "tags": [
+          "digital-health",
+          "health-wellbeing",
+          "wearables"
+        ]
+      }
+    ],
+    "chapters": [
+      {
+        "citation": "Miah, A. (2025) Neuralink as an Evolutionary and Ethical Imperative. In Hughes et al. (Eds.) The Biopolitics of Human Enhancement. De Gruyter.",
+        "tags": [
+          "bioethics",
+          "enhancement",
+          "ai-ethics"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2024) Contemporary Sport and its Implications for the Olympic Games. IOC Olympic Essentials Collection.",
+        "tags": [
+          "olympic-studies",
+          "esports"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2023) The Moral Metaverse: Establishing an Ethical Foundation for XR Design. In Understanding Virtual Reality. Routledge.",
+        "tags": [
+          "esports",
+          "metaverse",
+          "ai-ethics"
+        ]
+      },
+      {
+        "citation": "Miah, A. & Fenton, A. (2020) Esport in the Olympic & Paralympic Games: The Case for Inclusion. In Chatziefstathiou, D. (Ed.) International Handbook of Olympic and Paralympic Games. Routledge.",
+        "tags": [
+          "esports",
+          "olympic-studies"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2018) Sport's Digital Future: Biodigital Design, E-Sport, Mixed Reality, Fan Engagement & Gamification. In Bundon, A. (Ed.) Digital Qualitative Research in Sport & Physical Activity. Routledge.",
+        "tags": [
+          "esports",
+          "digital-sport",
+          "olympic-studies"
+        ]
+      },
+      {
+        "citation": "Miah, A., Fenton, A. & Chadwick, S. (2020/2023) Virtual Reality and Sports. In 21st Century Sports. Springer. [also Chinese translation]",
+        "tags": [
+          "esports",
+          "digital-sport",
+          "gametech"
+        ]
+      },
+      {
+        "citation": "Rich, E., Lewis, S. & Miah, A. (2020) Digital Health Technologies, Body Pedagogies. In Leahy et al. (Eds.) Social Theory and Health Education. Routledge.",
+        "tags": [
+          "digital-health",
+          "health-wellbeing"
+        ]
+      }
+    ],
+    "journalism": [
+      {
+        "citation": "Miah, A. (2019) Esports is the future of all sports — here's why. The Conversation.",
+        "tags": [
+          "esports"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2020) Esports and the Beginnings of Transmedia Architecture. The Design Exchange.",
+        "tags": [
+          "esports",
+          "creative-industries"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2018) NHS in Fortnite and Facebook? It would put mental healthcare where it's needed. The Conversation.",
+        "tags": [
+          "esports",
+          "digital-health"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2022) The metaverse is much more than a virtual copy of your campus. Times Higher Education.",
+        "tags": [
+          "metaverse",
+          "esports",
+          "ai-ethics"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2017) How artificial intelligence could provide some respite for the NHS. The Conversation.",
+        "tags": [
+          "ai-ethics",
+          "digital-health"
+        ]
+      },
+      {
+        "citation": "Miah, A. (2016) Will Super Mario ever be an Olympic sport? The Conversation.",
+        "tags": [
+          "esports",
+          "olympic-studies"
+        ]
+      }
+    ]
+  },
+  "keynotes": [
+    {
+      "text": "Esports in Education Summit, BETT Show, London (2026)",
+      "tags": [
+        "esports"
+      ]
+    },
+    {
+      "text": "AI and Biological Weapons, Oxford University (2026)",
+      "tags": [
+        "ai-ethics",
+        "bioethics"
+      ]
+    },
+    {
+      "text": "Pioneers in Innovation, Rochdale Innovation Forum (2026)",
+      "tags": [
+        "creative-manchester",
+        "manchester",
+        "innovation"
+      ]
+    },
+    {
+      "text": "Gamification & Game-Based Learning, BETT Global, London (2025)",
+      "tags": [
+        "esports",
+        "gaming"
+      ]
+    },
+    {
+      "text": "Esports and the Olympic Games, International Olympic Academy (2025)",
+      "tags": [
+        "esports",
+        "olympic-studies"
+      ]
+    },
+    {
+      "text": "Brabners State of Play Conference, Etihad, Manchester (2025)",
+      "tags": [
+        "esports",
+        "manchester"
+      ]
+    },
+    {
+      "text": "How Gaming Changed the World, New Scientist Live, London (2025)",
+      "tags": [
+        "esports",
+        "science-communication"
+      ]
+    },
+    {
+      "text": "Imagining the World Technology Games, Leiden University (2025)",
+      "tags": [
+        "esports",
+        "governance"
+      ]
+    },
+    {
+      "text": "Artificial Intelligence in the Workplace, Manchester City Council Leadership Summit (2025)",
+      "tags": [
+        "ai-ethics",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "text": "How AI is Changing the Business of Science, Business of Science Conference, Liverpool (2025)",
+      "tags": [
+        "ai-ethics",
+        "science-communication"
+      ]
+    },
+    {
+      "text": "AI and Intellectual Property, Cheltenham Science Festival (2025)",
+      "tags": [
+        "ai-ethics",
+        "science-communication"
+      ]
+    },
+    {
+      "text": "The Future of MediaCity, Healthy City Design Conference (2025)",
+      "tags": [
+        "creative-manchester",
+        "manchester",
+        "digital-health"
+      ]
+    },
+    {
+      "text": "Government Office for Science, Manchester (2023)",
+      "tags": [
+        "ai-ethics",
+        "science-communication",
+        "governance"
+      ]
+    },
+    {
+      "text": "The Metaverse, South by Southwest, Texas (2023)",
+      "tags": [
+        "esports",
+        "metaverse",
+        "ai-ethics"
+      ]
+    },
+    {
+      "text": "Future Esports, DTX Manchester (2023)",
+      "tags": [
+        "esports",
+        "manchester"
+      ]
+    },
+    {
+      "text": "The Future of Esports, ESIC Global Esports Summit, London (2023)",
+      "tags": [
+        "esports",
+        "governance"
+      ]
+    },
+    {
+      "text": "Edinburgh Science Festival (2024)",
+      "tags": [
+        "science-communication"
+      ]
+    },
+    {
+      "text": "Creative AI, Pro-Manchester Creative Conference, UA92 (2024)",
+      "tags": [
+        "ai-ethics",
+        "creative-manchester",
+        "manchester"
+      ]
+    },
+    {
+      "text": "Skills and the City, The BEYOND Conference, MediaCity (2024)",
+      "tags": [
+        "creative-manchester",
+        "manchester",
+        "civic"
+      ]
+    },
+    {
+      "text": "Esports and Our Phygital Future, Digital City Festival, Manchester (2022)",
+      "tags": [
+        "esports",
+        "manchester"
+      ]
+    },
+    {
+      "text": "Esports in Education Summit, British Esports Federation, Nottingham Trent (2022)",
+      "tags": [
+        "esports"
+      ]
+    },
+    {
+      "text": "ESIC Global Esports Summit, London (2022)",
+      "tags": [
+        "esports",
+        "governance"
+      ]
+    },
+    {
+      "text": "Trust In Me: Data and AI, Edinburgh Science Festival (2022)",
+      "tags": [
+        "ai-ethics",
+        "science-communication"
+      ]
+    },
+    {
+      "text": "Creating safe digital spaces through esports and AI, UN ITU AI for Good (2021)",
+      "tags": [
+        "esports",
+        "ai-ethics",
+        "governance"
+      ]
+    },
+    {
+      "text": "Future (E)Sports, Chinese Taipei Olympic Academy (2021)",
+      "tags": [
+        "esports",
+        "olympic-studies"
+      ]
+    },
+    {
+      "text": "Esports for Peace, Peace and Sport International Forum, Monaco (2019)",
+      "tags": [
+        "esports",
+        "olympic-studies"
+      ]
+    },
+    {
+      "text": "Emerging Realities in Esports, Esports Regulatory Congress, Barcelona (2019)",
+      "tags": [
+        "esports",
+        "governance"
+      ]
+    },
+    {
+      "text": "New Scientist Live (2022, 2025)",
+      "tags": [
+        "science-communication",
+        "esports"
+      ]
+    },
+    {
+      "text": "Global Esports Executive Summit, Busan, South Korea (2017)",
+      "tags": [
+        "esports",
+        "governance"
+      ]
+    },
+    {
+      "text": "Edinburgh Science Festival (2024)",
+      "tags": [
+        "science-communication"
+      ]
+    },
+    {
+      "text": "GMCA Creative Industries Exchange keynote (2026)",
+      "tags": [
+        "creative-manchester",
+        "civic",
+        "manchester",
+        "creative-industries"
+      ]
+    },
+    {
+      "text": "Alliance Manchester Business School Creative Industries events (2026)",
+      "tags": [
+        "creative-manchester",
+        "manchester",
+        "creative-industries"
+      ]
+    },
+    {
+      "text": "Cheltenham Science Festival (2011, 2015, 2016, 2020, 2025)",
+      "tags": [
+        "science-communication"
+      ]
+    },
+    {
+      "text": "Sport Accord Convention, Antalya (2014)",
+      "tags": [
+        "olympic-studies",
+        "esports"
+      ]
+    },
+    {
+      "text": "Peace and Sport Summit, Monaco (2016)",
+      "tags": [
+        "olympic-studies",
+        "esports"
+      ]
+    },
+    {
+      "text": "Olympism in Action Forum, Buenos Aires (2018)",
+      "tags": [
+        "olympic-studies"
+      ]
+    },
+    {
+      "text": "MeCCSA Keynote, London South Bank University (2018)",
+      "tags": [
+        "science-communication",
+        "digital-health"
+      ]
+    },
+    {
+      "text": "Digital Health Generation, Houses of Parliament (2018)",
+      "tags": [
+        "digital-health"
+      ]
+    },
+    {
+      "text": "Wellcome Trust event, London (2016)",
+      "tags": [
+        "bioethics",
+        "science-communication"
+      ]
+    },
+    {
+      "text": "Royal Institution of Great Britain, Futures Debates (2005)",
+      "tags": [
+        "bioethics",
+        "science-communication"
+      ]
+    },
+    {
+      "text": "Harvard Law School symposium on bioethics (2005)",
+      "tags": [
+        "bioethics"
+      ]
+    },
+    {
+      "text": "European Parliament, Evidence Briefing on Human Enhancement (2009)",
+      "tags": [
+        "bioethics",
+        "governance"
+      ]
+    },
+    {
+      "text": "TEDx University of Salford (2021)",
+      "tags": [
+        "science-communication",
+        "ai-ethics"
+      ]
+    },
+    {
+      "text": "AI Leadership in the Workplace, Science Council, London, July 2026",
+      "tags": [],
+      "needs_tagging": true,
+      "added": "2026-05-07"
+    }
+  ],
+  "partnerships": [
+    {
+      "org": "GMCA",
+      "description": "Strategic engagement; Creative Industries Exchange keynote (2026)",
+      "tags": [
+        "creative-manchester",
+        "civic",
+        "manchester",
+        "platform-leadership"
+      ]
+    },
+    {
+      "org": "Factory International / Aviva Studios",
+      "description": "Diaspora Innovation Network (2025–2026)",
+      "tags": [
+        "creative-manchester",
+        "civic",
+        "creative-industries"
+      ]
+    },
+    {
+      "org": "MediaCity / Peel Media & Salford City Council",
+      "description": "£4.5m Innovate UK Accelerator partnership",
+      "tags": [
+        "creative-manchester",
+        "esports",
+        "gametech",
+        "platform-leadership",
+        "manchester"
+      ]
+    },
+    {
+      "org": "Manchester Science Festival",
+      "description": "10-year institutional partnership lead",
+      "tags": [
+        "science-communication",
+        "civic",
+        "manchester",
+        "creative-manchester"
+      ]
+    },
+    {
+      "org": "Contact Theatre",
+      "description": "Project collaborations",
+      "tags": [
+        "creative-manchester",
+        "creative-industries"
+      ]
+    },
+    {
+      "org": "Abandon Normal Devices",
+      "description": "Organising Committee (2009–12); NESTA-funded Project Daedalus",
+      "tags": [
+        "creative-manchester",
+        "arts-science",
+        "creative-industries"
+      ]
+    },
+    {
+      "org": "FutureEverything",
+      "description": "Strategic and project collaboration",
+      "tags": [
+        "creative-manchester",
+        "creative-industries"
+      ]
+    },
+    {
+      "org": "Science and Industry Museum, Manchester",
+      "description": "Advisory Board (2016–2024)",
+      "tags": [
+        "science-communication",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "org": "GM Business Growth Hub & GM Chamber of Commerce",
+      "description": "Institutional liaison",
+      "tags": [
+        "creative-manchester",
+        "civic",
+        "manchester",
+        "platform-leadership"
+      ]
+    },
+    {
+      "org": "Invest Manchester",
+      "description": "City delegation support (India & Brazil, 2025)",
+      "tags": [
+        "creative-manchester",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "org": "International Olympic Committee",
+      "description": "Young Reporters Programme Mentor (2014); advisory",
+      "tags": [
+        "olympic-studies",
+        "social-media-sport"
+      ]
+    },
+    {
+      "org": "Swiss Re",
+      "description": "Advisory",
+      "tags": [
+        "ai-ethics",
+        "bioethics",
+        "governance"
+      ]
+    },
+    {
+      "org": "News Media Coalition",
+      "description": "Advisory (Berlin, 2019)",
+      "tags": [
+        "science-communication",
+        "olympic-studies"
+      ]
+    },
+    {
+      "org": "Deloitte Manchester",
+      "description": "Manchester-India Sports Business Summit (2025)",
+      "tags": [
+        "creative-manchester",
+        "esports",
+        "manchester"
+      ]
+    }
+  ],
+  "uom_collaborations": [
+    {
+      "text": "Prof Sarah Sharples — joint bid to bring the British Science Festival to Manchester 2027",
+      "tags": [
+        "science-communication",
+        "platform-leadership",
+        "manchester",
+        "creative-manchester"
+      ]
+    },
+    {
+      "text": "Dr Leandro Valiati & Dr Marianna Rolbina — Creative Manchester / AMBS events on creative industries policy (April 2026)",
+      "tags": [
+        "creative-manchester",
+        "creative-industries"
+      ]
+    },
+    {
+      "text": "Dr Anita Greenhill — esports and Digital Futures workshop and grant collaborations (2021–present)",
+      "tags": [
+        "esports",
+        "ai-ethics",
+        "creative-manchester"
+      ]
+    },
+    {
+      "text": "Prof Rob Appleby — Executive Producer for CERN/LHC data VJ set, Blue Dot Festival (2019)",
+      "tags": [
+        "science-communication",
+        "arts-science",
+        "creative-manchester"
+      ]
+    },
+    {
+      "text": "Prof Danielle George — Manchester European City of Science Steering Committee (2015–16)",
+      "tags": [
+        "science-communication",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
+      "text": "Anthony Stephens, Director of Digital — digital innovation strategy collaboration",
+      "tags": [
+        "ai-ethics",
+        "platform-leadership",
+        "creative-manchester"
+      ]
+    },
+    {
+      "text": "Prof Lynne Bianchi — Great Science Share (2016–2024); emergency site relocation 2024",
+      "tags": [
+        "science-communication",
+        "creative-manchester"
+      ]
+    }
+  ],
+  "awards": [
+    {
+      "text": "2026 — Marketing Manchester Ambassador",
+      "tags": [
+        "civic",
+        "manchester",
+        "creative-manchester",
+        "platform-leadership"
+      ]
+    },
+    {
+      "text": "2025 — DCMS College of Experts (UK Government)",
+      "tags": [
+        "ai-ethics",
+        "governance",
+        "creative-manchester",
+        "platform-leadership"
+      ]
+    },
+    {
+      "text": "2025 — Business of Science Conference Founders Award",
+      "tags": [
+        "science-communication"
+      ]
+    },
+    {
+      "text": "2015 — Josh Award for Science Communication (Science and Industry Museum, Manchester)",
+      "tags": [
+        "science-communication"
+      ]
+    },
+    {
+      "text": "2013 — British Muslim Award nomination: Services to Science & Engineering",
+      "tags": [
+        "science-communication",
+        "platform-leadership"
+      ]
+    },
+    {
+      "text": "2012 — British Bangladeshi Power 100 List: Services to Education, Culture & Sport",
+      "tags": [
+        "science-communication",
+        "platform-leadership"
+      ]
+    },
+    {
+      "text": "2010–12 — #media2012: PODIUM Award (London 2012 HE Unit); Pierre de Coubertin Award shortlist",
+      "tags": [
+        "olympic-studies",
+        "social-media-sport",
+        "science-communication"
+      ]
+    }
+  ],
+  "editorial": [
+    {
+      "text": "Journal of Future Robot Life (IOS Press) — 2020–present",
+      "tags": [
+        "ai-ethics",
+        "bioethics"
+      ]
+    },
+    {
+      "text": "Performance Enhancement & Health (Springer) — 2020–present",
+      "tags": [
+        "bioethics",
+        "digital-health"
+      ]
+    },
+    {
+      "text": "International Journal of Esports — 2020–present",
+      "tags": [
+        "esports"
+      ]
+    },
+    {
+      "text": "NanoEthics (Springer) — 2016–present",
+      "tags": [
+        "bioethics",
+        "ai-ethics"
+      ]
+    },
+    {
+      "text": "International Journal of Technoethics — Associate Editor, 2010–2017",
+      "tags": [
+        "bioethics",
+        "ai-ethics"
+      ]
+    },
+    {
+      "text": "AHRC Peer Review College — 2012–2015",
+      "tags": [
+        "platform-leadership",
+        "science-communication"
+      ]
+    },
+    {
+      "text": "NERC Public Engagement Grants panel — 2021",
+      "tags": [
+        "science-communication"
+      ]
+    },
+    {
+      "text": "EPSRC Ingenious panel — 2018",
+      "tags": [
+        "science-communication",
+        "ai-ethics"
+      ]
+    }
+  ],
+  "education": [
+    {
+      "degree": "MPhil, Medical Law & Ethics",
+      "institution": "University of Glasgow",
+      "dates": "2003–2006",
+      "note": "Dissertation: Genetic Selection for Enhanced Health. Supervisor: Professor Sheila McLean."
+    },
+    {
+      "degree": "PhD, Bioethics, Philosophy of Technology & Genetic Enhancement",
+      "institution": "De Montfort University",
+      "dates": "1998–2002",
+      "note": "3-year university bursary funded. Focus: posthumanism, biotechnology, and human enhancement in sport."
+    },
+    {
+      "degree": "BA (Hons) Sport & Leisure Studies — First Class",
+      "institution": "De Montfort University",
+      "dates": "1994–1997",
+      "note": ""
+    }
+  ],
+  "media": {
+    "summary": "350+ broadcast and print appearances over 20 years, including BBC Newsnight, Sky News, CNN, GBNews, BBC World Service, BBC Radio 4, The Guardian, Wired, Washington Post, and The Conversation (columnist). Most recently: Future Tense podcast (Audible, with Richard Ayoade and Warwick Davis, 2025). Josh Award for Science Communication, 2015.",
+    "highlights": [
+      {
+        "text": "BBC Newsnight (2012, gene doping); BBC Radio 4 Start the Week with Andrew Marr (2008)",
+        "tags": [
+          "bioethics",
+          "science-communication"
+        ]
+      },
+      {
+        "text": "Future Tense podcast, Audible (with Richard Ayoade and Warwick Davis, 2025)",
+        "tags": [
+          "science-communication",
+          "ai-ethics"
+        ]
+      },
+      {
+        "text": "BBC 5 Live — Esports feature, The Beautiful Gamers with Dan Walker (2016)",
+        "tags": [
+          "esports"
+        ]
+      },
+      {
+        "text": "EA Sports FC eChampions League promotion with MediaCityUK, YouTube (2025)",
+        "tags": [
+          "esports"
+        ]
+      },
+      {
+        "text": "Washington Post, The Guardian, Wired — regular commentator on human enhancement and emerging tech",
+        "tags": [
+          "bioethics",
+          "ai-ethics",
+          "science-communication"
+        ]
+      },
+      {
+        "text": "The Conversation — columnist on technology, ethics, and sport",
+        "tags": [
+          "science-communication",
+          "esports",
+          "bioethics",
+          "ai-ethics"
+        ]
+      },
+      {
+        "text": "CNN, Sky News — AI, drones, and emerging technology (ongoing)",
+        "tags": [
+          "ai-ethics",
+          "science-communication"
+        ]
+      }
+    ]
+  }
+}
