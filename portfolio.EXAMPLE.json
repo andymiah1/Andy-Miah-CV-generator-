@@ -1,1 +1,106 @@
+{
+  "_readme": "This is a template. Copy to portfolio.json and fill in your own data. See README.md for full documentation.",
 
+  "identity": {
+    "name": "Your Name",
+    "credentials": "BSc, PhD",
+    "title": "Professor of [Your Field]",
+    "institution": "University of Somewhere",
+    "location": "City, Country",
+    "website": "yourwebsite.com",
+    "tagline": "One-line positioning statement for your CV header"
+  },
+
+  "focus_areas": {
+    "my-specialism": ["tag-one", "tag-two", "tag-three"],
+    "another-focus": ["tag-four", "tag-five"]
+  },
+
+  "metrics": [
+    { "value": "20 yrs", "label": "Professorial Experience",   "tags": ["my-specialism"] },
+    { "value": "£2m",    "label": "Grant Income (PI)",         "tags": ["my-specialism", "another-focus"] },
+    { "value": "100+",   "label": "Publications",              "tags": ["my-specialism"] }
+  ],
+
+  "profile": {
+    "core": "Your default profile paragraph, used when no focus-specific variant exists.",
+    "variants": {
+      "my-specialism":  "A profile paragraph tailored specifically to this focus area.",
+      "another-focus":  "A different profile paragraph for this focus area."
+    }
+  },
+
+  "appointments": [
+    {
+      "title": "Professor of [Field]",
+      "institution": "University of Somewhere",
+      "dates": "2015 – present",
+      "tags": ["my-specialism", "another-focus"],
+      "bullets": [
+        { "text": "Role or achievement relevant to specialism", "tags": ["my-specialism"] },
+        { "text": "Role or achievement relevant to another focus", "tags": ["another-focus"] }
+      ]
+    }
+  ],
+
+  "governance_advisory": [
+    { "title": "Board Member", "org": "Relevant Organisation", "dates": "2020 – present", "tags": ["my-specialism"] }
+  ],
+
+  "grants": [
+    {
+      "title": "Grant Title",
+      "funder": "Funder Name",
+      "role": "PI",
+      "amount": "£500,000",
+      "dates": "2022 – 2025",
+      "description": "Brief description of the project.",
+      "tags": ["my-specialism"]
+    }
+  ],
+
+  "publications": {
+    "books": [
+      { "citation": "Your Name (2020) Book Title. Publisher.", "tags": ["my-specialism"] }
+    ],
+    "books_forthcoming": [
+      { "citation": "Your Name (forthcoming) Book Title. Publisher.", "tags": ["my-specialism"] }
+    ],
+    "books_edited": [],
+    "journal_articles": [
+      { "citation": "Your Name (2023) Article Title. Journal Name, 1(1), 1–20.", "tags": ["my-specialism"] }
+    ],
+    "chapters": [],
+    "journalism": []
+  },
+
+  "keynotes": [
+    { "text": "Talk Title, Conference Name, City (2024)", "tags": ["my-specialism"] }
+  ],
+
+  "partnerships": [
+    { "org": "Organisation Name", "description": "Nature of partnership", "tags": ["my-specialism"] }
+  ],
+
+  "uom_collaborations": [],
+
+  "awards": [
+    { "text": "2023 — Award Name, Awarding Body", "tags": ["my-specialism"] }
+  ],
+
+  "editorial": [
+    { "text": "Journal Name — Role — Year–present", "tags": ["my-specialism"] }
+  ],
+
+  "education": [
+    { "degree": "PhD, Field", "institution": "University", "dates": "1998–2002", "note": "Dissertation title." },
+    { "degree": "BA (Hons) Field — First Class", "institution": "University", "dates": "1994–1997", "note": "" }
+  ],
+
+  "media": {
+    "summary": "Brief summary of your media presence.",
+    "highlights": [
+      { "text": "Outlet — topic — year", "tags": ["my-specialism"] }
+    ]
+  }
+}
