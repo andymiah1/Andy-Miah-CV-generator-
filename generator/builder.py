@@ -187,11 +187,25 @@ def build_cv(
     # ── Profile ───────────────────────────────────────────────────────────────
     story += section_heading("Profile", styles)
     variants = portfolio["profile"].get("variants", {})
-    profile_text = variants.get(
-        focus_label,
-        portfolio["profile"]["core"]
-    )
-    story.append(Paragraph(profile_text, styles["body"]))
+    focus_areas = portfolio.get("focus_areas", {})
+
+    # Try exact match first, then score each variant against active_tags
+    profile_text = variants.get(focus_label)
+    if not profile_text:
+        best_score, best_variant = 0, None
+        for variant_key, variant_text in variants.items():
+            variant_tags = set(focus_areas.get(variant_key, []))
+            score = len(variant_tags & set(active_tags))
+            if score > best_score:
+                best_score, best_variant = score, variant_text
+        profile_text = best_variant or portfolio["profile"]["core"]
+
+    # Render as multiple paragraphs (split on blank line)
+    for para_text in profile_text.split("\n\n"):
+        para_text = para_text.strip()
+        if para_text:
+            story.append(Paragraph(para_text, styles["body"]))
+            story.append(Spacer(1, 2 * mm))
 
     # ── Governance & Advisory (if relevant) ───────────────────────────────────
     gov_items = filter_and_rank(
