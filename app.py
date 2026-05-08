@@ -209,6 +209,10 @@ st.divider()
 
 portfolio = load_portfolio()
 
+# Debug — remove after fix
+st.sidebar.write("Portfolio keys:", list(portfolio.keys()))
+st.sidebar.write("Teaching items:", len(portfolio.get("teaching", [])))
+
 # Expertise area dropdown
 selected_area = st.selectbox(
     "Expertise area",
