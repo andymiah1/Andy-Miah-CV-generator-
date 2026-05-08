@@ -499,7 +499,7 @@ def build_teaching_cv(
                 styles)
             story += block
 
-    # ── Teaching history detail ───────────────────────────────────────────────
+    # ── Teaching history detail (always shown) ────────────────────────────────
     story += section_heading("Programme & Module Contributions", styles)
 
     prog_data = [
