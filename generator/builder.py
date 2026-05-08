@@ -209,7 +209,7 @@ def build_cv(
 
     # ── Governance & Advisory (if relevant) ───────────────────────────────────
     gov_items = filter_and_rank(
-        portfolio["governance_advisory"], active_tags, min_score=1, max_items=8)
+        portfolio["governance_advisory"], active_tags, min_score=1, max_items=10)
     if gov_items:
         story += section_heading("Governance & Advisory Roles", styles)
         rows = []
@@ -242,7 +242,7 @@ def build_cv(
 
     # ── Grants ────────────────────────────────────────────────────────────────
     grant_items = filter_and_rank(
-        portfolio["grants"], active_tags, min_score=1, max_items=6)
+        portfolio["grants"], active_tags, min_score=1, max_items=8)
     if grant_items:
         story += section_heading("Grants & Funded Projects", styles)
         for g in grant_items:
@@ -266,7 +266,7 @@ def build_cv(
 
     # ── UoM Collaborations (if relevant) ──────────────────────────────────────
     uom_items = filter_and_rank(
-        portfolio["uom_collaborations"], active_tags, min_score=1, max_items=6)
+        portfolio["uom_collaborations"], active_tags, min_score=1, max_items=8)
     if uom_items:
         story += section_heading("Collaborations with University of Manchester", styles)
         for item in uom_items:
@@ -274,7 +274,7 @@ def build_cv(
 
     # ── Partnerships ──────────────────────────────────────────────────────────
     partner_items = filter_and_rank(
-        portfolio["partnerships"], active_tags, min_score=1, max_items=8)
+        portfolio["partnerships"], active_tags, min_score=1, max_items=10)
     if partner_items:
         story += section_heading("Key External Partnerships", styles)
         left = partner_items[: len(partner_items) // 2 + len(partner_items) % 2]
@@ -304,11 +304,11 @@ def build_cv(
     pubs = portfolio["publications"]
     story += section_heading("Selected Publications", styles)
 
-    book_items = filter_and_rank(pubs["books"], active_tags, min_score=1, max_items=5)
-    fc_items   = filter_and_rank(pubs["books_forthcoming"], active_tags, min_score=1, max_items=3)
-    ch_items   = filter_and_rank(pubs["chapters"], active_tags, min_score=1, max_items=4)
-    ja_items   = filter_and_rank(pubs["journal_articles"], active_tags, min_score=1, max_items=4)
-    jo_items   = filter_and_rank(pubs["journalism"], active_tags, min_score=1, max_items=3)
+    book_items = filter_and_rank(pubs["books"], active_tags, min_score=1, max_items=6)
+    fc_items   = filter_and_rank(pubs["books_forthcoming"], active_tags, min_score=1, max_items=4)
+    ch_items   = filter_and_rank(pubs["chapters"], active_tags, min_score=1, max_items=8)
+    ja_items   = filter_and_rank(pubs["journal_articles"], active_tags, min_score=1, max_items=8)
+    jo_items   = filter_and_rank(pubs["journalism"], active_tags, min_score=1, max_items=8)
 
     sub_style = ParagraphStyle("psub", fontSize=8.5, textColor=NAVY,
                                 fontName="Helvetica-Bold", leading=11,
@@ -337,7 +337,7 @@ def build_cv(
 
     # ── Selected Keynotes ─────────────────────────────────────────────────────
     keynote_items = filter_and_rank(
-        portfolio["keynotes"], active_tags, min_score=1, max_items=16)
+        portfolio["keynotes"], active_tags, min_score=1, max_items=30)
     if keynote_items:
         story += section_heading("Selected Keynotes & Invited Talks", styles)
         # Two-column layout
@@ -361,6 +361,22 @@ def build_cv(
         ]))
         story.append(t)
 
+    # ── Selected Writing & Web Content ──────────────────────────────────────
+    web_items = filter_and_rank(
+        portfolio.get("web_content", []), active_tags, min_score=2, max_items=12)
+    if web_items:
+        story += section_heading("Selected Writing & Commentary", styles)
+        for w in web_items:
+            text = w.get("text", "")
+            snippet = w.get("snippet", "")
+            story.append(Paragraph(f"•  {text}", styles["bullet"]))
+            if snippet:
+                story.append(Paragraph(
+                    snippet[:160] + ("..." if len(snippet) > 160 else ""),
+                    ParagraphStyle("wsnip", fontSize=7.5, leading=10,
+                                   textColor=LIGHT, fontName="Helvetica-Oblique",
+                                   leftIndent=10, spaceAfter=3)))
+
     # ── Awards ────────────────────────────────────────────────────────────────
     award_items = filter_and_rank(
         portfolio["awards"], active_tags, min_score=0)  # always show all
@@ -370,7 +386,7 @@ def build_cv(
 
     # ── Editorial & Review ────────────────────────────────────────────────────
     ed_items = filter_and_rank(
-        portfolio["editorial"], active_tags, min_score=1, max_items=6)
+        portfolio["editorial"], active_tags, min_score=1, max_items=8)
     if ed_items:
         story += section_heading("Editorial & Review", styles)
         for e in ed_items:
@@ -378,7 +394,7 @@ def build_cv(
 
     # ── Media ─────────────────────────────────────────────────────────────────
     media_highlights = filter_and_rank(
-        portfolio["media"]["highlights"], active_tags, min_score=1, max_items=4)
+        portfolio["media"]["highlights"], active_tags, min_score=1, max_items=10)
     story += section_heading("Media Presence", styles)
     story.append(Paragraph(portfolio["media"]["summary"], styles["body"]))
     for m in media_highlights:
