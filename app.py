@@ -197,6 +197,13 @@ st.markdown("""
 }
 </style>
 
+<!-- Video background -->
+<video id="bg-video" autoplay muted loop playsinline
+  style="position:fixed;top:0;left:0;width:100%;height:100%;
+         object-fit:cover;z-index:-1;opacity:0.18;pointer-events:none;">
+  <source src="https://raw.githubusercontent.com/andymiah1/Andy-Miah-CV-generator-/main/2024.03.15-MetaHumanCompressed.mp4" type="video/mp4">
+</video>
+
 <!-- Decorative background shapes -->
 <div style="position:fixed;top:-80px;right:-80px;width:400px;height:400px;
     border-radius:50%;background:radial-gradient(circle, rgba(77,208,225,0.15), transparent 70%);
