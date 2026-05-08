@@ -264,14 +264,6 @@ def build_cv(
             bullets, styles)
         story += block
 
-    # ── UoM Collaborations (if relevant) ──────────────────────────────────────
-    uom_items = filter_and_rank(
-        portfolio["uom_collaborations"], active_tags, min_score=1, max_items=8)
-    if uom_items:
-        story += section_heading("Collaborations with University of Manchester", styles)
-        for item in uom_items:
-            story.append(Paragraph(f"\u2022  {item['text']}", styles["bullet"]))
-
     # ── Partnerships ──────────────────────────────────────────────────────────
     partner_items = filter_and_rank(
         portfolio["partnerships"], active_tags, min_score=1, max_items=10)
