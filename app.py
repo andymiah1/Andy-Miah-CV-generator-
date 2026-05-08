@@ -1,5 +1,6 @@
 """
-app.py — Streamlit web app for generating tailored PDF CVs.
+app.py — Andy Miah CV Generator
+Clean UI: dropdown only, visual design with custom CSS
 """
 
 import copy
@@ -7,13 +8,9 @@ import json
 import os
 import re
 import tempfile
-import time
 
-import requests
 import streamlit as st
-from bs4 import BeautifulSoup
 
-from generator.scorer import resolve_tags
 from generator.builder import build_cv, build_teaching_cv
 
 st.set_page_config(
@@ -22,21 +19,199 @@ st.set_page_config(
     layout="centered",
 )
 
-SITE = "andymiah.net"
-DDG_URL = "https://html.duckduckgo.com/html/"
-DDG_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml",
-    "Accept-Language": "en-GB,en;q=0.9",
-    "Referer": "https://duckduckgo.com/",
+# ── Custom CSS & visual design ────────────────────────────────────────────────
+st.markdown("""
+<style>
+/* Import Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+
+/* Full-page gradient background */
+[data-testid="stAppViewContainer"] {
+    background: linear-gradient(135deg, #0d1b2a 0%, #1a2e44 40%, #0d3348 70%, #0a1628 100%);
+    font-family: 'Inter', sans-serif;
 }
 
+/* Hide default header */
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
+/* Main content card */
+[data-testid="stMainBlockContainer"] {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 2rem 2.5rem;
+    backdrop-filter: blur(12px);
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Hero title */
+.hero-title {
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #ffffff;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    margin-bottom: 0.3rem;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+
+.hero-institution {
+    font-size: 1rem;
+    color: #4dd0e1;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/* Divider */
+.hero-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(77,208,225,0.4), transparent);
+    margin: 1.5rem 0;
+}
+
+/* Label */
+.select-label {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 0.5rem;
+}
+
+/* Selectbox styling */
+[data-testid="stSelectbox"] > div > div {
+    background: rgba(255,255,255,0.07) !important;
+    border: 1px solid rgba(255,255,255,0.15) !important;
+    border-radius: 10px !important;
+    color: white !important;
+}
+
+[data-testid="stSelectbox"] label {
+    color: rgba(255,255,255,0.6) !important;
+    font-size: 0.8rem !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+}
+
+/* Generate button */
+[data-testid="stButton"] > button {
+    background: linear-gradient(135deg, #006d77, #00a896) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.75rem 2.5rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    letter-spacing: 0.03em !important;
+    width: 100% !important;
+    margin-top: 1rem !important;
+    transition: all 0.2s ease !important;
+    box-shadow: 0 4px 20px rgba(0,168,150,0.3) !important;
+}
+
+[data-testid="stButton"] > button:hover {
+    transform: translateY(-1px) !important;
+    box-shadow: 0 6px 24px rgba(0,168,150,0.45) !important;
+}
+
+/* Download button */
+[data-testid="stDownloadButton"] > button {
+    background: linear-gradient(135deg, #1a6b3c, #22a45d) !important;
+    color: white !important;
+    border: none !important;
+    border-radius: 10px !important;
+    padding: 0.75rem 2rem !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    box-shadow: 0 4px 20px rgba(34,164,93,0.3) !important;
+}
+
+/* Success message */
+[data-testid="stAlert"] {
+    background: rgba(34,164,93,0.15) !important;
+    border: 1px solid rgba(34,164,93,0.3) !important;
+    border-radius: 10px !important;
+    color: #a8f0c6 !important;
+}
+
+/* Info box */
+.info-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+    color: rgba(255,255,255,0.6);
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+/* Tag chips */
+.tag-chip {
+    display: inline-block;
+    background: rgba(77,208,225,0.15);
+    border: 1px solid rgba(77,208,225,0.3);
+    color: #4dd0e1;
+    border-radius: 20px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.7rem;
+    margin: 0.15rem;
+    font-weight: 500;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    color: rgba(255,255,255,0.25);
+    font-size: 0.75rem;
+    margin-top: 2rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Spinner */
+[data-testid="stSpinner"] {
+    color: #4dd0e1 !important;
+}
+
+/* Floating particles (decorative) */
+.particle {
+    position: fixed;
+    border-radius: 50%;
+    opacity: 0.06;
+    pointer-events: none;
+}
+</style>
+
+<!-- Decorative background shapes -->
+<div style="position:fixed;top:-80px;right:-80px;width:400px;height:400px;
+    border-radius:50%;background:radial-gradient(circle, rgba(77,208,225,0.15), transparent 70%);
+    pointer-events:none;z-index:0;"></div>
+<div style="position:fixed;bottom:-100px;left:-100px;width:500px;height:500px;
+    border-radius:50%;background:radial-gradient(circle, rgba(0,109,119,0.12), transparent 70%);
+    pointer-events:none;z-index:0;"></div>
+<div style="position:fixed;top:40%;left:-60px;width:250px;height:250px;
+    border-radius:50%;background:radial-gradient(circle, rgba(100,150,255,0.08), transparent 70%);
+    pointer-events:none;z-index:0;"></div>
+""", unsafe_allow_html=True)
+
+# ── Data ──────────────────────────────────────────────────────────────────────
 EXPERTISE_AREAS = {
-    "":                       "— select an expertise area —",
+    "":                       "— Select an expertise area —",
     "drones":                 "Drones",
     "esports":                "Esports & Gaming",
     "olympic-games":          "Olympic Games",
@@ -48,7 +223,7 @@ EXPERTISE_AREAS = {
     "bioart":                 "BioArt",
     "future-sport":           "Future Sport",
     "creative-industries":    "Creative Industries",
-    "teaching-cv":            "📋 Teaching CV (full teaching portfolio)",
+    "teaching-cv":            "📋 Teaching CV",
 }
 
 
@@ -59,271 +234,106 @@ def load_portfolio() -> dict:
         return json.load(f)
 
 
-@st.cache_data(ttl=1800)
-def search_website(query: str, max_results: int = 8) -> list[dict]:
-    try:
-        time.sleep(0.5)
-        r = requests.post(
-            DDG_URL,
-            data={"q": f"site:{SITE} {query}"},
-            headers=DDG_HEADERS,
-            timeout=12,
-            allow_redirects=True,
-        )
-        if r.status_code != 200:
-            return []
-        soup = BeautifulSoup(r.text, "html.parser")
-        results = []
-        for result in soup.find_all("div", class_="result__body"):
-            title_tag   = result.find("a", class_="result__a")
-            snippet_tag = result.find("a", class_="result__snippet")
-            url_tag     = result.find("a", class_="result__url")
-            title   = title_tag.get_text(strip=True)   if title_tag   else ""
-            snippet = snippet_tag.get_text(strip=True)  if snippet_tag else ""
-            url     = url_tag.get_text(strip=True)      if url_tag     else ""
-            if title and SITE in url:
-                results.append({"title": title, "url": url, "snippet": snippet})
-            if len(results) >= max_results:
-                break
-        return results
-    except Exception:
-        return []
-
-
-def search_portfolio_text(portfolio: dict, query: str) -> list[str]:
-    words = set(re.findall(r"[a-z]{4,}", query.lower()))
-    if not words:
-        return []
-    matches = []
-    seen: set[str] = set()
-
-    def recurse(obj) -> None:
-        if isinstance(obj, str) and len(obj) > 10:
-            score = sum(1 for w in words if w in obj.lower())
-            if score > 0:
-                key = obj[:60].lower()
-                if key not in seen:
-                    seen.add(key)
-                    snippet = obj[:120] + ("..." if len(obj) > 120 else "")
-                    matches.append((score, snippet))
-        elif isinstance(obj, list):
-            for item in obj:
-                recurse(item)
-        elif isinstance(obj, dict):
-            for k, v in obj.items():
-                if k not in ("tags", "needs_tagging", "added", "fetched", "source", "_kind"):
-                    recurse(v)
-
-    recurse(portfolio)
-    matches.sort(key=lambda x: x[0], reverse=True)
-    return [text for _, text in matches[:8]]
-
-
-def tags_from_query(query: str, portfolio: dict) -> list[str]:
+def tags_from_focus(focus: str, portfolio: dict) -> list[str]:
     focus_areas = portfolio["focus_areas"]
-    all_tags: set[str] = set()
-    for tags in focus_areas.values():
-        all_tags.update(tags)
-
-    words = re.findall(r"[a-z0-9]+", query.lower())
-    matched: set[str] = set()
-
-    synonyms = {
-        # Drones
-        "drone":    ["drone", "drones", "uav", "arts-science"],
-        "uav":      ["drone", "drones", "uav"],
-        # Esports
-        "esport":   ["esports", "gaming", "gametech", "digital-sport"],
-        "game":     ["esports", "gaming", "gametech"],
-        "gaming":   ["esports", "gaming", "gametech"],
-        # Olympic Games
-        "olymp":    ["olympic-studies", "olympics", "mega-events"],
-        "paralymp": ["olympic-studies", "olympics"],
-        "ioc":      ["olympic-studies", "olympics", "mega-events"],
-        # Bioethics & Enhancement
-        "bio":      ["bioethics", "enhancement", "gene-doping"],
-        "gene":     ["gene-doping", "bioethics", "enhancement"],
-        "doping":   ["gene-doping", "bioethics", "enhancement"],
-        "posthum":  ["bioethics", "enhancement", "arts-science"],
-        "transhum": ["bioethics", "enhancement"],
-        "enhance":  ["enhancement", "bioethics", "gene-doping"],
-        # AI Ethics
-        "ai":       ["ai-ethics", "ai", "emerging-tech"],
-        "robot":    ["ai-ethics", "emerging-tech"],
-        "autonom":  ["ai-ethics", "emerging-tech", "drone"],
-        # Science Communication
-        "scicomm":  ["science-communication", "scicomm", "public-engagement"],
-        "festiv":   ["science-communication", "public-engagement"],
-        "public":   ["science-communication", "public-engagement"],
-        "communic": ["science-communication", "scicomm"],
-        # Digital Health
-        "health":   ["digital-health", "health-wellbeing"],
-        "wellbei":  ["digital-health", "health-wellbeing"],
-        "nhs":      ["digital-health", "health-wellbeing"],
-        "wearabl":  ["digital-health", "health-wellbeing"],
-        "clinic":   ["digital-health", "health-wellbeing"],
-        # Metaverse
-        "metaver":  ["metaverse", "virtual-reality", "xr"],
-        "virtual":  ["metaverse", "virtual-reality", "xr"],
-        "immersiv": ["metaverse", "virtual-reality", "createch"],
-        "xr":       ["metaverse", "virtual-reality", "xr"],
-        # BioArt
-        "bioart":   ["bioart", "arts-science", "bioethics"],
-        # Future Sport
-        "sport":    ["digital-sport", "future-sport", "olympic-studies"],
-        "athlete":  ["digital-sport", "future-sport", "bioethics"],
-        # Creative Industries
-        "creativ":  ["creative-industries", "createch", "platform-leadership"],
-        "createch": ["createch", "creative-industries", "innovation"],
-        "innovat":  ["createch", "creative-industries", "innovation"],
-        "manchest": ["manchester", "civic", "creative-manchester"],
-        "science":  ["science-communication", "scicomm", "public-engagement"],
-        "media":    ["science-communication", "media", "broadcast"],
-    }
-
-    for word in words:
-        for tag in all_tags:
-            if word in tag.replace("-", " ").split():
-                matched.add(tag)
-        for key, tags in focus_areas.items():
-            if word in key.replace("-", " ").split():
-                matched.update(tags)
-        for stem, tags in synonyms.items():
-            if word.startswith(stem[:6]):
-                matched.update(tags)
-
-    if not matched:
-        for tags in focus_areas.values():
-            matched.update(tags)
-
-    return sorted(matched)
+    if focus in focus_areas:
+        return focus_areas[focus]
+    return sorted(set(t for ts in focus_areas.values() for t in ts))
 
 
-# ── UI ─────────────────────────────────────────────────────────────────────────
+# ── Hero ──────────────────────────────────────────────────────────────────────
+st.markdown('''
+<div class="hero-subtitle">Curriculum Vitae Generator</div>
+<div class="hero-title">Professor Andy Miah</div>
+<div class="hero-institution">Chair in Science Communication & Future Media · University of Salford</div>
+<div class="hero-divider"></div>
+''', unsafe_allow_html=True)
 
-st.markdown("## Professor Andy Miah — CV Generator")
 st.markdown(
-    "Select an expertise area or type your own keywords to generate a tailored PDF CV."
+    '<p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin-bottom:1.5rem;">' +
+    'Select an expertise area to generate a tailored PDF CV drawing from Andy\u2019s full portfolio of research, publications, and keynotes.' +
+    '</p>',
+    unsafe_allow_html=True
 )
-st.divider()
 
+# ── Portfolio ─────────────────────────────────────────────────────────────────
 portfolio = load_portfolio()
 
-# Expertise area dropdown
-selected_area = st.selectbox(
+# ── Selector ──────────────────────────────────────────────────────────────────
+selected = st.selectbox(
     "Expertise area",
     options=list(EXPERTISE_AREAS.keys()),
     format_func=lambda k: EXPERTISE_AREAS[k],
     index=0,
 )
 
-# Free text — pre-filled from dropdown selection
-query = st.text_input(
-    "Or describe the role / topic:",
-    value=selected_area,
-    placeholder="e.g. drones, esports governance, AI ethics, science communication...",
-    help="Type any keywords — role type, subject area, sector, or specific topic",
-)
+# Show matched tags as chips when something is selected
+if selected:
+    active_tags = tags_from_focus(selected, portfolio)
+    chips_html = " ".join(
+        f'<span class="tag-chip">{t}</span>'
+        for t in active_tags[:12]
+    )
+    st.markdown(
+        f'<div style="margin:0.75rem 0 0.25rem;">{chips_html}</div>',
+        unsafe_allow_html=True
+    )
 
-if query.strip():
-    active_tags = tags_from_query(query, portfolio)
+# ── Generate ──────────────────────────────────────────────────────────────────
+generate = st.button("📄 Generate CV", type="primary", disabled=not selected)
 
-    col_a, col_b = st.columns(2)
+if generate and selected:
+    with st.spinner("Building your CV..."):
+        try:
+            active_tags = tags_from_focus(selected, portfolio)
+            enriched = copy.deepcopy(portfolio)
 
-    with col_a:
-        with st.expander(f"Portfolio areas matched ({len(active_tags)} tags)"):
-            st.markdown("  ".join([f"`{t}`" for t in sorted(active_tags)]))
+            with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
+                tmp_path = tmp.name
 
-    web_results: list[dict] = []
-    portfolio_matches: list[str] = []
-
-    with col_b:
-        with st.expander("Content from andymiah.net"):
-            with st.spinner("Searching website..."):
-                web_results = search_website(query)
-            if web_results:
-                for item in web_results:
-                    st.markdown(f"**{item['title']}**")
-                    if item["snippet"]:
-                        st.caption(item["snippet"])
-                    if item["url"]:
-                        st.caption(f"[{item['url']}](https://{item['url']})")
-                    st.divider()
+            if selected == "teaching-cv":
+                build_teaching_cv(portfolio=enriched, output_path=tmp_path)
             else:
-                portfolio_matches = search_portfolio_text(portfolio, query)
-                if portfolio_matches:
-                    st.caption("Showing portfolio text matches:")
-                    for m in portfolio_matches[:5]:
-                        st.markdown(f"- {m}")
-                else:
-                    st.caption("No additional content found for this query.")
-
-    st.divider()
-
-    generate = st.button("📄 Generate CV", type="primary")
-
-    if generate:
-        with st.spinner("Building your tailored CV..."):
-            try:
-                enriched = copy.deepcopy(portfolio)
-
-                if web_results:
-                    existing = {
-                        k.get("text", "").lower()[:60]
-                        for k in enriched.get("media", {}).get("highlights", [])
-                    }
-                    for item in web_results:
-                        key = item["title"].lower()[:60]
-                        if key not in existing:
-                            enriched["media"]["highlights"].append({
-                                "text": f"{item['title']} — {item['url']}",
-                                "tags": active_tags[:3],
-                                "needs_tagging": False,
-                            })
-                            existing.add(key)
-
-                with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-                    tmp_path = tmp.name
-
-                if query.strip() == "teaching-cv":
-                    build_teaching_cv(
-                        portfolio=enriched,
-                        output_path=tmp_path,
-                    )
-                else:
-                    build_cv(
-                        portfolio=enriched,
-                        active_tags=active_tags,
-                        focus_label=query,
-                        output_path=tmp_path,
-                    )
-
-                with open(tmp_path, "rb") as f:
-                    pdf_bytes = f.read()
-                os.unlink(tmp_path)
-
-                safe_name = re.sub(r"[^a-z0-9]+", "_", query.lower()).strip("_")
-                filename = f"AndyMiah_CV_{safe_name}.pdf"
-
-                st.success("CV generated successfully.")
-                st.download_button(
-                    label="⬇️  Download PDF",
-                    data=pdf_bytes,
-                    file_name=filename,
-                    mime="application/pdf",
-                    type="primary",
+                build_cv(
+                    portfolio=enriched,
+                    active_tags=active_tags,
+                    focus_label=selected,
+                    output_path=tmp_path,
                 )
 
-            except Exception as e:
-                st.error(f"Something went wrong: {e}")
-                st.markdown("Please try again or contact Andy at [andymiah.net](https://andymiah.net)")
+            with open(tmp_path, "rb") as f:
+                pdf_bytes = f.read()
+            os.unlink(tmp_path)
 
-else:
-    st.info("Select an expertise area above or type your own keywords to get started.")
+            safe = re.sub(r"[^a-z0-9]+", "_", selected.lower()).strip("_")
+            filename = f"AndyMiah_CV_{safe}.pdf"
 
-st.divider()
-st.markdown(
-    "<small>andymiah.net · University of Salford · "
-    "Built with [Streamlit](https://streamlit.io)</small>",
-    unsafe_allow_html=True,
-)
+            st.success("CV ready.")
+            st.download_button(
+                label="⬇️  Download PDF",
+                data=pdf_bytes,
+                file_name=filename,
+                mime="application/pdf",
+                type="primary",
+            )
+
+        except Exception as e:
+            st.error(f"Something went wrong: {e}")
+            st.markdown("Please try again or contact Andy at [andymiah.net](https://andymiah.net)")
+
+elif not selected:
+    st.markdown('''
+    <div class="info-box">
+    Choose an expertise area from the dropdown above. Each option generates
+    a different CV, foregrounding the publications, keynotes, grants, and
+    profile most relevant to that area.
+    </div>
+    ''', unsafe_allow_html=True)
+
+# ── Footer ────────────────────────────────────────────────────────────────────
+st.markdown('''
+<div class="footer">
+    andymiah.net &nbsp;·&nbsp; University of Salford &nbsp;·&nbsp;
+    Built with <a href="https://streamlit.io" style="color:rgba(255,255,255,0.35);">Streamlit</a>
+</div>
+''', unsafe_allow_html=True)
