@@ -488,9 +488,12 @@ def build_teaching_cv(
 
     # ── Teaching (ALL items, no cap) ──────────────────────────────────────────
     teaching_items = portfolio.get("teaching", [])
-    if teaching_items:
+    # Filter to only structured items (title/institution/dates/notes format)
+    structured = [t for t in teaching_items
+                  if t.get("title") and t.get("institution")]
+    if structured:
         story += section_heading("Teaching Appointments & Courses", styles)
-        for t in teaching_items:
+        for t in structured:
             block = role_block(
                 t.get("title", ""),
                 t.get("institution", ""),
