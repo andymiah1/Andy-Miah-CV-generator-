@@ -249,12 +249,14 @@ st.markdown('''
 <div class="hero-divider"></div>
 ''', unsafe_allow_html=True)
 
-st.markdown(
-    '<p style="color:rgba(255,255,255,0.55);font-size:0.9rem;margin-bottom:1.5rem;">' +
-    'Select an expertise area to generate a tailored PDF CV drawing from Andy\u2019s full portfolio of research, publications, and keynotes.' +
-    '</p>',
-    unsafe_allow_html=True
-)
+st.markdown('''
+<p style="color:rgba(255,255,255,0.8);font-size:1rem;line-height:1.75;margin-bottom:0.75rem;font-style:italic;">
+“People often ask me ‘what do you do?’ and I tell them ‘It’s complicated’. I have always worked across disciplines and so my portfolio is incredibly diverse. So, based on what you want to discover about me, take your pick.”
+</p>
+<p style="color:rgba(255,255,255,0.35);font-size:0.8rem;margin-bottom:1.5rem;">
+Select an expertise area below to generate a tailored PDF CV.
+</p>
+''', unsafe_allow_html=True)
 
 # ── Portfolio ─────────────────────────────────────────────────────────────────
 portfolio = load_portfolio()
