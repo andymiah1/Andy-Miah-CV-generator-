@@ -14,7 +14,7 @@ import streamlit as st
 from bs4 import BeautifulSoup
 
 from generator.scorer import resolve_tags
-from generator.builder import build_cv
+from generator.builder import build_cv, build_teaching_cv
 
 st.set_page_config(
     page_title="Andy Miah — CV Generator",
@@ -48,6 +48,7 @@ EXPERTISE_AREAS = {
     "bioart":                 "BioArt",
     "future-sport":           "Future Sport",
     "creative-industries":    "Creative Industries",
+    "teaching-cv":            "📋 Teaching CV (full teaching portfolio)",
 }
 
 
@@ -284,12 +285,18 @@ if query.strip():
                 with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
                     tmp_path = tmp.name
 
-                build_cv(
-                    portfolio=enriched,
-                    active_tags=active_tags,
-                    focus_label=query,
-                    output_path=tmp_path,
-                )
+                if query.strip() == "teaching-cv":
+                    build_teaching_cv(
+                        portfolio=enriched,
+                        output_path=tmp_path,
+                    )
+                else:
+                    build_cv(
+                        portfolio=enriched,
+                        active_tags=active_tags,
+                        focus_label=query,
+                        output_path=tmp_path,
+                    )
 
                 with open(tmp_path, "rb") as f:
                     pdf_bytes = f.read()
