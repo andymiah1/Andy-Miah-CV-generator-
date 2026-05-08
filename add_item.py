@@ -1,329 +1,363 @@
+#!/usr/bin/env python3
 """
-app.py — Streamlit web app for generating tailored PDF CVs.
+add_item.py — Quickly add new items to portfolio.json from the terminal.
+
+Usage:
+    python add_item.py keynote "AI Ethics in Sport, Oxford University, June 2026"
+    python add_item.py publication "Miah, A. (2026) The Ethics of AI. Nature."
+    python add_item.py grant "AHRC Digital Futures — Co-I — £450,000 — 2026–2029"
+    python add_item.py award "2026 — Fellowship of the Royal Society"
+    python add_item.py partnership "Greater Manchester Combined Authority — strategic lead"
+    python add_item.py appointment "Visiting Professor — MIT Media Lab — 2026–present"
+    python add_item.py advisory "Ethics Board — DeepMind — 2026–present"
+
+After adding, the item is saved with needs_tagging: true.
+The script prints the available tags and prompts you to add them inline.
 """
 
-import copy
+from __future__ import annotations
+
 import json
 import os
-import re
-import tempfile
-import time
+import sys
+from datetime import datetime
 
-import requests
-import streamlit as st
-from bs4 import BeautifulSoup
+PORTFOLIO_PATH = os.path.join(os.path.dirname(__file__), "portfolio.json")
 
-from generator.scorer import resolve_tags
-from generator.builder import build_cv, build_teaching_cv
-
-st.set_page_config(
-    page_title="Andy Miah — CV Generator",
-    page_icon="📄",
-    layout="centered",
-)
-
-SITE = "andymiah.net"
-DDG_URL = "https://html.duckduckgo.com/html/"
-DDG_HEADERS = {
-    "User-Agent": (
-        "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-        "AppleWebKit/537.36 (KHTML, like Gecko) "
-        "Chrome/124.0.0.0 Safari/537.36"
-    ),
-    "Accept": "text/html,application/xhtml+xml",
-    "Accept-Language": "en-GB,en;q=0.9",
-    "Referer": "https://duckduckgo.com/",
+ITEM_TYPES = {
+    "keynote":      ("keynotes",        "text"),
+    "talk":         ("keynotes",        "text"),
+    "publication":  ("publications",    "citation"),
+    "pub":          ("publications",    "citation"),
+    "grant":        ("grants",          "title"),
+    "award":        ("awards",          "text"),
+    "partnership":  ("partnerships",    "org"),
+    "appointment":  ("appointments",    "title"),
+    "advisory":     ("governance_advisory", "title"),
+    "media":        ("media",           "text"),
+    "uom":          ("uom_collaborations", "text"),
 }
 
-EXPERTISE_AREAS = {
-    "":                       "— select an expertise area —",
-    "drones":                 "Drones",
-    "esports":                "Esports & Gaming",
-    "olympic-games":          "Olympic Games",
-    "bioethics-enhancement":  "Bioethics & Human Enhancement",
-    "ai-ethics":              "AI Ethics",
-    "science-communication":  "Science Communication",
-    "digital-health":         "Digital Health",
-    "metaverse":              "Metaverse & Virtual Reality",
-    "bioart":                 "BioArt",
-    "future-sport":           "Future Sport",
-    "creative-industries":    "Creative Industries",
-    "teaching-cv":            "📋 Teaching CV (full teaching portfolio)",
+PUB_SUBSECTIONS = {
+    "book":         "books",
+    "chapter":      "chapters",
+    "article":      "journal_articles",
+    "journal":      "journal_articles",
+    "journalism":   "journalism",
+    "forthcoming":  "books_forthcoming",
 }
 
+COLOURS = {
+    "green":  "\033[92m",
+    "yellow": "\033[93m",
+    "cyan":   "\033[96m",
+    "bold":   "\033[1m",
+    "reset":  "\033[0m",
+}
 
-@st.cache_data
-def load_portfolio() -> dict:
-    path = os.path.join(os.path.dirname(__file__), "portfolio.json")
-    with open(path, "r", encoding="utf-8") as f:
+def c(colour: str, text: str) -> str:
+    return f"{COLOURS.get(colour, '')}{text}{COLOURS['reset']}"
+
+
+def load() -> dict:
+    with open(PORTFOLIO_PATH, "r", encoding="utf-8") as f:
         return json.load(f)
 
 
-@st.cache_data(ttl=1800)
-def search_website(query: str, max_results: int = 8) -> list[dict]:
-    try:
-        time.sleep(0.5)
-        r = requests.post(
-            DDG_URL,
-            data={"q": f"site:{SITE} {query}"},
-            headers=DDG_HEADERS,
-            timeout=12,
-            allow_redirects=True,
-        )
-        if r.status_code != 200:
-            return []
-        soup = BeautifulSoup(r.text, "html.parser")
-        results = []
-        for result in soup.find_all("div", class_="result__body"):
-            title_tag   = result.find("a", class_="result__a")
-            snippet_tag = result.find("a", class_="result__snippet")
-            url_tag     = result.find("a", class_="result__url")
-            title   = title_tag.get_text(strip=True)   if title_tag   else ""
-            snippet = snippet_tag.get_text(strip=True)  if snippet_tag else ""
-            url     = url_tag.get_text(strip=True)      if url_tag     else ""
-            if title and SITE in url:
-                results.append({"title": title, "url": url, "snippet": snippet})
-            if len(results) >= max_results:
-                break
-        return results
-    except Exception:
-        return []
+def save(portfolio: dict) -> None:
+    with open(PORTFOLIO_PATH, "w", encoding="utf-8") as f:
+        json.dump(portfolio, f, indent=2, ensure_ascii=False)
 
 
-def search_portfolio_text(portfolio: dict, query: str) -> list[str]:
-    words = set(re.findall(r"[a-z]{4,}", query.lower()))
-    if not words:
-        return []
-    matches = []
-    seen: set[str] = set()
-
-    def recurse(obj) -> None:
-        if isinstance(obj, str) and len(obj) > 10:
-            score = sum(1 for w in words if w in obj.lower())
-            if score > 0:
-                key = obj[:60].lower()
-                if key not in seen:
-                    seen.add(key)
-                    snippet = obj[:120] + ("..." if len(obj) > 120 else "")
-                    matches.append((score, snippet))
-        elif isinstance(obj, list):
-            for item in obj:
-                recurse(item)
-        elif isinstance(obj, dict):
-            for k, v in obj.items():
-                if k not in ("tags", "needs_tagging", "added", "fetched", "source", "_kind"):
-                    recurse(v)
-
-    recurse(portfolio)
-    matches.sort(key=lambda x: x[0], reverse=True)
-    return [text for _, text in matches[:8]]
-
-
-def tags_from_query(query: str, portfolio: dict) -> list[str]:
-    focus_areas = portfolio["focus_areas"]
+def print_tags(portfolio: dict) -> None:
+    focus_areas = portfolio.get("focus_areas", {})
     all_tags: set[str] = set()
     for tags in focus_areas.values():
         all_tags.update(tags)
+    sorted_tags = sorted(all_tags)
+    print(c("cyan", "\nAvailable tags:"))
+    # Print in rows of 4
+    row = []
+    for tag in sorted_tags:
+        row.append(f"  {tag:<28}")
+        if len(row) == 4:
+            print("".join(row))
+            row = []
+    if row:
+        print("".join(row))
+    print()
 
-    words = re.findall(r"[a-z0-9]+", query.lower())
-    matched: set[str] = set()
 
-    synonyms = {
-        # Drones
-        "drone":    ["drone", "drones", "uav", "arts-science"],
-        "uav":      ["drone", "drones", "uav"],
-        # Esports
-        "esport":   ["esports", "gaming", "gametech", "digital-sport"],
-        "game":     ["esports", "gaming", "gametech"],
-        "gaming":   ["esports", "gaming", "gametech"],
-        # Olympic Games
-        "olymp":    ["olympic-studies", "olympics", "mega-events"],
-        "paralymp": ["olympic-studies", "olympics"],
-        "ioc":      ["olympic-studies", "olympics", "mega-events"],
-        # Bioethics & Enhancement
-        "bio":      ["bioethics", "enhancement", "gene-doping"],
-        "gene":     ["gene-doping", "bioethics", "enhancement"],
-        "doping":   ["gene-doping", "bioethics", "enhancement"],
-        "posthum":  ["bioethics", "enhancement", "arts-science"],
-        "transhum": ["bioethics", "enhancement"],
-        "enhance":  ["enhancement", "bioethics", "gene-doping"],
-        # AI Ethics
-        "ai":       ["ai-ethics", "ai", "emerging-tech"],
-        "robot":    ["ai-ethics", "emerging-tech"],
-        "autonom":  ["ai-ethics", "emerging-tech", "drone"],
-        # Science Communication
-        "scicomm":  ["science-communication", "scicomm", "public-engagement"],
-        "festiv":   ["science-communication", "public-engagement"],
-        "public":   ["science-communication", "public-engagement"],
-        "communic": ["science-communication", "scicomm"],
-        # Digital Health
-        "health":   ["digital-health", "health-wellbeing"],
-        "wellbei":  ["digital-health", "health-wellbeing"],
-        "nhs":      ["digital-health", "health-wellbeing"],
-        "wearabl":  ["digital-health", "health-wellbeing"],
-        "clinic":   ["digital-health", "health-wellbeing"],
-        # Metaverse
-        "metaver":  ["metaverse", "virtual-reality", "xr"],
-        "virtual":  ["metaverse", "virtual-reality", "xr"],
-        "immersiv": ["metaverse", "virtual-reality", "createch"],
-        "xr":       ["metaverse", "virtual-reality", "xr"],
-        # BioArt
-        "bioart":   ["bioart", "arts-science", "bioethics"],
-        # Future Sport
-        "sport":    ["digital-sport", "future-sport", "olympic-studies"],
-        "athlete":  ["digital-sport", "future-sport", "bioethics"],
-        # Creative Industries
-        "creativ":  ["creative-industries", "createch", "platform-leadership"],
-        "createch": ["createch", "creative-industries", "innovation"],
-        "innovat":  ["createch", "creative-industries", "innovation"],
-        "manchest": ["manchester", "civic", "creative-manchester"],
-        "science":  ["science-communication", "scicomm", "public-engagement"],
-        "media":    ["science-communication", "media", "broadcast"],
+def prompt_tags(portfolio: dict) -> list[str]:
+    print_tags(portfolio)
+    raw = input(c("yellow", "Enter tags (comma-separated, or press Enter to skip): ")).strip()
+    if not raw:
+        return []
+    return [t.strip() for t in raw.split(",") if t.strip()]
+
+
+def prompt_pub_subsection() -> str:
+    print(c("cyan", "\nPublication type:"))
+    for key in PUB_SUBSECTIONS:
+        print(f"  {key}")
+    raw = input(c("yellow", "Type (default: article): ")).strip().lower()
+    return PUB_SUBSECTIONS.get(raw, "journal_articles")
+
+
+def add_keynote(portfolio: dict, text: str) -> None:
+    tags = prompt_tags(portfolio)
+    item = {
+        "text": text,
+        "tags": tags,
+        "needs_tagging": len(tags) == 0,
+        "added": datetime.today().strftime("%Y-%m-%d"),
     }
-
-    for word in words:
-        for tag in all_tags:
-            if word in tag.replace("-", " ").split():
-                matched.add(tag)
-        for key, tags in focus_areas.items():
-            if word in key.replace("-", " ").split():
-                matched.update(tags)
-        for stem, tags in synonyms.items():
-            if word.startswith(stem[:6]):
-                matched.update(tags)
-
-    if not matched:
-        for tags in focus_areas.values():
-            matched.update(tags)
-
-    return sorted(matched)
+    portfolio["keynotes"].append(item)
+    save(portfolio)
+    _confirm("keynote", text, tags)
 
 
-# ── UI ─────────────────────────────────────────────────────────────────────────
+def add_publication(portfolio: dict, citation: str) -> None:
+    subsection = prompt_pub_subsection()
+    tags = prompt_tags(portfolio)
+    item = {
+        "citation": citation,
+        "tags": tags,
+        "needs_tagging": len(tags) == 0,
+        "added": datetime.today().strftime("%Y-%m-%d"),
+    }
+    portfolio["publications"][subsection].append(item)
+    save(portfolio)
+    _confirm(f"publication ({subsection})", citation, tags)
 
-st.markdown("## Professor Andy Miah — CV Generator")
-st.markdown(
-    "Select an expertise area or type your own keywords to generate a tailored PDF CV."
-)
-st.divider()
 
-portfolio = load_portfolio()
+def add_grant(portfolio: dict, raw: str) -> None:
+    # Try to parse "Title — Role — Amount — Dates" format
+    parts = [p.strip() for p in raw.split("—")]
+    item: dict = {
+        "title":       parts[0] if len(parts) > 0 else raw,
+        "funder":      parts[1] if len(parts) > 1 else "",
+        "role":        parts[2] if len(parts) > 2 else "",
+        "amount":      parts[3] if len(parts) > 3 else "",
+        "dates":       parts[4] if len(parts) > 4 else "",
+        "description": "",
+        "tags":        [],
+        "needs_tagging": True,
+        "added":       datetime.today().strftime("%Y-%m-%d"),
+    }
+    print(c("cyan", "\nParsed grant entry:"))
+    for k, v in item.items():
+        if k not in ("tags", "needs_tagging", "added") and v:
+            print(f"  {k}: {v}")
+    print(c("yellow", "\nIf any fields are wrong, edit portfolio.json directly after saving.\n"))
+    tags = prompt_tags(portfolio)
+    item["tags"] = tags
+    item["needs_tagging"] = len(tags) == 0
+    portfolio["grants"].append(item)
+    save(portfolio)
+    _confirm("grant", item["title"], tags)
 
-# Expertise area dropdown
-selected_area = st.selectbox(
-    "Expertise area",
-    options=list(EXPERTISE_AREAS.keys()),
-    format_func=lambda k: EXPERTISE_AREAS[k],
-    index=0,
-)
 
-# Free text — pre-filled from dropdown selection
-query = st.text_input(
-    "Or describe the role / topic:",
-    value=selected_area,
-    placeholder="e.g. drones, esports governance, AI ethics, science communication...",
-    help="Type any keywords — role type, subject area, sector, or specific topic",
-)
+def add_award(portfolio: dict, text: str) -> None:
+    tags = prompt_tags(portfolio)
+    item = {
+        "text": text,
+        "tags": tags,
+        "needs_tagging": len(tags) == 0,
+        "added": datetime.today().strftime("%Y-%m-%d"),
+    }
+    portfolio["awards"].append(item)
+    save(portfolio)
+    _confirm("award", text, tags)
 
-if query.strip():
-    active_tags = tags_from_query(query, portfolio)
 
-    col_a, col_b = st.columns(2)
+def add_partnership(portfolio: dict, raw: str) -> None:
+    # Try to parse "Org — Description"
+    parts = [p.strip() for p in raw.split("—", 1)]
+    item = {
+        "org":         parts[0],
+        "description": parts[1] if len(parts) > 1 else "",
+        "tags":        [],
+        "needs_tagging": True,
+        "added":       datetime.today().strftime("%Y-%m-%d"),
+    }
+    tags = prompt_tags(portfolio)
+    item["tags"] = tags
+    item["needs_tagging"] = len(tags) == 0
+    portfolio["partnerships"].append(item)
+    save(portfolio)
+    _confirm("partnership", item["org"], tags)
 
-    with col_a:
-        with st.expander(f"Portfolio areas matched ({len(active_tags)} tags)"):
-            st.markdown("  ".join([f"`{t}`" for t in sorted(active_tags)]))
 
-    web_results: list[dict] = []
-    portfolio_matches: list[str] = []
+def add_appointment(portfolio: dict, raw: str) -> None:
+    # Try to parse "Title — Institution — Dates"
+    parts = [p.strip() for p in raw.split("—")]
+    item = {
+        "title":       parts[0] if len(parts) > 0 else raw,
+        "institution": parts[1] if len(parts) > 1 else "",
+        "dates":       parts[2] if len(parts) > 2 else "",
+        "tags":        [],
+        "bullets":     [],
+        "needs_tagging": True,
+        "added":       datetime.today().strftime("%Y-%m-%d"),
+    }
+    tags = prompt_tags(portfolio)
+    item["tags"] = tags
+    item["needs_tagging"] = len(tags) == 0
+    portfolio["appointments"].append(item)
+    save(portfolio)
+    _confirm("appointment", item["title"], tags)
 
-    with col_b:
-        with st.expander("Content from andymiah.net"):
-            with st.spinner("Searching website..."):
-                web_results = search_website(query)
-            if web_results:
-                for item in web_results:
-                    st.markdown(f"**{item['title']}**")
-                    if item["snippet"]:
-                        st.caption(item["snippet"])
-                    if item["url"]:
-                        st.caption(f"[{item['url']}](https://{item['url']})")
-                    st.divider()
+
+def add_advisory(portfolio: dict, raw: str) -> None:
+    # Try to parse "Title — Org — Dates"
+    parts = [p.strip() for p in raw.split("—")]
+    item = {
+        "title": parts[0] if len(parts) > 0 else raw,
+        "org":   parts[1] if len(parts) > 1 else "",
+        "dates": parts[2] if len(parts) > 2 else "",
+        "tags":  [],
+        "needs_tagging": True,
+        "added": datetime.today().strftime("%Y-%m-%d"),
+    }
+    tags = prompt_tags(portfolio)
+    item["tags"] = tags
+    item["needs_tagging"] = len(tags) == 0
+    portfolio["governance_advisory"].append(item)
+    save(portfolio)
+    _confirm("advisory role", item["title"], tags)
+
+
+def add_media(portfolio: dict, text: str) -> None:
+    tags = prompt_tags(portfolio)
+    item = {
+        "text": text,
+        "tags": tags,
+        "needs_tagging": len(tags) == 0,
+        "added": datetime.today().strftime("%Y-%m-%d"),
+    }
+    portfolio["media"]["highlights"].append(item)
+    save(portfolio)
+    _confirm("media item", text, tags)
+
+
+def add_uom(portfolio: dict, text: str) -> None:
+    tags = prompt_tags(portfolio)
+    item = {
+        "text": text,
+        "tags": tags,
+        "needs_tagging": len(tags) == 0,
+        "added": datetime.today().strftime("%Y-%m-%d"),
+    }
+    portfolio["uom_collaborations"].append(item)
+    save(portfolio)
+    _confirm("UoM collaboration", text, tags)
+
+
+def _confirm(kind: str, text: str, tags: list[str]) -> None:
+    print()
+    print(c("green", f"✓  Added {kind}:"))
+    print(f"   {text[:100]}")
+    if tags:
+        print(f"   Tags: {', '.join(tags)}")
+    else:
+        print(c("yellow", "   ⚠  No tags added — item flagged as needs_tagging: true"))
+        print("   Run:  python add_item.py --untagged  to review all untagged items")
+    print()
+
+
+def show_untagged(portfolio: dict) -> None:
+    """Print all items with needs_tagging: true."""
+    found = []
+
+    def recurse(obj, path=""):
+        if isinstance(obj, list):
+            for i, item in enumerate(obj):
+                recurse(item, f"{path}[{i}]")
+        elif isinstance(obj, dict):
+            if obj.get("needs_tagging"):
+                text = obj.get("text") or obj.get("citation") or obj.get("title") or "?"
+                found.append((path, text))
             else:
-                portfolio_matches = search_portfolio_text(portfolio, query)
-                if portfolio_matches:
-                    st.caption("Showing portfolio text matches:")
-                    for m in portfolio_matches[:5]:
-                        st.markdown(f"- {m}")
-                else:
-                    st.caption("No additional content found for this query.")
+                for k, v in obj.items():
+                    recurse(v, f"{path}.{k}" if path else k)
 
-    st.divider()
+    recurse(portfolio)
 
-    generate = st.button("📄 Generate CV", type="primary")
+    if not found:
+        print(c("green", "\n✓  All items are tagged.\n"))
+    else:
+        print(c("yellow", f"\n⚠  {len(found)} item(s) need tagging:\n"))
+        for path, text in found:
+            print(f"  {c('cyan', path)}")
+            print(f"  {text[:100]}\n")
 
-    if generate:
-        with st.spinner("Building your tailored CV..."):
-            try:
-                enriched = copy.deepcopy(portfolio)
 
-                if web_results:
-                    existing = {
-                        k.get("text", "").lower()[:60]
-                        for k in enriched.get("media", {}).get("highlights", [])
-                    }
-                    for item in web_results:
-                        key = item["title"].lower()[:60]
-                        if key not in existing:
-                            enriched["media"]["highlights"].append({
-                                "text": f"{item['title']} — {item['url']}",
-                                "tags": active_tags[:3],
-                                "needs_tagging": False,
-                            })
-                            existing.add(key)
+HANDLERS = {
+    "keynote":     add_keynote,
+    "talk":        add_keynote,
+    "publication": add_publication,
+    "pub":         add_publication,
+    "grant":       add_grant,
+    "award":       add_award,
+    "partnership": add_partnership,
+    "appointment": add_appointment,
+    "advisory":    add_advisory,
+    "media":       add_media,
+    "uom":         add_uom,
+}
 
-                with tempfile.NamedTemporaryFile(suffix=".pdf", delete=False) as tmp:
-                    tmp_path = tmp.name
 
-                if query.strip() == "teaching-cv":
-                    build_teaching_cv(
-                        portfolio=enriched,
-                        output_path=tmp_path,
-                    )
-                else:
-                    build_cv(
-                        portfolio=enriched,
-                        active_tags=active_tags,
-                        focus_label=query,
-                        output_path=tmp_path,
-                    )
+def print_usage() -> None:
+    print(c("bold", "\nadd_item.py — Add items to portfolio.json\n"))
+    print("Usage:")
+    print("  python add_item.py <type> \"<content>\"")
+    print("  python add_item.py --untagged\n")
+    print("Types:")
+    types = [
+        ("keynote",     '"AI Ethics in Sport, Oxford, June 2026"'),
+        ("publication", '"Miah, A. (2026) The Ethics of AI. Nature."'),
+        ("grant",       '"AHRC — Co-I — £450k — 2026–2029"  (dash-separated fields)'),
+        ("award",       '"2026 — Fellowship of the Royal Society"'),
+        ("partnership", '"DeepMind — AI ethics advisory"'),
+        ("appointment", '"Visiting Professor — MIT Media Lab — 2026–present"'),
+        ("advisory",    '"Ethics Board — DeepMind — 2026–present"'),
+        ("media",       '"BBC Newsnight, AI and sport ethics (2026)"'),
+        ("uom",         '"Prof Jane Smith — joint grant application (2026)"'),
+    ]
+    for t, example in types:
+        print(f"  {c('cyan', t):<20}  e.g. {example}")
+    print()
 
-                with open(tmp_path, "rb") as f:
-                    pdf_bytes = f.read()
-                os.unlink(tmp_path)
 
-                safe_name = re.sub(r"[^a-z0-9]+", "_", query.lower()).strip("_")
-                filename = f"AndyMiah_CV_{safe_name}.pdf"
+def main() -> None:
+    if not os.path.exists(PORTFOLIO_PATH):
+        print(f"ERROR: portfolio.json not found at {PORTFOLIO_PATH}", file=sys.stderr)
+        sys.exit(1)
 
-                st.success("CV generated successfully.")
-                st.download_button(
-                    label="⬇️  Download PDF",
-                    data=pdf_bytes,
-                    file_name=filename,
-                    mime="application/pdf",
-                    type="primary",
-                )
+    # --untagged flag
+    if len(sys.argv) == 2 and sys.argv[1] in ("--untagged", "-u"):
+        portfolio = load()
+        show_untagged(portfolio)
+        return
 
-            except Exception as e:
-                st.error(f"Something went wrong: {e}")
-                st.markdown("Please try again or contact Andy at [andymiah.net](https://andymiah.net)")
+    if len(sys.argv) < 3:
+        print_usage()
+        sys.exit(0)
 
-else:
-    st.info("Select an expertise area above or type your own keywords to get started.")
+    item_type = sys.argv[1].lower()
+    content = " ".join(sys.argv[2:])
 
-st.divider()
-st.markdown(
-    "<small>andymiah.net · University of Salford · "
-    "Built with [Streamlit](https://streamlit.io)</small>",
-    unsafe_allow_html=True,
-)
+    if item_type not in HANDLERS:
+        print(f"\nERROR: Unknown type '{item_type}'")
+        print(f"Valid types: {', '.join(sorted(set(HANDLERS.keys())))}\n")
+        sys.exit(1)
+
+    portfolio = load()
+    print(c("bold", f"\nAdding {item_type}: {content[:80]}"))
+
+    HANDLERS[item_type](portfolio, content)
+
+
+if __name__ == "__main__":
+    main()
