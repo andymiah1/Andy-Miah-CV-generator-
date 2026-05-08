@@ -253,6 +253,21 @@ def build_cv(
                     "gdesc", fontSize=8, leading=10, textColor=LIGHT,
                     fontName="Helvetica-Oblique", leftIndent=10, spaceAfter=2)))
 
+    # ── Teaching ─────────────────────────────────────────────────────────────
+    teaching_items = filter_and_rank(
+        portfolio.get("teaching", []), active_tags, min_score=1, max_items=6,
+        query=focus_label)
+    if teaching_items:
+        story += section_heading("Teaching", styles)
+        for t in teaching_items:
+            block = role_block(
+                t.get("title", ""),
+                t.get("institution", ""),
+                t.get("dates", ""),
+                [t["notes"]] if t.get("notes") else [],
+                styles)
+            story += block
+
     # ── Career History ────────────────────────────────────────────────────────
     story += section_heading("Career History", styles)
     ranked_roles = filter_and_rank(
@@ -296,11 +311,11 @@ def build_cv(
     pubs = portfolio["publications"]
     story += section_heading("Selected Publications", styles)
 
-    book_items = filter_and_rank(pubs["books"], active_tags, min_score=1, max_items=6)
-    fc_items   = filter_and_rank(pubs["books_forthcoming"], active_tags, min_score=1, max_items=4)
-    ch_items   = filter_and_rank(pubs["chapters"], active_tags, min_score=1, max_items=8)
-    ja_items   = filter_and_rank(pubs["journal_articles"], active_tags, min_score=1, max_items=8)
-    jo_items   = filter_and_rank(pubs["journalism"], active_tags, min_score=1, max_items=8)
+    book_items = filter_and_rank(pubs["books"], active_tags, min_score=1, max_items=6, query=focus_label)
+    fc_items   = filter_and_rank(pubs["books_forthcoming"], active_tags, min_score=1, max_items=4, query=focus_label)
+    ch_items   = filter_and_rank(pubs["chapters"], active_tags, min_score=1, max_items=8, query=focus_label)
+    ja_items   = filter_and_rank(pubs["journal_articles"], active_tags, min_score=1, max_items=8, query=focus_label)
+    jo_items   = filter_and_rank(pubs["journalism"], active_tags, min_score=1, max_items=8, query=focus_label)
 
     sub_style = ParagraphStyle("psub", fontSize=8.5, textColor=NAVY,
                                 fontName="Helvetica-Bold", leading=11,
@@ -355,7 +370,7 @@ def build_cv(
 
     # ── Selected Writing & Web Content ──────────────────────────────────────
     web_items = filter_and_rank(
-        portfolio.get("web_content", []), active_tags, min_score=2, max_items=12)
+        portfolio.get("web_content", []), active_tags, min_score=1, max_items=12)
     if web_items:
         story += section_heading("Selected Writing & Commentary", styles)
         for w in web_items:
