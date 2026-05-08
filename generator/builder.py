@@ -253,21 +253,6 @@ def build_cv(
                     "gdesc", fontSize=8, leading=10, textColor=LIGHT,
                     fontName="Helvetica-Oblique", leftIndent=10, spaceAfter=2)))
 
-    # ── Teaching ─────────────────────────────────────────────────────────────
-    teaching_items = filter_and_rank(
-        portfolio.get("teaching", []), active_tags, min_score=1, max_items=6,
-        query=focus_label)
-    if teaching_items:
-        story += section_heading("Teaching", styles)
-        for t in teaching_items:
-            block = role_block(
-                t.get("title", ""),
-                t.get("institution", ""),
-                t.get("dates", ""),
-                [t["notes"]] if t.get("notes") else [],
-                styles)
-            story += block
-
     # ── Career History ────────────────────────────────────────────────────────
     story += section_heading("Career History", styles)
     ranked_roles = filter_and_rank(
@@ -432,6 +417,203 @@ def build_cv(
         topMargin=MARGIN,
         bottomMargin=MARGIN,
         title=f"Andy Miah CV — {focus_label}",
+        author="Andy Miah",
+    )
+    doc.build(story)
+    return output_path
+
+
+# ── Teaching CV builder ────────────────────────────────────────────────────────
+def build_teaching_cv(
+    portfolio: dict,
+    output_path: str,
+) -> str:
+    """
+    Build a dedicated teaching-focused CV.
+    Sections ordered: Profile → Teaching → Doctoral Supervision →
+    Career → Selected Publications → Keynotes → Awards → Education
+    """
+    from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+    from reportlab.lib.units import mm
+    from reportlab.lib.pagesizes import A4
+
+    styles = make_styles()
+    identity = portfolio["identity"]
+    story = []
+    active_tags = portfolio["focus_areas"].get("teaching-cv", [])
+    focus_label = "teaching-cv"
+
+    MARGIN = 18 * mm
+
+    # ── Header ────────────────────────────────────────────────────────────────
+    story.append(Paragraph(identity["name"].upper(), styles["name"]))
+    story.append(Paragraph(identity["credentials"], styles["credentials"]))
+    story.append(Paragraph(
+        f"{identity['title']}  ·  {identity['institution']}",
+        styles["title"]))
+    story.append(Paragraph(
+        "Teaching Portfolio & Academic CV",
+        ParagraphStyle("tptag", fontSize=9, leading=11,
+                       textColor=TEAL, fontName="Helvetica-Oblique",
+                       spaceAfter=4)))
+    story.append(Paragraph(
+        f"{identity['website']}  ·  {identity['location']}",
+        styles["meta"]))
+    story.append(Spacer(1, 3 * mm))
+    story.append(thin_rule())
+    story.append(Spacer(1, 2 * mm))
+
+    # ── Teaching summary stats ────────────────────────────────────────────────
+    from generator.scorer import filter_and_rank
+    teaching_metrics = [
+        {"value": "25+ yrs", "label": "University Teaching"},
+        {"value": "10+",     "label": "Courses Designed"},
+        {"value": "10",      "label": "PhD Students Supervised/Examined"},
+        {"value": "15+",     "label": "Institutions Taught At"},
+        {"value": "120",     "label": "Max Cohort Size"},
+        {"value": "10 yrs",  "label": "RCA Visiting Professorship"},
+    ]
+    story.append(metric_strip(teaching_metrics, styles))
+    story.append(Spacer(1, 4 * mm))
+
+    # ── Profile ───────────────────────────────────────────────────────────────
+    story += section_heading("Profile", styles)
+    profile_text = portfolio["profile"]["variants"].get(
+        "teaching-cv", portfolio["profile"]["core"])
+    for para_text in profile_text.split("\n\n"):
+        para_text = para_text.strip()
+        if para_text:
+            story.append(Paragraph(para_text, styles["body"]))
+            story.append(Spacer(1, 2 * mm))
+
+    # ── Teaching (ALL items, no cap) ──────────────────────────────────────────
+    teaching_items = portfolio.get("teaching", [])
+    if teaching_items:
+        story += section_heading("Teaching Appointments & Courses", styles)
+        for t in teaching_items:
+            block = role_block(
+                t.get("title", ""),
+                t.get("institution", ""),
+                t.get("dates", ""),
+                [t["notes"]] if t.get("notes") else [],
+                styles)
+            story += block
+
+    # ── Teaching history detail ───────────────────────────────────────────────
+    story += section_heading("Programme & Module Contributions", styles)
+
+    prog_data = [
+        ("University of Salford", "2015 – present", [
+            "MSc Science Communication & Future Media — Co-Director. Modules: Science Communication as a Way of Life; Science Writing, Backpack Journalism & Mobile Media; Global Challenges in Science Communication; Live Performance; Public Involvement & Citizen Science",
+            "MSc Biotechnology — Critical Issues in Science Communication",
+            "MSc Wildlife Conservation — Science Communication as a Way of Life; Contemporary Issues",
+            "BSc Biomedical Science — Bioethics (Level 5); Translational Research Skills",
+            "BSc Wildlife Conservation — Frontiers in Wildlife Biology (Drones); Study Skills",
+            "BSc across School — Professional Skills & Practice (Science Communication)",
+        ]),
+        ("Royal College of Art — MA Design Interactions", "2006 – 2016", [
+            "Annual masterclasses for Professor Anthony Dunne: Posthuman Designs (2006); NanoCulture: On Speculation & Paranoia (2008); Superheros (2009); Drone Culture (2014); Living a Posthuman Life (2015); Life After Extinction (2016)",
+        ]),
+        ("University of the West of Scotland", "2002 – 2014", [
+            "Becoming Posthuman (Year 4 Honours, class 16) — course designer and lead lecturer. External examiner commendation for innovative delivery",
+            "Cyberculture (Year 2, class 120) — coordinator and lead lecturer. Topics: CyberIdentity, CyberCinema, VideoGaming, CyberPolitics",
+            "Sport & Spectacle (Year 3, class 100) — lecturer. Topics: technology, doping, Olympic politics, extreme sports",
+            "Digital Environments (Year 2/3, class 20) — lecturer. Macromedia Design Suite, Dreamweaver, Photoshop",
+        ]),
+        ("University of Glasgow — Graduate School of Biomedical & Life Sciences", "2002 – 2005", [
+            "Ethics & Bioethics in Science & Medicine — associate lecturer (cohort: 120 PhD students across biomedical and life sciences). Topics: xenotransplantation, ecosystem health, human genetics, experimental research ethics",
+        ]),
+        ("Guest & Visiting Teaching", "2002 – present", [
+            "Central St Martins — MA Material Futures: BioDesign and Future Humans (2017); Posthuman Futures (2014)",
+            "UCL — Bioethics & Sport MSc (2007); Beyond Bioethics: The Culture of Posthumanity (2007)",
+            "Glasgow School of Art — New Media Ethics and Biotechnology (2006); Posthumanism (2005)",
+            "Oregon State University (2016); Edinburgh College of Art (2010); Glasgow School of Art (2010)",
+            "St Mary's College San Francisco: The Posthuman Athlete (2008); Gene Doping and the Future of Sport (2004)",
+            "International Academy of Sports Science & Technology, Switzerland: Social/Ethical issues in Technology & Sport (2004); Gene Doping (2003)",
+            "EPFL Lausanne (2003); State University of New York (2002); Anglia Ruskin LLM International Sport Law (2001, 2004, 2007)",
+        ]),
+    ]
+
+    for inst, dates, bullets in prog_data:
+        block = role_block(inst, "", dates, bullets, styles)
+        story += block
+
+    # ── Doctoral Supervision ──────────────────────────────────────────────────
+    story += section_heading("Doctoral Supervision & Examination", styles)
+
+    story.append(Paragraph("Director of Studies", ParagraphStyle(
+        "dsub", fontSize=8.5, textColor=MID, fontName="Helvetica-Bold",
+        leading=11, spaceBefore=5, spaceAfter=2)))
+    for b in [
+        "Max Kimano — Science Communication at Science Festivals, University of Salford (2025–)",
+        "Jennifer Jones — Social Media and the Olympic Games, UWS (2009–)",
+        "Bettina Hörmann — Public Engagement with Nanotechnology Ethics, UWS (2007–)",
+        "Ana Adi — New Media at the Beijing Olympics, UWS (2007–) [Fulbright alumna]",
+    ]:
+        story.append(Paragraph(f"\u2022  {b}", styles["bullet"]))
+
+    story.append(Paragraph("External Examiner", ParagraphStyle(
+        "dsub2", fontSize=8.5, textColor=MID, fontName="Helvetica-Bold",
+        leading=11, spaceBefore=8, spaceAfter=2)))
+    for b in [
+        "Yun Peng, University of Glasgow (2020)",
+        "Debra Brasset, Warwick University (2019)",
+        "James McFarlane, Warwick University (2018)",
+        "Ege Sezen, Lancaster University (2017)",
+        "Laura Ager, Salford University (2016)",
+        "John Pinder, Salford University (2015)",
+        "Bryce Dyer, Bournemouth University (2013)",
+        "Natasha Vita-More, Plymouth University (2012)",
+        "Janet Bennett, Cardiff Metropolitan University (2012)",
+        "Neil McPherson, Glasgow Caledonian University (2010)",
+    ]:
+        story.append(Paragraph(f"\u2022  {b}", styles["bullet"]))
+
+    # ── Career ────────────────────────────────────────────────────────────────
+    story += section_heading("Academic Appointments", styles)
+    for appt in portfolio["appointments"]:
+        bullets = [b["text"] for b in appt.get("bullets", [])][:4]
+        block = role_block(
+            appt["title"], appt["institution"], appt["dates"],
+            bullets, styles)
+        story += block
+
+    # ── Selected publications relevant to teaching ─────────────────────────────
+    pubs = portfolio["publications"]
+    story += section_heading("Selected Publications", styles)
+    all_pubs = (
+        filter_and_rank(pubs["books"], active_tags, min_score=1, max_items=5,
+                        query=focus_label) +
+        filter_and_rank(pubs["chapters"], active_tags, min_score=1, max_items=4,
+                        query=focus_label) +
+        filter_and_rank(pubs["journal_articles"], active_tags, min_score=1,
+                        max_items=4, query=focus_label)
+    )
+    for pub in all_pubs:
+        story.append(Paragraph(f"\u2022  {pub['citation']}", styles["bullet"]))
+
+    # ── Education ─────────────────────────────────────────────────────────────
+    story += section_heading("Education & Qualifications", styles)
+    for ed in portfolio["education"]:
+        block = role_block(ed["degree"], ed["institution"], ed["dates"],
+                           [ed["note"]] if ed.get("note") else [], styles)
+        story += block
+
+    # ── Footer ────────────────────────────────────────────────────────────────
+    story.append(Spacer(1, 4 * mm))
+    story.append(thin_rule())
+    story.append(Paragraph(
+        f"References available on request  ·  andymiah.net  ·  Teaching Portfolio",
+        styles["footer"]))
+
+    # ── Build ─────────────────────────────────────────────────────────────────
+    import os
+    os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else ".", exist_ok=True)
+    doc = SimpleDocTemplate(
+        output_path, pagesize=A4,
+        leftMargin=MARGIN, rightMargin=MARGIN,
+        topMargin=MARGIN, bottomMargin=MARGIN,
+        title="Andy Miah — Teaching CV",
         author="Andy Miah",
     )
     doc.build(story)
