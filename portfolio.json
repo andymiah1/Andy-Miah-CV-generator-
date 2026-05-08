@@ -773,6 +773,193 @@
         "interdisciplinary",
         "platform-leadership"
       ]
+    },
+    {
+      "title": "Research at Paris 2024 Olympic Games",
+      "funder": "University of Salford RIPE Internal Fund",
+      "role": "PI",
+      "amount": "N/A",
+      "dates": "2024",
+      "description": "Fieldwork and research at the Paris 2024 Summer Olympics.",
+      "tags": [
+        "olympic-studies",
+        "olympics",
+        "mega-events"
+      ]
+    },
+    {
+      "title": "Effecting Media Change: Rise of Online Media at Vancouver 2010",
+      "funder": "The Carnegie Trust",
+      "role": "PI",
+      "amount": "£2,100",
+      "dates": "2009",
+      "description": "Research at the Vancouver 2010 Winter Olympic Games on online media transformation.",
+      "tags": [
+        "olympic-studies",
+        "olympics",
+        "science-communication",
+        "media"
+      ]
+    },
+    {
+      "title": "Non-Accredited Media at the Olympics: Torino & Beijing",
+      "funder": "The British Academy",
+      "role": "PI",
+      "amount": "£7,474",
+      "dates": "2006",
+      "description": "Research into non-accredited media at Torino 2006 and preliminary work for Beijing 2008.",
+      "tags": [
+        "olympic-studies",
+        "olympics",
+        "science-communication",
+        "mega-events"
+      ]
+    },
+    {
+      "title": "Non-Accredited Media at Athens 2004 Olympic Games",
+      "funder": "The British Academy",
+      "role": "PI (with Dr Beatriz Garcia, University of Glasgow)",
+      "amount": "£7,740",
+      "dates": "2004–2006",
+      "description": "Fieldwork examining non-accredited media at the Athens 2004 Olympic Games.",
+      "tags": [
+        "olympic-studies",
+        "olympics",
+        "science-communication",
+        "mega-events"
+      ]
+    },
+    {
+      "title": "Research at the Beijing 2008 Olympic Games",
+      "funder": "The Carnegie Trust",
+      "role": "PI",
+      "amount": "£2,310",
+      "dates": "2008",
+      "description": "Funded research fieldwork at the Beijing 2008 Summer Olympics.",
+      "tags": [
+        "olympic-studies",
+        "olympics",
+        "mega-events"
+      ]
+    },
+    {
+      "title": "Social Media Impacts of European Capital of Culture 2008 (Liverpool)",
+      "funder": "Impacts 08",
+      "role": "PI",
+      "amount": "£3,500",
+      "dates": "2009",
+      "description": "Analysing social media impacts of Liverpool's European Capital of Culture year.",
+      "tags": [
+        "science-communication",
+        "media",
+        "creative-industries",
+        "civic"
+      ]
+    },
+    {
+      "title": "PhD Studentship Co-Sponsorship — Nanotechnology Ethics",
+      "funder": "Institute of Nanotechnology",
+      "role": "Supervisor",
+      "amount": "£18,000",
+      "dates": "2007",
+      "description": "Co-sponsorship for PhD studentship for Bettina Hörmann on nanotechnology ethics.",
+      "tags": [
+        "bioethics",
+        "ai-ethics",
+        "science-communication"
+      ]
+    },
+    {
+      "title": "De Montfort University PhD Bursary",
+      "funder": "De Montfort University",
+      "role": "PhD Recipient",
+      "amount": "£30,000",
+      "dates": "1998–2002",
+      "description": "3-year fully funded doctoral bursary for PhD in Bioethics, Philosophy of Technology and Genetic Enhancement.",
+      "tags": [
+        "bioethics",
+        "enhancement",
+        "gene-doping"
+      ]
+    },
+    {
+      "title": "Visiting Fellowship — The Hastings Center, New York",
+      "funder": "The Carnegie Trust / Bedford PE Old Students' Association",
+      "role": "Fellow",
+      "amount": "£1,800",
+      "dates": "2002",
+      "description": "International Visiting Fellowship to The Hastings Center for Bioethics, New York.",
+      "tags": [
+        "bioethics",
+        "enhancement"
+      ]
+    },
+    {
+      "title": "Human Waste & Stem Cells (with Gina Czarnecki)",
+      "funder": "The Wellcome Trust",
+      "role": "Adviser",
+      "amount": "N/A",
+      "dates": "Various",
+      "description": "Advisory role on Wellcome Trust project on human waste and stem cells with artist Gina Czarnecki.",
+      "tags": [
+        "bioart",
+        "bioethics",
+        "arts-science"
+      ]
+    },
+    {
+      "title": "Genetic Kinship (with Revital Cohen)",
+      "funder": "The Wellcome Trust",
+      "role": "Adviser",
+      "amount": "£25,976",
+      "dates": "Various",
+      "description": "Advisory role on Wellcome Trust project on genetic kinship with artist Revital Cohen.",
+      "tags": [
+        "bioart",
+        "bioethics",
+        "arts-science",
+        "enhancement"
+      ]
+    },
+    {
+      "title": "NERC Public Engagement Grant",
+      "funder": "Natural Environment Research Council",
+      "role": "Co-I",
+      "amount": "£7,500",
+      "dates": "Various",
+      "description": "Public engagement grant for science communication on environmental research.",
+      "tags": [
+        "science-communication",
+        "public-engagement"
+      ]
+    },
+    {
+      "title": "IOC Social Media Mentor — Young Reporters Programme",
+      "funder": "International Olympic Committee",
+      "role": "Social Media Mentor",
+      "amount": "$10,000",
+      "dates": "2014",
+      "description": "Mentoring 30+ young people as Olympic reporters at the Nanjing 2014 Youth Olympic Games.",
+      "tags": [
+        "olympic-studies",
+        "science-communication",
+        "media",
+        "social-media-sport"
+      ]
+    },
+    {
+      "title": "Media Training for Athletes at IAAF Youth World Championships",
+      "funder": "International Amateur Athletics Federation (IAAF)",
+      "role": "Lead",
+      "amount": "£5,000",
+      "dates": "2014",
+      "description": "Social media training for athletes at the IAAF Junior World Championships in Oregon.",
+      "tags": [
+        "olympic-studies",
+        "science-communication",
+        "media",
+        "digital-sport"
+      ]
     }
   ],
   "publications": {
@@ -17594,2625 +17781,129 @@
   ],
   "teaching": [
     {
-      "text": "PRESENT ASSOCIATE ROLES (From)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "EDITORIAL BOARDS",
+      "title": "MSc in Science Communication & Future Media",
+      "institution": "University of Salford",
+      "dates": "2017 – present",
+      "role": "Co-Director",
+      "notes": "Co-directs the programme; teaches Science Communication as a Way of Life, Science Writing, Global Challenges in Science Communication, Live Performance, and Mobile Media modules.",
       "tags": [
-        "civic",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "PANEL REVIEW BOARDS",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Over 6 years, I was involved with funding approximately £15m funds towards science communication and public engagement projects across Switzerland.",
-      "tags": [
-        "public-engagement",
+        "science-communication",
         "scicomm",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Professor of Ethics & Emerging Technologies, Faculty of Business & Creative Industries.",
-      "tags": [
-        "createch",
-        "creative-industries",
-        "innovation",
         "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
+      ]
     },
     {
-      "text": "Management and Administration:",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "School REF2014 Unit Leader (2010-present)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "University Ethics Committee (2011-2012)",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "School Research Committee, Chair (2007-present)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "School Digital Communications Manager (2002-present)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "School Marketing Group (2003-present)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "RAE2008 Submission Co-Author (2007-8)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Organizing Committee (Salons Chair).",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Visiting Fellow, School of Law, The New Zealand Law Foundation Centre for Law and Emerging Technologies.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Reader in New Media & Bioethics, School of Media, Language & Music.",
-      "tags": [
-        "arts-science",
-        "bioethics",
-        "broadcast",
-        "civic",
-        "creative-industries",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Lecturer in Media, Bioethics & Cyberculture, School of Media, Language & Music. Course Design: Becoming Posthuman (Honours); Cyberculture; Sport & Spectacle.",
-      "tags": [
-        "arts-science",
-        "bioethics",
-        "civic",
-        "creative-industries",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Lecturer, Graduate School of Biomedical & Life Sciences.",
-      "tags": [
-        "civic",
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "International Visiting Scholar",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Research Fellow, part-time. Areas of Responsibility: Working with the Departmental Chair to develop the research culture.",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "EDUCATION & QUALIFICATIONS",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "MPhil: Taught Master Degree in Medical Law and Ethics Dissertation Title: Genetic Selection for Enhanced Health [Supervisor: Professor Sheila Mclean]",
+      "title": "Bioethics — Biomedical Sciences BSc & Biotechnology MSc",
+      "institution": "University of Salford",
+      "dates": "2015 – present",
+      "role": "Module Lead",
+      "notes": "Teaches bioethics across Biomedical Science, Biotechnology MSc, and Wildlife Conservation MSc programmes.",
       "tags": [
         "bioethics",
-        "civic",
-        "digital-health",
-        "emerging-tech",
         "enhancement",
-        "gene-doping",
-        "health-wellbeing",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "First Class, BA (Hons) Degree Sport & Leisure Studies.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "External Study",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Olympic Studies Centre, Olympic Museum, Lausanne, Switzerland Two months research study at the IOC Olympic Museum Study Centre at Lausanne, Switzerland. Research focus: The IOC Ethics Commission and the IOC Medical Commission. During the period I met Dr. Patrick Schamasch, IOC Medical Director to discuss the implications of genetic technologies for sport.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "digital-health",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "health-wellbeing",
-        "interdisciplinary",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Research Methods Training",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "De Montfort University, Master degree course in Qualitative Research Methods",
-      "tags": [
-        "platform-leadership",
         "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
+      ]
     },
     {
-      "text": "Norwegian University of Sport Science, PhD accredited course in Philosophy.",
+      "title": "Drones — Frontiers in Wildlife Biology",
+      "institution": "University of Salford",
+      "dates": "2015 – present",
+      "role": "Guest Lecturer",
+      "notes": "Teaches drone applications in environmental and wildlife research contexts.",
       "tags": [
-        "civic",
-        "digital-sport",
-        "olympic-studies",
-        "platform-leadership",
+        "drone",
+        "drones",
         "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
+      ]
     },
     {
-      "text": "Higher Education Teacher Training",
+      "title": "Science Communication — MSc Wildlife Conservation & Professional Skills",
+      "institution": "University of Salford",
+      "dates": "2015 – present",
+      "role": "Lecturer",
+      "notes": "Contributes science communication teaching across undergraduate and postgraduate programmes.",
       "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Research Council Referee",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "National Science Foundation (USA).",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "The Wellcome Trust (various proposals 2005-present).",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Referee for International Journals",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "International Journal of Media and Cultural Politics (Intellect); Theory, Culture, Society (SAGE); Cultural Politics (Berg); Institutional Review Board: Ethics & Human Research, (The Hastings Center); Research in Philosophy and Technology (Elsevier); Journal of Medical Ethics; Journal of the Philosophy of Sport (Human Kinetics); Medical Science Monitor: International Journal for Experimental and Clinical Research; International SportMed Journal; Theoretical Medicine and Bioethics; Bioethics; World Leisure Journal; Public Understanding of Science; Science, Script-Ed: A Journal of Law, Technology and Society; Sociology of Sport Journal.",
-      "tags": [
-        "ai-ethics",
-        "arts-science",
-        "bioethics",
-        "civic",
-        "creative-industries",
-        "digital-health",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "governance",
-        "health-wellbeing",
-        "olympic-studies",
-        "platform-leadership",
-        "public-engagement",
+        "science-communication",
         "scicomm",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
+        "public-engagement"
+      ]
     },
     {
-      "text": "External Promotions Assessor",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "CPD (For Ofsted)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Keynote Presentations at Conferences",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Professional body events",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Research events",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "university apprentice training – Safeguarding etc.",
+      "title": "MA Design Interactions",
+      "institution": "Royal College of Art, London",
+      "dates": "2006 – 2016",
+      "role": "Visiting Professor",
+      "notes": "Annual masterclass contributions including Posthuman Designs (2006), NanoCulture (2008), Drone Culture (2014), Living a Posthuman Life (2015), Life After Extinction (2016).",
       "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
+        "bioethics",
+        "enhancement",
+        "drone",
+        "drones",
+        "arts-science"
+      ]
     },
     {
-      "text": "Publications /",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2022, Jan 4 ) After 30 years of STEM, it is time to move on, Times Higher Education, https://www.timeshighereducation.com/opinion/after-30-years-stem-it-time-move",
+      "title": "Becoming Posthuman (Honours); Cyberculture; Sport & Spectacle",
+      "institution": "University of the West of Scotland",
+      "dates": "2002 – 2014",
+      "role": "Course Designer & Lead Lecturer",
+      "notes": "Designed and led three courses across the BA Media programme. Cyberculture reached class sizes of 120. Becoming Posthuman received external examiner praise for innovative delivery.",
       "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2020) Esports and the Beginnings of Transmedia Architecture, The Design Exchange, Available at: https://www.demagazine.co.uk/2020/04/07/esports-and-beginnings-of-transmedia-architecture/",
-      "tags": [
-        "arts-science",
-        "civic",
-        "createch",
-        "creative-industries",
+        "bioethics",
+        "enhancement",
         "digital-sport",
-        "esports",
-        "gaming",
-        "innovation",
+        "science-communication"
+      ]
+    },
+    {
+      "title": "Ethics & Bioethics in Science & Medicine",
+      "institution": "University of Glasgow, Graduate School of Biomedical & Life Sciences",
+      "dates": "2002 – 2005",
+      "role": "Associate Lecturer",
+      "notes": "Taught research ethics to PhD cohorts across biomedical and life sciences (cohort size: 120). Topics: xenotransplantation, human genetics, experimental research ethics.",
+      "tags": [
+        "bioethics",
+        "science-communication"
+      ]
+    },
+    {
+      "title": "Guest Teaching — International Institutions",
+      "institution": "Multiple",
+      "dates": "2002 – present",
+      "role": "Invited Lecturer",
+      "notes": "Regular visiting contributions to Central St Martins (MA Material Futures), UCL (Bioethics & Sport MSc), Glasgow School of Art, Edinburgh College of Art, Oregon State University, St Mary's College San Francisco, EPFL Switzerland, State University of New York.",
+      "tags": [
+        "bioethics",
+        "enhancement",
+        "bioart",
+        "science-communication"
+      ]
+    },
+    {
+      "title": "Doctoral Supervision",
+      "institution": "University of Salford & University of the West of Scotland",
+      "dates": "2007 – present",
+      "role": "Director of Studies",
+      "notes": "Supervised PhD students on: Science Communication at Science Festivals (Salford, 2025–); Social Media and the Olympic Games (UWS, 2009–); Public Engagement with Nanotechnology Ethics (UWS, 2007–); New Media at the Beijing Olympics (UWS, 2007–, Ana Adi, Fulbright alumna).",
+      "tags": [
+        "science-communication",
         "olympic-studies",
+        "bioethics",
         "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
+      ]
     },
     {
-      "text": "Miah, A. (2020, April 8) Don’t give up on your non-virus-related research, Times Higher Education, https://www.timeshighereducation.com/blog/dont-give-your-non-virus-related-research",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2020) Our Eyes in the Skies, The Big Issue. https://medium.com/@andymiah/living-with-drones-7af964d36f9a",
-      "tags": [
-        "arts-science",
-        "civic",
-        "emerging-tech",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2019) Are You TikTok Ready? Times Higher Education, https://www.timeshighereducation.com/blog/are-you-tiktok-ready",
-      "tags": [
-        "broadcast",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2019) Esports is the future of all sports – here’s why, The Conversation, Available at: https://theconversation.com/esports-is-the-future-of-all-sports-heres-why-121335",
-      "tags": [
-        "digital-sport",
-        "esports",
-        "gaming",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2019) Good Science Begins with Communication, Times Higher Education, Available at: https://www.timeshighereducation.com/blog/good-science-begins-communication",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A (2018, Dec 19) NHS in Fortnite and Facebook? It would put mental healthcare where it’s needed. The Conversation, https://theconversation.com/nhs-in-fortnite-and-facebook-it-would-put-mental-healthcare-where-its-needed-107549",
-      "tags": [
-        "digital-health",
-        "digital-sport",
-        "esports",
-        "gaming",
-        "health-wellbeing"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A (2018, Dec 19) Putting the X in Text: Warm wishes or a kiss off?, The Conversation, https://theconversation.com/putting-the-x-in-text-warm-wishes-or-a-kiss-off-107020",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Mark Lorch, Andy Miah, Mark Whiting, Isabel Pires, (2017, Nov 3) Secret science of superheroes: What Spider-Man needs to eat for breakfast to spin his webs and how it IS possible to become the Incredible Hulk, The Mirror, Available at: https://www.mirror.co.uk/news/weird-news/secret-science-superheroes-what-spider-11462274",
-      "tags": [
-        "civic",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2017, March 30) How scientists should communicate their work in a post-truth era, The Conversation, https://theconversation.com/how-scientists-should-communicate-their-work-in-a-post-truth-era-75420",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2017, Jan 30) How the drone went from the latest must have tech toy to a billion-dollar cultural phenomenon, The Conversation, https://theconversation.com/how-the-drone-went-from-the-latest-must-have-tech-toy-to-a-billion-dollar-cultural-phenomenon-71773",
-      "tags": [
-        "arts-science",
-        "emerging-tech",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2017, Jan 12) How artificial intelligence could provide some respite for the NHS, The Conversation, https://theconversation.com/how-artificial-intelligence-could-provide-some-respite-for-the-nhs-70973",
-      "tags": [
-        "ai",
-        "ai-ethics",
-        "arts-science",
-        "creative-industries",
-        "digital-health",
-        "emerging-tech",
-        "health-wellbeing"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2016, ) Will Super Mario ever be an Olympic sport?, The Conversation, https://theconversation.com/will-super-mario-ever-be-an-olympic-sport-64274",
-      "tags": [
-        "digital-sport",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2016, Aug 20) Incredible Images From Rio 2016, As Photographers Rise To Meet Social Media Challenges, The Conversation, https://theconversation.com/incredible-images-from-rio-2016-as-photographers-rise-to-meet-social-media-challenges-64079",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2016, Aug 19) New Olympic Channel Will Change The Way We Watch Sport Forever – Here's How, The Conversation, https://theconversation.com/new-olympic-channel-will-change-the-way-we-watch-sport-forever-heres-how-64036",
-      "tags": [
-        "digital-sport",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2016, Aug 18) Why academics should make time for social media, Times Higher Education, https://www.timeshighereducation.com/comment/why-academics-should-make-time-for-social-media-app",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2016) The A to Z of Social Media for Academia, Times Higher Education, https://www.timeshighereducation.com/a-z-social-media",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2015, April 17) Parties short of ideas on how to secure Britain’s digital future, The Conversation",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2015, March 18) Will Technology Kill Universities? TIME http://time.com/3747816/education-chalkboard-chatroom/",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2015, Feb 15) Drones are more than killing machines, but what happens when they become intelligent, The Conversation",
-      "tags": [
-        "arts-science",
-        "emerging-tech",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2014, Dec 18) Can a six-second movie be considered art?, The Conversation",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2014, Aug 4) Living without ‘Her’ [Movie Review], Huffington Post",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2014, April 4) Por que os livros de história devem permanecer abertos para Lance Armstrong, Com Ciencia (Brazil)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2014, Feb 13) #RingFail — Why a Broken Ring Matters at the Olympic Games Opening Ceremony, Inside the Games",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2014, Feb 7) Being Gay at the Sochi Olympics, Huffington Post",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2014, Jan 27) Twitter Journal: Would you share your original research on social media?, The Guardian",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2013, March 15) Raising the digital generation, The Huffington Post",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2013, Feb 25) Does technology set us free? Digicult Magazine",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2013 Feb 22) ‘Peculiarities’ not enough to deny Oscar Pistorius bail appeal Metro UK",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2013 Feb 22) Oscar Pistorius Granted Bail, The Huffington Post",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2013 Feb 16) Oscar Pistorius Is More Than Just a Fallen Hero, The Huffington Post",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2013, Feb 1) De geschiedenis is nog niet klaar met Lance Armstrong, De Morgen (Belgium)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2013, Jan 30) Lance Armstrong should be celebrated as a pioneer of human enhancement, Wired MagazineMiah, A. (2012, Sept 10) The Transhuman Paralympic Games, The Huffington Post",
+      "title": "Doctoral Examination",
+      "institution": "Multiple UK Universities",
+      "dates": "2010 – 2020",
+      "role": "External Examiner",
+      "notes": "External examiner for PhD candidates at Glasgow (2020), Warwick (2018, 2019), Lancaster (2017), Salford (2015, 2016), Bournemouth (2013), Cardiff Metropolitan (2012), Plymouth (2012).",
       "tags": [
         "bioethics",
-        "emerging-tech",
         "enhancement",
-        "gene-doping",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012) Professor 2.0:The Professor as Mass Communicator, Academic Matters: The Canadian Journal of Higher Education",
-      "tags": [
         "platform-leadership",
         "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, Sept 9) A Very Olympic Last Night of the Proms, The Huffington Post",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, Aug 17) Pussy Riot Sentence Jeopardises the Sochi 2014 Olympic Games, The Huffington Post",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, Aug 11) Julius Caesar is Victorious at the Olympic Games, The Huffington Post",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, Aug 11) The Olympic Games are over, but the London 2012 festival goes on, The Huffington Post",
-      "tags": [
-        "arts-science",
-        "creative-industries",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, Aug 9) Viewpoint: London 2012, a social media Olympics to remember, BBC Technology Online",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, Aug 9) One Day in London During the Olympic Games - A Guide for the Ticketless Olympic Tourist, The Huffington Post",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, Aug 5) Is this What they meant by the first social media Olympics?, The Huffington Post",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, July 30) Your Twitter Guide to the London 2012 Olympic Games, The Huffington Post",
-      "tags": [
-        "broadcast",
-        "media",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, July 29) Olympic legacy for higher education: Who will take the podium?, University World News",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, July 29) London 2012: The first social media Olympic opening ceremony, Metro Newspaper",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, July 13) Why Oscar Pistorius Has Already Made History and Why It's a Good Thing for Everyone, The Huffington Post",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, July 11) Physical inactivity kills, but who cares?, Metro Newspaper",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012, July 11) Oscar Pistorius makes a ‘One Games’ future more likely, Metro Newspaper",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012) Will London 2012 be Everybody’s Olympics? Future Everybody, festival book, Future Everything.",
-      "tags": [
-        "arts-science",
-        "civic",
-        "creative-industries",
-        "creative-manchester",
-        "manchester",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012) The Olympic Legacy for Higher Education, The Guardian Higher Education",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012) Is it time to boycott books (CHECK), The Guardian Higher Education Network",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012) Brian Cox, David Starkey, and Colin Firth; a new type of Public Intellectual?, The Guardian Higher Education Network",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2012) Occupying the Olympics S+RO Magazine, NL",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2011) People should be free to use smart drugs if they choose to, The Independent Online",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A (2011) Bioart is changing the world, The Huffington Post",
-      "tags": [
-        "arts-science",
-        "bioethics",
-        "creative-industries",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2011) Media Ethics: Is the Sky Falling? The Huffington Post",
-      "tags": [
-        "civic",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2011, Jan 24) Has the Business Card Finally Had its Day?, The Huffington Post.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, Sept 8) Will Citizen journalists take over the London 2012 Olympic & Paralympic Games?, The Huffington Post",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, August 31) The Human Centipede and Bioethics, The Huffington Post.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, March 2) From Vancouver 2010 to London 2012, The Huffington Post.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, Feb 20) Why Britain's Media are Failing at The Vancouver Olympic Games, The Huffington Post.",
-      "tags": [
-        "civic",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, Feb 17) Doping at the Vancouver Olympics, The Huffington Post.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, Feb 16) Augmented Reality and Olympic Sport, The Huffington Post.",
-      "tags": [
-        "createch",
-        "digital-sport",
-        "esports",
-        "gametech",
-        "mega-events",
-        "metaverse",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, Feb 12) The Opening Ceremony of the Olympic Games, The Huffington Post.",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2010, Feb 8) The Vancouver 2010 Olympic Games: Predicting The First Major Controversy -- New Media Activism, The Huffington Post.",
-      "tags": [
-        "broadcast",
-        "civic",
-        "media",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2009, 1 May) Make me a superhero, The Guardian",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2009, 22 March) We’re All Activists Now, The Guardian.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2008, August) Various articles for the Huffington Post",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2008, 3 August) Enhanced Athletes? It’s Only Natural, The Washington Post, B1, B5.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2008, 04 April) Free Speech and the Olympics, Letter to Editor Evening Standard, London.",
-      "tags": [
-        "civic",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2008) 17 Days in Beijing, for Beijing 2008 Olympic Dossier, Centre for Olympic Studies, Autonomous University of Barcelona, Online at: http://olympicstudies.uab.es/beijing08/eng/content.asp?id_seccions=38&id_subseccions=80",
-      "tags": [
-        "ai",
-        "ai-ethics",
-        "emerging-tech",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2008) Paralympics 2.0, Bioethics Forum, The Hastings Center.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2007) Gene Doping: Performance Enhancement? The Biochemist, April, 24-26.",
-      "tags": [
-        "arts-science",
-        "bioethics",
-        "creative-industries",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (with Matthew Syed) (2006, Oct 18) Digital era taking fans closer to action, The Times, p.82.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2006, Aug 2) Is sport winning the war on drugs? No. The Guardian, p.7.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (with Garcia, B.) (2006, July) Ever-Decreasing Circles? The profile of culture at the Olympics, Locum Destination Review, pp.60-62.",
-      "tags": [
-        "arts-science",
-        "creative-industries",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (with Kayser, B. and Mauron, A.) (2006, Jan 17) En termes de sante publique, la guerre antidopage purrait bien etre un non-sens, Le Monde, p.3.",
-      "tags": [
-        "ai-ethics",
-        "governance",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2005, Sept) Genetically Modified Athletes, Science & Public Affairs, Magazine of the British Association for the Advancement of Science.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2005, Aug) Is ‘Gene Doping’ Wrong?’, Project Syndicate (Newswire), New York.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2004, Aug 13). Why I believe…that genetic modification might be good for sport and society, The Times Higher Education Supplement. London, p.14.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2004, Aug 1). Genetically Modified Athletes in Athens? Bring them on. The Observer. London, p.9.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2002, April) Catching up with Frankenrunner, Sp!ked, Hypertext Document: http://www.spiked-online.com/Articles/00000006D86E.htm",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Garcia B. and Miah, A. (2002, March) The Olympics is Not a Sporting Event! Arts and Culture at the 2002 Winter Olympics, In Gauntlett, David (Ed), Some Things about Art and Cities at www.theory.org.uk and NewMediaStudies, Hypertext Document: http://www.newmediastudies.com/art/olympic.htm",
-      "tags": [
-        "arts-science",
-        "civic",
-        "creative-industries",
-        "digital-sport",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. and Garcia, B. (2002, April) The Olympic Games Should Happen Nowhere or Everywhere, Spark Online, 31.0, Hypertext Document: http://www.spark-online.com/issue31/miah-garcia.html",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2002, Jan) ArtFutura – 12 years later and out of Real-Time, Spark Online 28.0, Hypertext Document: http://www.spark-online.com/issue28/miah.html",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2001, June 1) Soapbox: Why I...believe that genetically engineered athletes might not be cheating, Times Higher Education Supplement, London, p.16.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2001, April 27) IOC Presidency Race for Olympic Gold: How can they play fair?, Times Higher Education Supplement.",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2001, April 25) The International Olympic Committee Guarantees Fair Play, Campus Review: Australasia’s Higher Education Newspaper.",
-      "tags": [
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2001, Nov 29) Letter to Editor: Alcohol Consumption, Spiked-Online, Hypertext Document: http://www.spiked-online.com/Printable/00000002D304.htm",
-      "tags": [
-        "civic",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2001, Nov) Safe Sex on the Internet: hotsex@university.ac.uk!, Spark Online 26.0, Hypertext Document: http://www.spark-online.com/issue26/miah.html",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2001, Feb) Digitising Sporting Arenas: The end of an arena!, Spark Online 17.0, Hypertext Document: http://www.spark-online.com/february01/trends/miah.html",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2000, Feb 5) Enter the Superkid, New Scientist, 2224, 54.",
-      "tags": [
-        "public-engagement",
-        "scicomm",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "García, B. & Miah, A. (2000, November) Olympic ideals and Disney dreams: Opportunities and constraints for cultural representation during Sydney's Opening Ceremony, Human Kinetics: Social Science and Sport News,",
-      "tags": [
-        "digital-sport",
-        "mega-events",
-        "olympic-studies",
-        "olympics"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2000, April) Can you remain faithful in cyberspace?, Spark Online 7.0, Online: http://www.spark-online.com/april00/trends/miah.html",
-      "tags": [
-        "digital-health",
-        "health-wellbeing"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Over the course of my career, I have held regular visiting professorships, notably with the Royal College of Art, to which I have contributed to the MA in Design Interactions (2006-20016), along with less frequent but sustained contributions to other universities, such as Central St Martins.",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Recent Praise from Students:",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "“Also, I just wanted to say how much I appreciated Becoming Posthuman - the most thought-provoking and challenging class the media course has offered, in my opinion.” Margaret, Becoming Posthuman 4th Year Media Student, 2005.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "“thanks for introducing probably one of the most enjoyable classes I've had.” Michael, Becoming Posthuman, 4th Year Media Theory student, 2004",
-      "tags": [
-        "bioethics",
-        "civic",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "“Thanks Andy for everything, the posthuman module was really interesting”",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Aileen, Becoming Posthuman, 4th Year Media Theory, student, 2004.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "“hey andy, just wanted to give you a wee bit of an \"un-anonymous\" feedback on the cyberculture module. Thoroughly enjoyed it, topics were interesting and lectures were always extremely well structured. and its about time someone used B/board properly!” David, Cyberculture, 2nd Year, Media Theory student, 2004.",
-      "tags": [
-        "arts-science",
-        "civic",
-        "creative-industries",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "DOCTORAL SUPERVISION",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "University of Salford, Manchester",
-      "tags": [
-        "civic",
-        "creative-manchester",
-        "manchester",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Max Kimano, 2025",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Science Communication at Science Festivals (2015-)",
-      "tags": [
-        "arts-science",
-        "creative-industries",
-        "public-engagement",
-        "scicomm",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Dr Gary Kerr, UK.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "University of the West of Scotland",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Social Media and the Olympic Games, Director of Studies (2009-)",
-      "tags": [
-        "broadcast",
-        "civic",
-        "interdisciplinary",
-        "media",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Ms Jennifer Jones (UK)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Public Engagement with Ethics of Nanotechnology, Director of Studies (2007-)",
-      "tags": [
-        "bioethics",
-        "civic",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "interdisciplinary",
-        "platform-leadership",
-        "public-engagement",
-        "scicomm",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Ms Bettina Hörmann (Germany)",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "New Media at the Beijing Olympics, Director of Studies (2007-) Ms Ana Adi (Romania) MA MA (Fulbright alumna",
-      "tags": [
-        "broadcast",
-        "civic",
-        "interdisciplinary",
-        "media",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Media Effects, Second Supervisor (2007-2011) John Quinn, MSc Elizabeth McLaughlin, MSc",
-      "tags": [
-        "civic",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "UNIVERSITY OF SALFORD",
-      "tags": [
-        "civic",
-        "creative-manchester",
-        "manchester",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Citations /",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Plymire, D. C. (2009). \"Remediating football for the posthuman future: embodiment and subjectivity in sport video games.\" Sociology of Sport Journal 26: 17-30.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "esports",
-        "gaming",
-        "gene-doping",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Ryall, Emily. \"The Language of Genetic Technology: Metaphor and Media Representation.\" Continuum: Journal of Media and Cultural Studies 22, no. 3 (2008): 363-73.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Select Committee on Science and Technology (2007) Human Enhancement Technologies in Sport.",
-      "tags": [
-        "ai-ethics",
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "governance",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Levine, B. D. (2006). \"Editorial: Should 'Artificial' High Altitude Environments Be Considered Doping?\" Scandinavian Journal of Medicine and Science in Sports 16: 297-301.",
-      "tags": [
-        "ai-ethics",
-        "arts-science",
-        "bioethics",
-        "civic",
-        "creative-industries",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "governance",
-        "olympic-studies",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Elliott, C. (2005). \"Adventure! Comedy! Tragedy! Robots! How bioethicists learned to stop worrying and embrace their inner cyborgs.\" Journal of Bioethical Inquiry 1(1): 18-23.",
-      "tags": [
-        "ai",
-        "ai-ethics",
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (ed.) (2008) Human Futures: Art in an Age of Uncertainty, FACT & Liverpool University Press.",
-      "tags": [
-        "arts-science",
-        "creative-industries",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Academic Citations/Reviews",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Frood, Arran. \"The Future Is Now: Book Review of Human Futures: Art in an Age of Uncertainty.\" Nature 457, 22 January (2009): 383-4.",
-      "tags": [
-        "arts-science",
-        "civic",
-        "creative-industries",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. & Rich, E. (2008) The Medicalization of Cyberspace (Oxon and NY: Routledge).",
-      "tags": [
-        "civic",
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Nayar, P. (2010) An Introduction to New Media and Cybercultures. Oxford: Blackwell.",
-      "tags": [
-        "arts-science",
-        "broadcast",
-        "civic",
-        "creative-industries",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "McMillon, S. (2009) Book Review: The Medicalization of Cyberspace, New Media and Society, 11, 463-4.",
-      "tags": [
-        "broadcast",
-        "civic",
-        "digital-health",
-        "health-wellbeing",
-        "media",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Scott, K. (2008) Book Review: The Medicalization of Cyberspace, Studies in Ethics, Law and Technology, 2(3), 1-3.",
-      "tags": [
-        "civic",
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Williams, Simon.J., J. Gabe, and Peter. Davis. \"The Sociology of Pharmaceuticals: Progress and Prospects.\" Sociology of Health and Illness 30, no. 6 (2008): 813-24.",
-      "tags": [
-        "digital-health",
-        "health-wellbeing"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Mitchell, Lisa. M. \"Book Review: The Medicalization of Cyberspace.\" Surveillance and Society 6, no. 2 (2009): 182-83.",
-      "tags": [
-        "civic",
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Rubinelli, S. \"Book Review: The Medicalization of Cyberspace.\" Body & Society 15, no. 1 (2009): 109-12.",
-      "tags": [
-        "civic",
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Campion, E.W. \"Book Review: The Medicalization of Cyberspace.\" New England Journal of Medicine 359, no. 19 (2008): 2074.",
-      "tags": [
-        "civic",
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "James, M. \"Book Review: The Medicalization of Cyberspace.\" BioCentre (2008): http://www.bioethics.ac.uk.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "digital-health",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "health-wellbeing",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2004) Genetically Modified Athletes: Biomedical Ethics, Gene Doping and Sport (London and NY: Routledge).",
-      "tags": [
-        "bioethics",
-        "civic",
-        "digital-health",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "health-wellbeing",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Mazanov, J. (2009). \"Without bounds: A cosmopolitan research agenda for drugs in sport.\" Sport in Society 12(3): 411 - 422.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Mazanov, J. (2009). \"Debating the role of drugs in sport: a reader.\" Sport in Society 12(3): 296 - 312.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Mazanov, J. and V. McDermott (2009). \"The case for a social science of drugs in sport.\" Sport in Society 12(3): 276 - 295.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "McNamee, M.J. (2008) Sports, Virtues and Vices. Oxon and New York, Routledge.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Kious, B. M. (2008). \"Philosophy on Steroids: why the anti-doping position could use a little enhancement.\" Theoretical Medicine and Bioethics 29: 213-234.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Stein, D.J. (2008) Philosophy of Psychopharmacology. Cambridge: Cambridge University Press, p.118.",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "More, Pete. (2008) Enhancing Me: The Hope and the Hype of Human Enhancement (Science Museum TechKnow Series), John Wiley & Sons, p.249.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Christian Lenk, Nils Hoppe & Roberto Andorno (2007) Ethics and Law of Intellectual Property: Current Problems in Politics, Science and Technology (Applied Legal Philosophy), Ashgate, p.84.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Heinemann Educational Publishers (2007) Perspectives on Science: The History, Philosophy and Ethics of Science.",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Kok, F. (2007) Personalized Nutrition: Principles and Applications, p.167.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Green R.M. (2007) Babies by Design: The Ethics of Genetic Choice. New Haven: Yale University Press.",
-      "tags": [
-        "arts-science",
-        "bioethics",
-        "civic",
-        "creative-industries",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Petróczi, A. (2007). \"Attitudes and doping: a structural equation analysis of the relationship between athletes' attitudes, sport orientation and doping behaviour Substance Abuse Treatment, Prevention, and Policy 2(34): doi:10.1186/1747-597X-2-34.",
-      "tags": [
-        "ai-ethics",
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "governance",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Davids, K. and J. Baker (2007). \"Genes, Environment and Sport Performance: Why the Nature-Nurture Dualism is no Longer Relevant.\" Sports Medicine 37(11): 961-980.",
-      "tags": [
-        "arts-science",
-        "civic",
-        "creative-industries",
-        "digital-sport",
-        "olympic-studies",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Mitchell, C. B., E. D. Pellegrino, et al. (2007). Biotechnology and the Human Good. Washington, DC., Georgetown University Press.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "TWINE, R. (2007) Thinking across species - a critical bioethics approach to enhancement. Theoretical Medicine and Bioethics, 28, 509-523.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "D'ANDREA, A. C. (2006) Federalizing Bioethics. Texas Law Review, 83, 1663.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Houlihan, B.M.J. (2006) GMA Review, European Physical Education Review, 12(3), 382-384.",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Foddy, B. (2006), 'The ethics of genetic testing in sport', International SportsMed Journal, 7, 3, 216-224.",
-      "tags": [
-        "bioethics",
-        "createch",
-        "creative-industries",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "innovation",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Cavanagh, S. L. and H. Sykes (2006). \"Transsexual Bodies at the Olympics: The International Olympic Committee's Policy on Transsexual Athletes at the 2004 Athens Summer Games.\" Body & Society 12(3): 75-102.",
-      "tags": [
-        "ai-ethics",
-        "digital-sport",
-        "governance",
-        "mega-events",
-        "olympic-studies",
-        "olympics",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Parks, J. B., J. Quarterman, et al., Eds. (2006). Contemporary Sport Management (Third Edition). Champaign, IL., Human Kinetics.",
-      "tags": [
-        "arts-science",
-        "civic",
-        "creative-industries",
-        "digital-sport",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Sheridan, H., B. Pasveer, et al. (2006). \"Gene-Talk and Sport-Talk: A View from the Radical Middle Ground.\" European Journal of Sport Science 6(4): 223-230.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Culbertson, L. (2006). \"Book Review: Genetically Modified Athletes.\" Journal of the Philosophy of Sport 33(1).",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Tamburrini, C. (2006). \"Are Doping Sanctions Justified? A Moral Relativistic View.\" Sport in Society 9(2): 199-211.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Atkinson, M. (2006). \"Book Review: Genetically Modified Athletes.\" Sport in Society 9(1): 172-175.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Shanks, Pete. (2005) Human Genetic Engineering: A Guide for Activists, Skeptics and the Very Perplexed, Nation Books.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Moates, A. (2005). \"Sports Medicine and Ethics.\" Chisholm Health Ethics Bulletin 11(2): 6-9.",
-      "tags": [
-        "civic",
-        "digital-health",
-        "digital-sport",
-        "health-wellbeing",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Pincock, S. (2005). \"Gene Doping.\" The Lancet: Special Supplement on Sport and Medicine 366(S18-S19).",
-      "tags": [
-        "bioethics",
-        "civic",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Belyaletdinov, R.R. (2005) Divnyi novyi sport (Brave New Sports), Chelovek, #5, 169-173 [Russian Academy of Science]",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Jonsson, Kutte. (2005) Cyborgatleterna äh här?! Om genus, “genfuskare” och idrottens hybrider, Idrottsforum, 1-13.",
-      "tags": [
-        "bioethics",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Ellliott, C. (2005) The Soul of a New Machine: Bioethicists in the Bureaucracy, Cambridge Quarterly for Healthcare Ethics; 14:4. 379-384.",
-      "tags": [
-        "arts-science",
-        "bioethics",
-        "creative-industries",
-        "digital-health",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "health-wellbeing"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Ian Ritchie (2005) Book Review.\" Sociology of Sport Journal, 22, 239-241.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Osborn, G. (2005). Uphill race for GM sprinters? Book Review. Times Higher Education Supplement. London: 24.",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Cutter, A. M. (2005). \"Book Review.\" Genomics, Society and Policy 1(2): 94-96.",
-      "tags": [
-        "ai-ethics",
-        "governance",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Festeu, D. (2005) Book Review, GMA, European Sport Management Quarterly, 5(1), 95-97.",
-      "tags": [
-        "arts-science",
-        "creative-industries",
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Cashmore, E. (2005) Making Sense of Sports. London & New York: Routledge",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Donais, M. (2005) Book Review, Yale Journal of Public Health",
-      "tags": [
-        "digital-health",
-        "health-wellbeing"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Pederson, I. K. (2005). \"Book Review.\" Scandinavian Journal of Medicine and Science in Sports 15: 65-66.",
-      "tags": [
-        "civic",
-        "digital-sport",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Jönsson, K. (2004). \"Genetiskt modifierade idrottare.\" Idrottsforum 26 October: http://idrottsforum.org/reviews/items/jonkut_gma.html.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Hilvoorde, Ivo van. (2004) Topsport en gendoping. Grenzen aan sport, opsporing en geloofwaardigheid. In Krisis. Tijdschrift voor empirische filosofie, 5(4), 5-21.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Ozyener, F. (2004). \"Book Review:.\" Journal of Sports Science and Medicine 3: 197.",
-      "tags": [
-        "civic",
-        "digital-sport",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Hosta, M. (2004). \"Book Review of Genetically Modified Athletes.\" Druzboslovne Razprave 20(46).",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Turner, L. (2004, August 13). Book Review: Ready, Steady…Modify, The Lancet 364:9434, pp.573-4.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Tooby-Smith, A. (13 July, 2004) Gene Doping, British Association of Sports Medicine Today, 2.",
-      "tags": [
-        "bioethics",
-        "civic",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "McNamee, M. J. (2004). \"Philosophy of Sport.\" Nursing Philosophy 5(2): 182-183.",
-      "tags": [
-        "digital-sport",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Córdova, M. Á. (2004). ATLETAS TRANSGÉNICOS: ¿MITO O REALIDAD? Presente: Diario Del Sureste. Mexico: http://www.diariopresente.com.mx/Portal/ArticleView.php?article_id=9919",
-      "tags": [
-        "arts-science",
-        "creative-industries"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. and Eassom, S.B. (2002) Sport Technology: History, Philosophy and Policy. Oxford: Elsevier.",
-      "tags": [
-        "ai-ethics",
-        "digital-sport",
-        "governance",
-        "olympic-studies",
-        "platform-leadership"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Bale, J. (2004) Racing in Time and Space. London & New York: Routledge",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Patterson, Mike. (2003) First Nations in Cyberspace: Two Worlds and Tricksters – Where the Forest meets the Highway, PhD Dissertation, Department of Sociology/Anthropology, Carlton University, Canada.",
-      "tags": [
-        "arts-science",
-        "creative-industries",
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Grosseck, Gabriela. (2003) Incursiune in ciberspatiu, Revista Informatica Economia 4(28), 9-14.",
-      "tags": [],
-      "needs_tagging": true,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Payne, P. (2003). \"The Technics of Environmental Education.\" Environmental Education Research 9(4): 525-541.",
-      "tags": [
-        "civic",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Lawrence, L. (2003). \"'These are the voyages...': interaction in real and virtual space environments in leisure.\" Leisure Studies 22(October): 301-315.",
-      "tags": [
-        "civic",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Rehman, L. A., L. M. Robinson, et al. (2002). Celebrating Net Gains: Transforming the Nature of Leisure. Tenth Canadian Congress on Leisure Research, University of Alberta, Canadian Association of Leisure Studies.",
-      "tags": [
-        "civic",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Scientific Research on the Internet, University of Maryland, USA http://www.webuse.umd.edu/biblio/bib_networks.htm",
-      "tags": [
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Patterson, M. (2003) First Nations in Cyberspace: Two Worlds and Tricksters, Where the Forest meets the Highway, PhD dissertation for Carlton University, Canada.",
-      "tags": [
-        "digital-health",
-        "health-wellbeing",
-        "platform-leadership",
-        "science-communication"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Miah, A. (2001) Genetics, Law and Athletes’ Rights, Sports Law Bulletin, Vol 4(5), pp.10-12",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
-    },
-    {
-      "text": "Houlihan, B. M. J. (2004). \"Civil Rights, Doping Control and the World Anti-Doping Code.\" Sport in Society 7(3): 420-437.",
-      "tags": [
-        "bioethics",
-        "digital-sport",
-        "emerging-tech",
-        "enhancement",
-        "gene-doping",
-        "olympic-studies"
-      ],
-      "needs_tagging": false,
-      "source": "cv2026_01-portfolio.docx",
-      "added": "2026-05-07"
+      ]
     }
   ],
   "web_content": [
