@@ -172,8 +172,8 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
     MARGIN_C = 18 * _mm
 
     # ── Background image ──────────────────────────────────────────────────────
-    # Look for 2026.05.10-ChatGPT-GoogleGlass.jpg relative to builder.py
-    bg_path = _os.path.join(_os.path.dirname(__file__), "2026.05.10-ChatGPT-GoogleGlass.jpg")
+    # Look for 2026.05.10-ChatGPT-GoogleGlass.png relative to builder.py
+    bg_path = _os.path.join(_os.path.dirname(__file__), "2026.05.10-ChatGPT-GoogleGlass.png")
     if _os.path.exists(bg_path):
         # Full bleed background — use a table to position it
         bg_img = RLImage(bg_path,
