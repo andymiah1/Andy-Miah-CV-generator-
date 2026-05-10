@@ -6,7 +6,8 @@
     "institution": "University of Salford",
     "location": "Manchester M5 4WT",
     "website": "andymiah.net",
-    "tagline": "Interdisciplinary research leader in AI ethics, creative technologies, and civic innovation"
+    "tagline": "Interdisciplinary research leader in AI ethics, creative technologies, and civic innovation",
+    "grant_note": "£4.1m direct grant income (PI/Co-I) plus £0.5m+ estimated keynote investment (568 international talks × £1,000 avg)"
   },
   "focus_areas": {
     "drones": [
@@ -148,19 +149,27 @@
       ]
     },
     {
-      "value": "£4.5m",
-      "label": "Innovate UK PI (2023–26)",
+      "value": "£4.1m+",
+      "label": "Direct Grant Income (PI/Co-I)",
       "tags": [
-        "creative-manchester",
-        "esports",
-        "gametech",
         "platform-leadership",
-        "createch"
+        "creative-industries",
+        "creative-manchester"
+      ]
+    },
+    {
+      "value": "£4.6m+",
+      "label": "Total Portfolio Investment",
+      "tags": [
+        "platform-leadership",
+        "creative-industries",
+        "esports",
+        "creative-manchester"
       ]
     },
     {
       "value": "£18m",
-      "label": "SNSF Funding Oversight",
+      "label": "Research Funding Oversight (SNSF)",
       "tags": [
         "science-communication",
         "interdisciplinary",
@@ -168,18 +177,7 @@
       ]
     },
     {
-      "value": "250+",
-      "label": "GM Businesses Mobilised",
-      "tags": [
-        "creative-manchester",
-        "esports",
-        "platform-leadership",
-        "civic",
-        "manchester"
-      ]
-    },
-    {
-      "value": "450+",
+      "value": "568+",
       "label": "Invited Talks, 50+ Countries",
       "tags": [
         "science-communication",
@@ -187,6 +185,16 @@
         "esports",
         "olympic-studies",
         "bioethics"
+      ]
+    },
+    {
+      "value": "250+",
+      "label": "Peer-reviewed Publications",
+      "tags": [
+        "bioethics",
+        "science-communication",
+        "ai-ethics",
+        "olympic-studies"
       ]
     },
     {
@@ -201,6 +209,17 @@
       ]
     },
     {
+      "value": "250+",
+      "label": "GM Businesses Mobilised",
+      "tags": [
+        "creative-manchester",
+        "esports",
+        "platform-leadership",
+        "civic",
+        "manchester"
+      ]
+    },
+    {
       "value": "6+ yrs",
       "label": "Esports Board & Commission",
       "tags": [
@@ -211,28 +230,10 @@
       ]
     },
     {
-      "value": "20+",
-      "label": "Esports Keynotes Delivered",
-      "tags": [
-        "esports",
-        "gaming"
-      ]
-    },
-    {
       "value": "2016",
-      "label": "First UK Uni Esports Conf.",
+      "label": "First UK Uni Esports Conference",
       "tags": [
         "esports"
-      ]
-    },
-    {
-      "value": "250+",
-      "label": "Peer-reviewed Publications",
-      "tags": [
-        "bioethics",
-        "science-communication",
-        "ai-ethics",
-        "olympic-studies"
       ]
     }
   ],
