@@ -158,164 +158,165 @@ def role_block(title: str, org: str, dates: str,
 def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
                      styles: dict) -> list:
     """
-    Full-page visual cover with photo background, name, quote, and focus summary.
+    Cover page: text runs down left ~55% of page, face visible on right.
+    No opaque header box — text floats over the dark image overlay.
     """
     import os as _os
     import re as _re
-    from reportlab.platypus import Image as RLImage
     from reportlab.lib.units import mm as _mm
 
     identity = portfolio["identity"]
     story = []
-
-    PAGE_W_C, PAGE_H_C = A4
-    MARGIN_C = 18 * _mm
-
-    # ── Background image ──────────────────────────────────────────────────────
-    # Look for 2026.05.10-ChatGPT-GoogleGlass.png relative to builder.py
-    bg_path = _os.path.join(_os.path.dirname(__file__), "2026.05.10-ChatGPT-GoogleGlass.png")
-    if _os.path.exists(bg_path):
-        # Full bleed background — use a table to position it
-        bg_img = RLImage(bg_path,
-                         width=PAGE_W_C - 2*MARGIN_C,
-                         height=PAGE_H_C - 2*MARGIN_C)
-        # Dark overlay achieved by placing content over image
-        story.append(bg_img)
-        # Go back to top via negative spacer trick — instead use canvas overlay
-        # We'll use a different approach: build as separate first page
-        story = []  # reset — use canvas-based approach below
-
-    # ── Build cover as flowables with dark gradient overlay ───────────────────
-    # Dark header block
     focus_display = focus_label.replace("-", " ").title()
+    col_w = (PAGE_W - 2 * MARGIN) * 0.58  # left column ~58% width
 
-    # Name block
-    story.append(Spacer(1, 8 * _mm))
-    story.append(Paragraph(
-        f'<font color="#4DD0E1">{identity["name"].upper()}</font>',
-        ParagraphStyle("cvname", fontSize=32, leading=36,
-                       fontName="Helvetica-Bold", alignment=TA_LEFT,
-                       spaceBefore=0, spaceAfter=2)))
-    story.append(Paragraph(
+    def left(para):
+        """Wrap paragraph to left column width via a 1-col table."""
+        t = Table([[para]], colWidths=[col_w])
+        t.setStyle(TableStyle([
+            ("LEFTPADDING",   (0,0),(-1,-1), 0),
+            ("RIGHTPADDING",  (0,0),(-1,-1), 0),
+            ("TOPPADDING",    (0,0),(-1,-1), 0),
+            ("BOTTOMPADDING", (0,0),(-1,-1), 0),
+        ]))
+        return t
+
+    story.append(Spacer(1, 10 * _mm))
+
+    # Name — large, white, no box
+    story.append(left(Paragraph(
+        f'<font color="#4DD0E1"><b>{identity["name"].upper()}</b></font>',
+        ParagraphStyle("cvn2", fontSize=30, leading=34,
+                       fontName="Helvetica-Bold", spaceAfter=3))))
+
+    # Title & institution — white, no box
+    story.append(left(Paragraph(
         f'<font color="white">{identity["title"]}</font>',
-        ParagraphStyle("cvtitle", fontSize=11, leading=14,
-                       fontName="Helvetica", alignment=TA_LEFT, spaceAfter=2)))
-    story.append(Paragraph(
+        ParagraphStyle("cvt2", fontSize=10, leading=13,
+                       fontName="Helvetica", spaceAfter=2))))
+
+    story.append(left(Paragraph(
         f'<font color="#80CED7">{identity["institution"]}</font>',
-        ParagraphStyle("cvinst", fontSize=10, leading=13,
-                       fontName="Helvetica", alignment=TA_LEFT, spaceAfter=6)))
+        ParagraphStyle("cvi2", fontSize=9, leading=12,
+                       fontName="Helvetica", spaceAfter=8))))
 
-    story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#4DD0E1"),
-                            spaceAfter=8, spaceBefore=2))
+    # Thin teal rule
+    story.append(Table([['']], colWidths=[col_w],
+                       style=TableStyle([
+                           ("LINEBELOW", (0,0),(-1,-1), 1, colors.HexColor("#4DD0E1")),
+                           ("TOPPADDING",    (0,0),(-1,-1), 0),
+                           ("BOTTOMPADDING", (0,0),(-1,-1), 0),
+                       ])))
+    story.append(Spacer(1, 6 * _mm))
 
-    # Quote
+    # Quote — italic white, constrained to left column
     quote = ('“People often ask me ‘what do you do?’ '
              'and I tell them ‘It’s complicated’. '
              'I have always worked across disciplines and so my portfolio '
              'is incredibly diverse. So, based on what you want to discover '
              'about me, take your pick.”')
-    story.append(Paragraph(quote, ParagraphStyle(
-        "cvquote", fontSize=10, leading=15,
+    story.append(left(Paragraph(quote, ParagraphStyle(
+        "cvq2", fontSize=9.5, leading=14,
         fontName="Helvetica-Oblique",
         textColor=colors.white,
-        spaceBefore=0, spaceAfter=10,
-        leftIndent=4)))
+        spaceAfter=8))))
 
-    # Metrics strip
-    def _calc_grants(grants):
-        total = 0
-        for g in grants:
-            amt = g.get("amount", "")
-            role = g.get("role", "").lower()
-            title = g.get("title", "").lower()
-            if "oversight" in amt.lower(): continue
-            if "4.5m total" in amt.lower(): continue
-            if "committee member" in role and "snsf" in title: continue
-            for num, unit in _re.findall(r"£([\d,.]+)\s*([mk]?)", amt.lower()):
-                n = float(num.replace(",", ""))
-                if unit == "m": n *= 1e6
-                elif unit == "k": n *= 1000
-                total += n
-        return total
-
-    _g = _calc_grants(portfolio.get("grants", []))
+    # Key stats — 3 small inline stats, no background box
+    _g = 0
+    for g in portfolio.get("grants", []):
+        amt = g.get("amount", "")
+        role = g.get("role", "").lower()
+        title = g.get("title", "").lower()
+        if "oversight" in amt.lower(): continue
+        if "4.5m total" in amt.lower(): continue
+        if "committee member" in role and "snsf" in title: continue
+        for num, unit in _re.findall(r"£([\d,.]+)\s*([mk]?)", amt.lower()):
+            n = float(num.replace(",", ""))
+            if unit == "m": n *= 1e6
+            elif unit == "k": n *= 1000
+            _g += n
     _k = len(portfolio.get("keynotes", []))
 
-    # 3-column key stats
-    stats = [
-        (f"£{(_g+_k*1000)/1e6:.1f}m+", "Total Portfolio Investment"),
-        (f"{_k}+", "Invited Talks, 50+ Countries"),
-        ("250+", "Publications incl. 10 Books"),
-    ]
-    col_w = (PAGE_W_C - 2*MARGIN_C) / 3
-    stat_rows = [[
-        Paragraph(f'<b><font color="#4DD0E1" size="18">{v}</font></b><br/>'
-                  f'<font color="white" size="7">{l}</font>',
-                  ParagraphStyle("csvs", alignment=TA_CENTER, leading=20,
-                                 fontName="Helvetica-Bold"))
-        for v, l in stats
+    stat_col = col_w / 3
+    stat_data = [[
+        Paragraph(
+            f'<font color="#4DD0E1" size="14"><b>{v}</b></font><br/>'
+            f'<font color="white" size="6.5">{l}</font>',
+            ParagraphStyle("csv2", alignment=TA_LEFT, leading=16,
+                           fontName="Helvetica-Bold", spaceAfter=0))
+        for v, l in [
+            (f"£{(_g+_k*1000)/1e6:.1f}m+", "Total Investment"),
+            (f"{_k}+", "Invited Talks"),
+            ("250+", "Publications"),
+        ]
     ]]
-    stat_table = Table(stat_rows, colWidths=[col_w]*3)
-    stat_table.setStyle(TableStyle([
-        ("BACKGROUND",    (0,0),(-1,-1), colors.HexColor("#0D1B2A80")),
-        ("TOPPADDING",    (0,0),(-1,-1), 8),
-        ("BOTTOMPADDING", (0,0),(-1,-1), 8),
-        ("LEFTPADDING",   (0,0),(-1,-1), 6),
+    stat_t = Table(stat_data, colWidths=[stat_col]*3)
+    stat_t.setStyle(TableStyle([
+        ("LEFTPADDING",   (0,0),(-1,-1), 0),
         ("RIGHTPADDING",  (0,0),(-1,-1), 6),
-        ("ALIGN",         (0,0),(-1,-1), "CENTER"),
-        ("VALIGN",        (0,0),(-1,-1), "MIDDLE"),
+        ("TOPPADDING",    (0,0),(-1,-1), 0),
+        ("BOTTOMPADDING", (0,0),(-1,-1), 0),
+        ("VALIGN",        (0,0),(-1,-1), "TOP"),
     ]))
-    story.append(stat_table)
-    story.append(Spacer(1, 8 * _mm))
+    story.append(stat_t)
+    story.append(Spacer(1, 7 * _mm))
 
-    # Focus area plain English
+    # Focus area
     plain = portfolio.get("plain_english", {}).get(focus_label, "")
     if plain:
-        story.append(Paragraph(
+        story.append(left(Paragraph(
             f'<font color="#4DD0E1"><b>Focus: {focus_display}</b></font>',
-            ParagraphStyle("cvfl", fontSize=9, leading=12,
-                           fontName="Helvetica-Bold", spaceAfter=4)))
-        story.append(Paragraph(
+            ParagraphStyle("cvfl2", fontSize=8.5, leading=11,
+                           fontName="Helvetica-Bold", spaceAfter=3))))
+        story.append(left(Paragraph(
             f'<font color="white">{plain}</font>',
-            ParagraphStyle("cvpe", fontSize=9, leading=13,
-                           fontName="Helvetica", spaceAfter=8)))
+            ParagraphStyle("cvpe2", fontSize=8.5, leading=12.5,
+                           fontName="Helvetica", spaceAfter=7))))
 
-    story.append(HRFlowable(width="100%", thickness=0.5,
-                            color=colors.HexColor("#4DD0E1"),
-                            spaceAfter=6, spaceBefore=0))
+    story.append(Table([['']], colWidths=[col_w],
+                       style=TableStyle([
+                           ("LINEBELOW", (0,0),(-1,-1), 0.5, colors.HexColor("#4DD0E1")),
+                           ("TOPPADDING",    (0,0),(-1,-1), 0),
+                           ("BOTTOMPADDING", (0,0),(-1,-1), 0),
+                       ])))
+    story.append(Spacer(1, 5 * _mm))
 
-    # Three distinctive statements
-    story.append(Paragraph(
+    # Distinctive statements
+    story.append(left(Paragraph(
         '<font color="#80CED7"><b>What makes Andy distinctive:</b></font>',
-        ParagraphStyle("cvdh", fontSize=8.5, leading=11,
-                       fontName="Helvetica-Bold", spaceAfter=5)))
+        ParagraphStyle("cvdh2", fontSize=8, leading=11,
+                       fontName="Helvetica-Bold", spaceAfter=4))))
 
     headlines = [
         ("Genuinely interdisciplinary",
-         "Andy’s research connects philosophy, science, media, sport, health, and technology in ways that very few academics can. His most important contributions happen precisely at disciplinary intersections."),
+         "His research connects philosophy, science, media, sport, health, and technology. His most important contributions happen precisely at disciplinary intersections."),
         ("Research that reaches people",
-         "From BBC Newsnight to Google SciFoo, from the European Parliament to the Olympic Games, Andy’s work consistently finds audiences far beyond academia. Over 500 invited talks in 50+ countries."),
+         "From BBC Newsnight to Google SciFoo, the European Parliament to the Olympic Games — over 500 invited talks in 50+ countries."),
         ("Ethics at the frontier",
-         "Andy has spent 25 years asking the ethical questions about emerging technologies before most people know those technologies exist — from gene doping and bioethics to AI, drones, esports, and the metaverse."),
+         "25 years asking the ethical questions about emerging technologies before most people know they exist — gene doping, AI, drones, esports, the metaverse."),
     ]
     for title, desc in headlines:
-        story.append(Paragraph(
-            f'<font color="#4DD0E1"><b>{title}</b></font>'
-            f'<font color="white"> — {desc}</font>',
-            ParagraphStyle("cvhl", fontSize=8, leading=12,
+        story.append(left(Paragraph(
+            f'<font color="#4DD0E1"><b>{title}.</b></font> '
+            f'<font color="white">{desc}</font>',
+            ParagraphStyle("cvhl2", fontSize=8, leading=11.5,
                            fontName="Helvetica", spaceBefore=2, spaceAfter=4,
-                           leftIndent=6)))
+                           leftIndent=0))))
 
     # Footer
     story.append(Spacer(1, 6 * _mm))
-    story.append(HRFlowable(width="100%", thickness=0.5,
-                            color=colors.HexColor("#4DD0E1"),
-                            spaceAfter=4))
-    story.append(Paragraph(
+    story.append(Table([['']], colWidths=[col_w],
+                       style=TableStyle([
+                           ("LINEBELOW", (0,0),(-1,-1), 0.5, colors.HexColor("#4DD0E1")),
+                           ("TOPPADDING",    (0,0),(-1,-1), 0),
+                           ("BOTTOMPADDING", (0,0),(-1,-1), 0),
+                       ])))
+    story.append(Spacer(1, 3 * _mm))
+    story.append(left(Paragraph(
         f'<font color="#80CED7">andymiah.net  ·  University of Salford  ·  '
         f'Generated {datetime.today().strftime("%B %Y")}</font>',
-        ParagraphStyle("cvfoot", fontSize=7.5, leading=10,
-                       fontName="Helvetica-Oblique", alignment=TA_CENTER)))
+        ParagraphStyle("cvfoot2", fontSize=7, leading=9,
+                       fontName="Helvetica-Oblique", alignment=TA_LEFT))))
 
     return story
 
