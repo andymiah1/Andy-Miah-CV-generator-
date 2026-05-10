@@ -140,36 +140,47 @@
   },
   "metrics": [
     {
-      "value": "18 yrs",
-      "label": "Professorial Experience",
+      "value": "£8.6m+",
+      "label": "Total Portfolio Value (cash + in-kind)",
+      "tags": [
+        "platform-leadership",
+        "creative-industries",
+        "creative-manchester",
+        "civic"
+      ]
+    },
+    {
+      "value": "£4.2m+",
+      "label": "Direct PI/Lead Cash Investment",
+      "tags": [
+        "platform-leadership",
+        "creative-industries",
+        "creative-manchester"
+      ]
+    },
+    {
+      "value": "£10.6m+",
+      "label": "Co-Investigator Portfolio",
       "tags": [
         "platform-leadership",
         "science-communication",
-        "ai-ethics"
+        "ai-ethics",
+        "bioethics"
       ]
     },
     {
-      "value": "£4.1m+",
-      "label": "Direct Grant Income (PI/Co-I)",
+      "value": "£4.3m+",
+      "label": "Estimated In-Kind Contributions",
       "tags": [
         "platform-leadership",
-        "creative-industries",
-        "creative-manchester"
-      ]
-    },
-    {
-      "value": "£4.6m+",
-      "label": "Total Portfolio Investment",
-      "tags": [
-        "platform-leadership",
-        "creative-industries",
-        "esports",
-        "creative-manchester"
+        "civic",
+        "manchester",
+        "science-communication"
       ]
     },
     {
       "value": "£18m",
-      "label": "Research Funding Oversight (SNSF)",
+      "label": "International Research Funding Oversight",
       "tags": [
         "science-communication",
         "interdisciplinary",
@@ -204,8 +215,7 @@
         "science-communication",
         "bioethics",
         "olympic-studies",
-        "esports",
-        "digital-health"
+        "esports"
       ]
     },
     {
@@ -227,13 +237,6 @@
         "gaming",
         "digital-sport",
         "governance"
-      ]
-    },
-    {
-      "value": "2016",
-      "label": "First UK Uni Esports Conference",
-      "tags": [
-        "esports"
       ]
     }
   ],
@@ -26183,5 +26186,15 @@
       "source": "squarespace_export",
       "added": "2026-05-08"
     }
-  ]
+  ],
+  "investment_summary": {
+    "pi_cash": 3374500,
+    "coi_cash": 10618000,
+    "institutional_cash": 861500,
+    "institutional_inkind": 4328000,
+    "total_pi_lead_cash": 4236000,
+    "total_inkind": 4328000,
+    "total_portfolio": 8564000,
+    "narrative": "Throughout my career I have secured and managed significant research and programme funding as both Principal Investigator and Co-Investigator. As PI, I have led grants totalling c.£3.4m, including a £3.2m Innovate UK Innovation Accelerator. I have also secured £861,500 in institutional investment from the University of Salford to support major public engagement programmes, including the Manchester Science Festival and New Scientist Live partnerships — leveraging an estimated £4.3m in associated in-kind contributions. As Co-Investigator, I have contributed to externally funded research with a combined portfolio value exceeding £10m, spanning funders including ERDF, AHRC, Innovate UK, and the Wellcome Trust."
+  }
 }
