@@ -181,24 +181,24 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
         ]))
         return t
 
-    story.append(Spacer(1, 10 * _mm))
+    story.append(Spacer(1, 14 * _mm))
 
     # Name — large, white, no box
     story.append(left(Paragraph(
-        f'<font color="#4DD0E1"><b>{identity["name"].upper()}</b></font>',
+        f'<font color="#4DD0E1"><b>PROF. {identity["name"].upper()}</b></font>',
         ParagraphStyle("cvn2", fontSize=30, leading=34,
-                       fontName="Helvetica-Bold", spaceAfter=3))))
+                       fontName="Helvetica-Bold", spaceAfter=6))))
 
     # Title & institution — white, no box
     story.append(left(Paragraph(
         f'<font color="white">{identity["title"]}</font>',
         ParagraphStyle("cvt2", fontSize=10, leading=13,
-                       fontName="Helvetica", spaceAfter=2))))
+                       fontName="Helvetica", spaceAfter=4))))
 
     story.append(left(Paragraph(
         f'<font color="#80CED7">{identity["institution"]}</font>',
         ParagraphStyle("cvi2", fontSize=9, leading=12,
-                       fontName="Helvetica", spaceAfter=8))))
+                       fontName="Helvetica", spaceAfter=10))))
 
     # Thin teal rule
     story.append(Table([['']], colWidths=[col_w],
@@ -207,7 +207,7 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
                            ("TOPPADDING",    (0,0),(-1,-1), 0),
                            ("BOTTOMPADDING", (0,0),(-1,-1), 0),
                        ])))
-    story.append(Spacer(1, 6 * _mm))
+    story.append(Spacer(1, 10 * _mm))
 
     # Quote — italic white, constrained to left column
     quote = ('“People often ask me ‘what do you do?’ '
@@ -219,7 +219,7 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
         "cvq2", fontSize=9.5, leading=14,
         fontName="Helvetica-Oblique",
         textColor=colors.white,
-        spaceAfter=8))))
+        spaceAfter=12))))
 
     # Key stats — 3 small inline stats, no background box
     _g = 0
@@ -259,7 +259,7 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
         ("VALIGN",        (0,0),(-1,-1), "TOP"),
     ]))
     story.append(stat_t)
-    story.append(Spacer(1, 7 * _mm))
+    story.append(Spacer(1, 10 * _mm))
 
     # Focus area
     plain = portfolio.get("plain_english", {}).get(focus_label, "")
@@ -267,11 +267,11 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
         story.append(left(Paragraph(
             f'<font color="#4DD0E1"><b>Focus: {focus_display}</b></font>',
             ParagraphStyle("cvfl2", fontSize=8.5, leading=11,
-                           fontName="Helvetica-Bold", spaceAfter=3))))
+                           fontName="Helvetica-Bold", spaceAfter=5))))
         story.append(left(Paragraph(
             f'<font color="white">{plain}</font>',
             ParagraphStyle("cvpe2", fontSize=8.5, leading=12.5,
-                           fontName="Helvetica", spaceAfter=7))))
+                           fontName="Helvetica", spaceAfter=10))))
 
     story.append(Table([['']], colWidths=[col_w],
                        style=TableStyle([
@@ -279,7 +279,7 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
                            ("TOPPADDING",    (0,0),(-1,-1), 0),
                            ("BOTTOMPADDING", (0,0),(-1,-1), 0),
                        ])))
-    story.append(Spacer(1, 5 * _mm))
+    story.append(Spacer(1, 8 * _mm))
 
     # Distinctive statements
     story.append(left(Paragraph(
@@ -300,7 +300,7 @@ def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
             f'<font color="#4DD0E1"><b>{title}.</b></font> '
             f'<font color="white">{desc}</font>',
             ParagraphStyle("cvhl2", fontSize=8, leading=11.5,
-                           fontName="Helvetica", spaceBefore=2, spaceAfter=4,
+                           fontName="Helvetica", spaceBefore=3, spaceAfter=6,
                            leftIndent=0))))
 
     # Footer
