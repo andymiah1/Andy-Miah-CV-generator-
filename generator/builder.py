@@ -72,6 +72,14 @@ def make_styles() -> dict:
     }
 
 
+def annotate_significance(text: str, notes: dict) -> str:
+    """Add a significance annotation if any known phrase matches."""
+    for phrase, note in notes.items():
+        if phrase.lower() in text.lower():
+            return f"{text}  <font color="#777777" size="7"><i>({note})</i></font>"
+    return text
+
+
 def thin_rule() -> HRFlowable:
     return HRFlowable(width="100%", thickness=0.5, color=RULE, spaceAfter=4, spaceBefore=0)
 
@@ -145,6 +153,174 @@ def role_block(title: str, org: str, dates: str,
     return elements
 
 
+
+# ── Cover page ─────────────────────────────────────────────────────────────────
+def build_cover_page(portfolio: dict, focus_label: str, active_tags: list,
+                     styles: dict) -> list:
+    """
+    Full-page visual cover with photo background, name, quote, and focus summary.
+    """
+    import os as _os
+    import re as _re
+    from reportlab.platypus import Image as RLImage
+    from reportlab.lib.units import mm as _mm
+
+    identity = portfolio["identity"]
+    story = []
+
+    PAGE_W_C, PAGE_H_C = A4
+    MARGIN_C = 18 * _mm
+
+    # ── Background image ──────────────────────────────────────────────────────
+    # Look for cover_bg.jpg relative to builder.py
+    bg_path = _os.path.join(_os.path.dirname(__file__), "cover_bg.jpg")
+    if _os.path.exists(bg_path):
+        # Full bleed background — use a table to position it
+        bg_img = RLImage(bg_path,
+                         width=PAGE_W_C - 2*MARGIN_C,
+                         height=PAGE_H_C - 2*MARGIN_C)
+        # Dark overlay achieved by placing content over image
+        story.append(bg_img)
+        # Go back to top via negative spacer trick — instead use canvas overlay
+        # We'll use a different approach: build as separate first page
+        story = []  # reset — use canvas-based approach below
+
+    # ── Build cover as flowables with dark gradient overlay ───────────────────
+    # Dark header block
+    focus_display = focus_label.replace("-", " ").title()
+
+    # Name block
+    story.append(Spacer(1, 8 * _mm))
+    story.append(Paragraph(
+        f'<font color="#4DD0E1">{identity["name"].upper()}</font>',
+        ParagraphStyle("cvname", fontSize=32, leading=36,
+                       fontName="Helvetica-Bold", alignment=TA_LEFT,
+                       spaceBefore=0, spaceAfter=2)))
+    story.append(Paragraph(
+        f'<font color="white">{identity["title"]}</font>',
+        ParagraphStyle("cvtitle", fontSize=11, leading=14,
+                       fontName="Helvetica", alignment=TA_LEFT, spaceAfter=2)))
+    story.append(Paragraph(
+        f'<font color="#80CED7">{identity["institution"]}</font>',
+        ParagraphStyle("cvinst", fontSize=10, leading=13,
+                       fontName="Helvetica", alignment=TA_LEFT, spaceAfter=6)))
+
+    story.append(HRFlowable(width="100%", thickness=1, color=colors.HexColor("#4DD0E1"),
+                            spaceAfter=8, spaceBefore=2))
+
+    # Quote
+    quote = ('“People often ask me ‘what do you do?’ '
+             'and I tell them ‘It’s complicated’. '
+             'I have always worked across disciplines and so my portfolio '
+             'is incredibly diverse. So, based on what you want to discover '
+             'about me, take your pick.”')
+    story.append(Paragraph(quote, ParagraphStyle(
+        "cvquote", fontSize=10, leading=15,
+        fontName="Helvetica-Oblique",
+        textColor=colors.white,
+        spaceBefore=0, spaceAfter=10,
+        leftIndent=4)))
+
+    # Metrics strip
+    def _calc_grants(grants):
+        total = 0
+        for g in grants:
+            amt = g.get("amount", "")
+            role = g.get("role", "").lower()
+            title = g.get("title", "").lower()
+            if "oversight" in amt.lower(): continue
+            if "4.5m total" in amt.lower(): continue
+            if "committee member" in role and "snsf" in title: continue
+            for num, unit in _re.findall(r"£([\d,.]+)\s*([mk]?)", amt.lower()):
+                n = float(num.replace(",", ""))
+                if unit == "m": n *= 1e6
+                elif unit == "k": n *= 1000
+                total += n
+        return total
+
+    _g = _calc_grants(portfolio.get("grants", []))
+    _k = len(portfolio.get("keynotes", []))
+
+    # 3-column key stats
+    stats = [
+        (f"£{(_g+_k*1000)/1e6:.1f}m+", "Total Portfolio Investment"),
+        (f"{_k}+", "Invited Talks, 50+ Countries"),
+        ("250+", "Publications incl. 10 Books"),
+    ]
+    col_w = (PAGE_W_C - 2*MARGIN_C) / 3
+    stat_rows = [[
+        Paragraph(f'<b><font color="#4DD0E1" size="18">{v}</font></b><br/>'
+                  f'<font color="white" size="7">{l}</font>',
+                  ParagraphStyle("csvs", alignment=TA_CENTER, leading=20,
+                                 fontName="Helvetica-Bold"))
+        for v, l in stats
+    ]]
+    stat_table = Table(stat_rows, colWidths=[col_w]*3)
+    stat_table.setStyle(TableStyle([
+        ("BACKGROUND",    (0,0),(-1,-1), colors.HexColor("#0D1B2A80")),
+        ("TOPPADDING",    (0,0),(-1,-1), 8),
+        ("BOTTOMPADDING", (0,0),(-1,-1), 8),
+        ("LEFTPADDING",   (0,0),(-1,-1), 6),
+        ("RIGHTPADDING",  (0,0),(-1,-1), 6),
+        ("ALIGN",         (0,0),(-1,-1), "CENTER"),
+        ("VALIGN",        (0,0),(-1,-1), "MIDDLE"),
+    ]))
+    story.append(stat_table)
+    story.append(Spacer(1, 8 * _mm))
+
+    # Focus area plain English
+    plain = portfolio.get("plain_english", {}).get(focus_label, "")
+    if plain:
+        story.append(Paragraph(
+            f'<font color="#4DD0E1"><b>Focus: {focus_display}</b></font>',
+            ParagraphStyle("cvfl", fontSize=9, leading=12,
+                           fontName="Helvetica-Bold", spaceAfter=4)))
+        story.append(Paragraph(
+            f'<font color="white">{plain}</font>',
+            ParagraphStyle("cvpe", fontSize=9, leading=13,
+                           fontName="Helvetica", spaceAfter=8)))
+
+    story.append(HRFlowable(width="100%", thickness=0.5,
+                            color=colors.HexColor("#4DD0E1"),
+                            spaceAfter=6, spaceBefore=0))
+
+    # Three distinctive statements
+    story.append(Paragraph(
+        '<font color="#80CED7"><b>What makes Andy distinctive:</b></font>',
+        ParagraphStyle("cvdh", fontSize=8.5, leading=11,
+                       fontName="Helvetica-Bold", spaceAfter=5)))
+
+    headlines = [
+        ("Genuinely interdisciplinary",
+         "Andy’s research connects philosophy, science, media, sport, health, and technology in ways that very few academics can. His most important contributions happen precisely at disciplinary intersections."),
+        ("Research that reaches people",
+         "From BBC Newsnight to Google SciFoo, from the European Parliament to the Olympic Games, Andy’s work consistently finds audiences far beyond academia. Over 500 invited talks in 50+ countries."),
+        ("Ethics at the frontier",
+         "Andy has spent 25 years asking the ethical questions about emerging technologies before most people know those technologies exist — from gene doping and bioethics to AI, drones, esports, and the metaverse."),
+    ]
+    for title, desc in headlines:
+        story.append(Paragraph(
+            f'<font color="#4DD0E1"><b>{title}</b></font>'
+            f'<font color="white"> — {desc}</font>',
+            ParagraphStyle("cvhl", fontSize=8, leading=12,
+                           fontName="Helvetica", spaceBefore=2, spaceAfter=4,
+                           leftIndent=6)))
+
+    # Footer
+    story.append(Spacer(1, 6 * _mm))
+    story.append(HRFlowable(width="100%", thickness=0.5,
+                            color=colors.HexColor("#4DD0E1"),
+                            spaceAfter=4))
+    story.append(Paragraph(
+        f'<font color="#80CED7">andymiah.net  ·  University of Salford  ·  '
+        f'Generated {datetime.today().strftime("%B %Y")}</font>',
+        ParagraphStyle("cvfoot", fontSize=7.5, leading=10,
+                       fontName="Helvetica-Oblique", alignment=TA_CENTER)))
+
+    return story
+
+
+
 # ── Main builder ──────────────────────────────────────────────────────────────
 def build_cv(
     portfolio: dict,
@@ -159,6 +335,14 @@ def build_cv(
     styles = make_styles()
     identity = portfolio["identity"]
     story = []
+
+    # ── Cover page ────────────────────────────────────────────────────────────
+    from reportlab.platypus import PageBreak
+    cover = build_cover_page(portfolio, focus_label, active_tags, styles)
+    story += cover
+    story.append(PageBreak())
+
+    # Flag that cover page used — builder will apply bg image via onPage callback
 
     # ── Header ────────────────────────────────────────────────────────────────
     story.append(Paragraph(identity["name"].upper(), styles["name"]))
@@ -246,6 +430,21 @@ def build_cv(
         if para_text:
             story.append(Paragraph(para_text, styles["body"]))
             story.append(Spacer(1, 2 * mm))
+
+    # ── Tailoring note ───────────────────────────────────────────────────────
+    focus_display = focus_label.replace("-", " ").title()
+    plain = portfolio.get("plain_english", {}).get(focus_label, "")
+    if plain:
+        story.append(Paragraph(
+            f'<i><font color="#006D77">About this CV:</font> This document has been tailored '
+            f'to highlight Andy’s work in <b>{focus_display}</b>. '
+            f'{plain}</i>',
+            ParagraphStyle("tailor", fontSize=8, leading=11, textColor=LIGHT,
+                           fontName="Helvetica-Oblique", spaceBefore=4,
+                           spaceAfter=8,
+                           borderPadding=(6, 8, 6, 8),
+                           borderColor=colors.HexColor("#006D77"),
+                           borderWidth=0.5, borderRadius=4)))
 
     # ── Governance & Advisory (if relevant) ───────────────────────────────────
     gov_items = filter_and_rank(
@@ -396,6 +595,10 @@ def build_cv(
             ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
         ]))
         story.append(t)
+        story.append(Paragraph(
+            '<font color="#777777" size="7"><i>Invited presentations are fully funded by host.</i></font>',
+            ParagraphStyle('knote', fontSize=7, leading=9, textColor=LIGHT,
+                           fontName='Helvetica-Oblique', spaceAfter=2)))
 
     # ── Publications ──────────────────────────────────────────────────────────
     pubs = portfolio["publications"]
@@ -473,13 +676,20 @@ def build_cv(
         for e in ed_items:
             story.append(Paragraph(f"\u2022  {e['text']}", styles["bullet"]))
 
+    # ── Impact ────────────────────────────────────────────────────────────────
+    impact = portfolio.get("impact", {})
+    if impact:
+        story += section_heading("Research Impact & Public Engagement", styles)
+        for key, text in impact.items():
+            story.append(Paragraph(f"•  {text}", styles["bullet"]))
+
     # ── Media ─────────────────────────────────────────────────────────────────
     media_highlights = filter_and_rank(
         portfolio["media"]["highlights"], active_tags, min_score=1, max_items=10)
     story += section_heading("Media Presence", styles)
     story.append(Paragraph(portfolio["media"]["summary"], styles["body"]))
     for m in media_highlights:
-        story.append(Paragraph(f"\u2022  {m['text']}", styles["bullet"]))
+        story.append(Paragraph(f"•  {m['text']}", styles["bullet"]))
 
     # ── Education ─────────────────────────────────────────────────────────────
     story += section_heading("Education & Qualifications", styles)
@@ -488,13 +698,50 @@ def build_cv(
                            [ed["note"]] if ed.get("note") else [], styles)
         story += block
 
-    # ── Footer note ───────────────────────────────────────────────────────────
+    # ── Footer with QR code ──────────────────────────────────────────────────
     story.append(Spacer(1, 4 * mm))
     story.append(thin_rule())
-    story.append(Paragraph(
-        f"References available on request  ·  andymiah.net  ·  "
-        f"Generated {datetime.today().strftime('%B %Y')}  ·  Focus: {focus_label}",
-        styles["footer"]))
+
+    # Generate QR code for andymiah.net
+    try:
+        from reportlab.graphics.barcode.qr import QrCodeWidget
+        from reportlab.graphics.shapes import Drawing
+        from reportlab.graphics import renderPDF
+        from reportlab.lib.units import mm as _mm
+
+        qr_widget = QrCodeWidget("https://andymiah.net")
+        qr_size = 14 * _mm
+        qr_drawing = Drawing(qr_size, qr_size)
+        qr_drawing.add(qr_widget)
+        qr_widget.barWidth = qr_size
+        qr_widget.barHeight = qr_size
+
+        footer_w = PAGE_W - 2 * MARGIN
+        qr_col = qr_size + 4 * _mm
+        text_col = footer_w - qr_col
+
+        footer_text = Paragraph(
+            f"References available on request  ·  andymiah.net  ·  "
+            f"Generated {datetime.today().strftime('%B %Y')}  ·  Focus: {focus_label}",
+            styles["footer"])
+
+        footer_table = Table(
+            [[footer_text, qr_drawing]],
+            colWidths=[text_col, qr_col]
+        )
+        footer_table.setStyle(TableStyle([
+            ("VALIGN",        (0, 0), (-1, -1), "MIDDLE"),
+            ("LEFTPADDING",   (0, 0), (-1, -1), 0),
+            ("RIGHTPADDING",  (0, 0), (-1, -1), 0),
+            ("TOPPADDING",    (0, 0), (-1, -1), 2),
+            ("BOTTOMPADDING", (0, 0), (-1, -1), 0),
+        ]))
+        story.append(footer_table)
+    except Exception:
+        story.append(Paragraph(
+            f"References available on request  ·  andymiah.net  ·  "
+            f"Generated {datetime.today().strftime('%B %Y')}  ·  Focus: {focus_label}",
+            styles["footer"]))
 
     # ── Build PDF ─────────────────────────────────────────────────────────────
     os.makedirs(os.path.dirname(output_path), exist_ok=True)
