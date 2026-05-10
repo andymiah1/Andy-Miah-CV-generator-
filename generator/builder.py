@@ -174,12 +174,52 @@ def build_cv(
     story.append(thin_rule())
     story.append(Spacer(1, 2 * mm))
 
-    # ── Metrics ───────────────────────────────────────────────────────────────
+    # ── Metrics — dynamically calculated ────────────────────────────────────
+    import re as _re
+
+    def _calc_grant_total(grants):
+        """Sum direct PI/Co-I grant income, excluding oversight and duplicates."""
+        total = 0
+        for g in grants:
+            amt = g.get("amount", "")
+            role = g.get("role", "").lower()
+            title = g.get("title", "").lower()
+            if "oversight" in amt.lower(): continue
+            if "£4.5m total" in amt.lower(): continue
+            if "committee member" in role and "snsf" in title: continue
+            for num, unit in _re.findall(r"£([\d,.]+)\s*([mk]?)", amt.lower()):
+                n = float(num.replace(",", ""))
+                if unit == "m": n *= 1_000_000
+                elif unit == "k": n *= 1_000
+                total += n
+        return total
+
+    _grant_total = _calc_grant_total(portfolio.get("grants", []))
+    _keynote_count = len(portfolio.get("keynotes", []))
+    _keynote_value = _keynote_count * 1000
+    _total_investment = _grant_total + _keynote_value
+    _pub_count = sum(len(portfolio["publications"].get(k, []))
+                     for k in ["journal_articles", "chapters", "books"])
+
+    # Update dynamic metrics values before scoring
+    dynamic_metrics = []
+    for m in portfolio.get("metrics", []):
+        m = dict(m)  # copy
+        label = m.get("label", "")
+        if "Direct Grant Income" in label:
+            m["value"] = f"£{_grant_total/1e6:.1f}m+"
+        elif "Total Portfolio Investment" in label:
+            m["value"] = f"£{_total_investment/1e6:.1f}m+"
+        elif "Invited Talks" in label:
+            m["value"] = f"{_keynote_count}+"
+        elif "Peer-reviewed" in label:
+            m["value"] = f"{_pub_count}+"
+        dynamic_metrics.append(m)
+
     scored_metrics = filter_and_rank(
-        portfolio["metrics"], active_tags, min_score=1, max_items=6)
-    # Pad to 6 if fewer matched
+        dynamic_metrics, active_tags, min_score=1, max_items=6)
     if len(scored_metrics) < 6:
-        fallback = [m for m in portfolio["metrics"] if m not in scored_metrics]
+        fallback = [m for m in dynamic_metrics if m not in scored_metrics]
         scored_metrics += fallback[: 6 - len(scored_metrics)]
     story.append(metric_strip(scored_metrics[:6], styles))
     story.append(Spacer(1, 4 * mm))
@@ -242,9 +282,74 @@ def build_cv(
 
     # ── Grants ────────────────────────────────────────────────────────────────
     grant_items = filter_and_rank(
-        portfolio["grants"], active_tags, min_score=1, max_items=8)
+        portfolio["grants"], active_tags, min_score=1, max_items=8,
+        query=focus_label)
     if grant_items:
-        story += section_heading("Grants & Funded Projects", styles)
+        story += section_heading("Research Funding", styles)
+
+        # Investment summary table if available
+        inv = portfolio.get("investment_summary")
+        if inv:
+            summary_rows = [
+                [
+                    Paragraph("<b>Category</b>", ParagraphStyle("th", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10)),
+                    Paragraph("<b>Role</b>", ParagraphStyle("th", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10)),
+                    Paragraph("<b>Cash Value</b>", ParagraphStyle("th", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10, alignment=2)),
+                    Paragraph("<b>Est. In-Kind</b>", ParagraphStyle("th", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10, alignment=2)),
+                    Paragraph("<b>Total</b>", ParagraphStyle("th", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10, alignment=2)),
+                ],
+                [
+                    Paragraph("Competitive Research Grants", ParagraphStyle("tc", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10)),
+                    Paragraph("PI", ParagraphStyle("tc", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10)),
+                    Paragraph("£3,374,500", ParagraphStyle("tc", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                    Paragraph("—", ParagraphStyle("tc", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                    Paragraph("£3,374,500", ParagraphStyle("tc", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                ],
+                [
+                    Paragraph("Competitive Research Grants", ParagraphStyle("tc2", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10)),
+                    Paragraph("Co-I", ParagraphStyle("tc2", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10)),
+                    Paragraph("£10,618,000+", ParagraphStyle("tc2", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                    Paragraph("—", ParagraphStyle("tc2", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                    Paragraph("£10,618,000+", ParagraphStyle("tc2", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                ],
+                [
+                    Paragraph("Strategic Institutional Investment", ParagraphStyle("tc3", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10)),
+                    Paragraph("Lead", ParagraphStyle("tc3", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10)),
+                    Paragraph("£861,500", ParagraphStyle("tc3", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                    Paragraph("£4,328,000", ParagraphStyle("tc3", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                    Paragraph("£5,189,500", ParagraphStyle("tc3", fontSize=7.5, textColor=MID, fontName="Helvetica", leading=10, alignment=2)),
+                ],
+                [
+                    Paragraph("<b>Total (PI/Lead)</b>", ParagraphStyle("tf", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10)),
+                    Paragraph("", ParagraphStyle("tf", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10)),
+                    Paragraph("<b>£4,236,000</b>", ParagraphStyle("tf", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10, alignment=2)),
+                    Paragraph("<b>£4,328,000</b>", ParagraphStyle("tf", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10, alignment=2)),
+                    Paragraph("<b>£8,564,000</b>", ParagraphStyle("tf", fontSize=7.5, textColor=TEAL, fontName="Helvetica-Bold", leading=10, alignment=2)),
+                ],
+            ]
+            col_w = PAGE_W - 2 * MARGIN
+            inv_table = Table(
+                summary_rows,
+                colWidths=[col_w*0.38, col_w*0.08, col_w*0.18, col_w*0.18, col_w*0.18]
+            )
+            inv_table.setStyle(TableStyle([
+                ("BACKGROUND",    (0, 0), (-1, 0),  PALE),
+                ("BACKGROUND",    (0, 4), (-1, 4),  PALE),
+                ("LINEBELOW",     (0, 0), (-1, 0),  0.5, TEAL),
+                ("LINEABOVE",     (0, 4), (-1, 4),  0.5, TEAL),
+                ("TOPPADDING",    (0, 0), (-1, -1), 3),
+                ("BOTTOMPADDING", (0, 0), (-1, -1), 3),
+                ("LEFTPADDING",   (0, 0), (-1, -1), 4),
+                ("RIGHTPADDING",  (0, 0), (-1, -1), 4),
+                ("VALIGN",        (0, 0), (-1, -1), "MIDDLE"),
+            ]))
+            story.append(inv_table)
+            story.append(Spacer(1, 4 * mm))
+
+        # Selected grants list
+        story.append(Paragraph("Selected Grants", ParagraphStyle(
+            "gsub", fontSize=8.5, textColor=MID, fontName="Helvetica-Bold",
+            leading=11, spaceBefore=4, spaceAfter=3)))
         for g in grant_items:
             label = f"<b>{g['dates']}</b>  ·  <b>{g['title']}</b>  —  {g['funder']} ({g['role']})  ·  {g['amount']}"
             story.append(Paragraph(label, styles["bullet"]))
@@ -352,22 +457,6 @@ def build_cv(
             ("BOTTOMPADDING", (0, 0), (-1, -1), 1),
         ]))
         story.append(t)
-
-    # ── Selected Writing & Web Content ──────────────────────────────────────
-    web_items = filter_and_rank(
-        portfolio.get("web_content", []), active_tags, min_score=1, max_items=12)
-    if web_items:
-        story += section_heading("Selected Writing & Commentary", styles)
-        for w in web_items:
-            text = w.get("text", "")
-            snippet = w.get("snippet", "")
-            story.append(Paragraph(f"•  {text}", styles["bullet"]))
-            if snippet:
-                story.append(Paragraph(
-                    snippet[:160] + ("..." if len(snippet) > 160 else ""),
-                    ParagraphStyle("wsnip", fontSize=7.5, leading=10,
-                                   textColor=LIGHT, fontName="Helvetica-Oblique",
-                                   leftIndent=10, spaceAfter=3)))
 
     # ── Awards ────────────────────────────────────────────────────────────────
     award_items = filter_and_rank(
