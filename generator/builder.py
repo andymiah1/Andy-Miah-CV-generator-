@@ -744,7 +744,36 @@ def build_cv(
             styles["footer"]))
 
     # ── Build PDF ─────────────────────────────────────────────────────────────
-    os.makedirs(os.path.dirname(output_path), exist_ok=True)
+    os.makedirs(os.path.dirname(output_path) if os.path.dirname(output_path) else ".", exist_ok=True)
+
+    # Try multiple locations for the cover image
+    img_name = "2026.05.10-ChatGPT-GoogleGlass.png"
+    candidate_paths = [
+        os.path.join(os.path.dirname(os.path.abspath(__file__)), img_name),
+        os.path.join(os.getcwd(), "generator", img_name),
+        os.path.join(os.getcwd(), img_name),
+        os.path.join("/mount/src", img_name),
+        os.path.join("/mount/src/andy-miah-cv-generator-/generator", img_name),
+    ]
+    bg_path = None
+    for cp in candidate_paths:
+        if os.path.exists(cp):
+            bg_path = cp
+            break
+
+    def on_first_page(canvas, doc):
+        if bg_path:
+            canvas.saveState()
+            canvas.drawImage(bg_path, 0, 0,
+                             width=PAGE_W, height=PAGE_H,
+                             preserveAspectRatio=False)
+            canvas.setFillColorRGB(0.05, 0.1, 0.16, alpha=0.72)
+            canvas.rect(0, 0, PAGE_W, PAGE_H, fill=1, stroke=0)
+            canvas.restoreState()
+
+    def on_later_pages(canvas, doc):
+        pass
+
     doc = SimpleDocTemplate(
         output_path,
         pagesize=A4,
@@ -755,7 +784,7 @@ def build_cv(
         title=f"Andy Miah CV — {focus_label}",
         author="Andy Miah",
     )
-    doc.build(story)
+    doc.build(story, onFirstPage=on_first_page, onLaterPages=on_later_pages)
     return output_path
 
 
